@@ -1,11 +1,20 @@
-using ChatProtocolRoyV2.Data;
+using ChatProtocolRoyV2.DataModule;
 using ChatProtocolRoyV2.Entities;
 
 namespace ChatProtocolRoyV2;
 
 public class Packet : MessageBase
 {
-    public Packet(Guid id, MessageType type) : base(id, type)
+    #region Ctor
+
+    public Packet(Guid id, MessageType type, byte[] checksum, string data, MessageEdge sync, MessageEdge tail) : base(id, type)
     {
+        
     }
+
+    #endregion
+
+    #region properties
+
+    #endregion
 }

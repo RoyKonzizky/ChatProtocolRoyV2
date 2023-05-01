@@ -2,8 +2,8 @@ namespace ChatProtocolRoyV2.Entities;
 
 public enum MessageType
 {
-    Text,
+    TextMessage,
     Image,
     Audio,
-    File
+    FileMessage
 }

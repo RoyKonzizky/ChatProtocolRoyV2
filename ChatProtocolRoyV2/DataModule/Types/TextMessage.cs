@@ -1,6 +1,6 @@
 using ChatProtocolRoyV2.Entities;
 
-namespace ChatProtocolRoyV2.Data.Types;
+namespace ChatProtocolRoyV2.DataModule.Types;
 
 public class TextMessage : MessageBase
 {
