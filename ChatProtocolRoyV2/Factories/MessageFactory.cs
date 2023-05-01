@@ -2,7 +2,7 @@ using ChatProtocolRoyV2.DataModule;
 using ChatProtocolRoyV2.DataModule.Types;
 using ChatProtocolRoyV2.Entities;
 
-namespace ChatProtocolRoyV2.Functionality;
+namespace ChatProtocolRoyV2.Factories;
 
 public static class MessageFactory
 {

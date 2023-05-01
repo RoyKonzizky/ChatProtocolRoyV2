@@ -1,7 +1,7 @@
 ﻿using System.Text;
 using ChatProtocolRoyV2.DataModule;
 using ChatProtocolRoyV2.Entities;
-using ChatProtocolRoyV2.Functionality;
+using ChatProtocolRoyV2.Factories;
 
 namespace ChatProtocolRoyV2.ParserModule;
 

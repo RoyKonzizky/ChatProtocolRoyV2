@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f29de42a-f7ba-48f7-9716-efeedc75c0d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/GeneratorModule/ChecksumStringCalculator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/GeneratorModule/IChecksumCalculator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/GeneratorModule/IChecksumStringCalculator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/ParserModule/IParsing.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/ParserModule/IParsingBytes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/ParserModule/Parsing.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/BinaryArrayCreator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/ChatProtocolRoyV2.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/ChatProtocolRoyV2.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Functionality/Utilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Functionality/Utilities.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +74,7 @@
       <workItem from="1682871630480" duration="6870000" />
       <workItem from="1682920667233" duration="17686000" />
       <workItem from="1682943479980" duration="6320000" />
+      <workItem from="1682961470057" duration="4684000" />
     </task>
     <task id="LOCAL‎-00001" summary="-finished the message class">
       <created>1682808044548</created>
