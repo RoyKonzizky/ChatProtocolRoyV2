@@ -6,7 +6,7 @@ namespace ChatProtocolRoyV2.Functionality;
 
 public class Utilities
 {
-    public static byte CalculateChecksum(string data) {
+    /*public static byte CalculateChecksum(string data) {
         byte sum = 0;
 
         for(int i = 0; i < data.Length; i++)
@@ -14,9 +14,9 @@ public class Utilities
             sum ^= (byte)data[i];
         }
         return sum;
-    }
+    }*/
 
-    public MessageBase Parser(byte[] binaryMessage)
+    /*public MessageBase Parser(byte[] binaryMessage)
     {
         MessageBase message =  null!;
         byte sync = binaryMessage[0];
@@ -38,7 +38,7 @@ public class Utilities
         byte tail = binaryMessage[^2];
         message = MessageFactory.CreateMessage(typeOfMessage, id, data);
         return message;
-    }
+    }*/
 
     public byte[] ToBinaryArray(object message)
     {

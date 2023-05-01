@@ -4,31 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f29de42a-f7ba-48f7-9716-efeedc75c0d0" name="Changes" comment="-commit before reworking the code to make it cleaner">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2.dir/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2.dir/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2.dir/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2.dir/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f29de42a-f7ba-48f7-9716-efeedc75c0d0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/GeneratorModule/ChecksumStringCalculator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/GeneratorModule/IChecksumCalculator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/GeneratorModule/IChecksumStringCalculator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/ParserModule/IParsing.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/ParserModule/IParsingBytes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/ParserModule/Parsing.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/ChatProtocolRoyV2.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/ChatProtocolRoyV2.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/MessageBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/DataModule/MessageBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/Audio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/DataModule/Types/Audio.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/File.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/DataModule/Types/FileMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/Image.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/DataModule/Types/Image.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/TextMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/DataModule/Types/TextMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Entities/MessageType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Entities/MessageType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Functionality/Factory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Functionality/MessageFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Functionality/Utilities.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Functionality/Utilities.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Packet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Packet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Development" />
+        <entry key="$PROJECT_DIR$" value="Features_Factory_utilities_and_packet" />
       </map>
     </option>
   </component>
@@ -85,7 +70,8 @@
       <workItem from="1682775983541" duration="874000" />
       <workItem from="1682776915347" duration="10293000" />
       <workItem from="1682871630480" duration="6870000" />
-      <workItem from="1682920667233" duration="17565000" />
+      <workItem from="1682920667233" duration="17686000" />
+      <workItem from="1682943479980" duration="6320000" />
     </task>
     <task id="LOCAL‎-00001" summary="-finished the message class">
       <created>1682808044548</created>
@@ -101,7 +87,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1682887858834</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="-commit before reworking the code to make it cleaner">
+      <created>1682943349804</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682943349804</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
