@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "se83jS/fzaVeYtz2kgbNXzg1NeBj8CdiCFR3l87J2Sg5KcJm1ndodROBtLaOdyif+jEBRkiyXN6/VndgAWBbAQ==",
+  "dgSpecHash": "HPupHUEf8zouWZSpUXXENEPrt1jdsOgARQ5jOailLEbhiiJf8lpzL2++Nb4a6BYWlUaUSJOJ4QrS9SpvBRnT+Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\IDF\\ChatProtocolRoyV2\\ChatProtocolRoyV2\\ChatProtocolRoyV2.csproj",
+  "projectFilePath": "C:\\ChatProtocolRoyV2\\ChatProtocolRoyV2\\ChatProtocolRoyV2.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512"
+    "C:\\Users\\Udi\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.11\\microsoft.netcore.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\Udi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.11\\microsoft.windowsdesktop.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\Udi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.11\\microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512"
   ],
   "logs": []
 }

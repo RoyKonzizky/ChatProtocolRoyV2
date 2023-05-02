@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization.Formatters.Binary;
+﻿using System.Text;
+using System.Text.Json;
 using ChatProtocolRoyV2.DataModule;
 
 namespace ChatProtocolRoyV2;
@@ -6,11 +7,10 @@ namespace ChatProtocolRoyV2;
 public class BinaryArrayCreator
 {
     public static byte[] ToBinaryArray(MessageBase messageBase)
-    {
-        BinaryFormatter formatter = new BinaryFormatter();
-        using MemoryStream stream = new MemoryStream();
-        formatter.Serialize(stream, messageBase);
-        return stream.ToArray();
+    { 
+        string jsonString = JsonSerializer.Serialize(messageBase);
+        byte[] byteArray = Encoding.UTF8.GetBytes(jsonString);
+        return byteArray;
     }
     
 }
