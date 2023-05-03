@@ -10,14 +10,18 @@ public static class MessageFactory
     {
         switch (type)
         {
-            case MessageType.TextMessage:
-                return new TextMessage(guid, type, (string)args[0]);
             case MessageType.Audio:
                 return new Audio(guid, type);
+            
             case MessageType.Image:
                 return new Image(guid, type);
+            
+            case MessageType.TextMessage:
+                return new TextMessage(guid, type, (string)args[0]);
+            
             case MessageType.FileMessage:
                 return new FileMessage(guid, type, (string)args[0],(string)args[1]);
+            
             default:
                 throw new ArgumentException("Invalid message type.");
         }

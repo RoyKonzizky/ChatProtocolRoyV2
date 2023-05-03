@@ -2,14 +2,17 @@
 using ChatProtocolRoyV2.DataModule;
 using ChatProtocolRoyV2.Entities;
 using ChatProtocolRoyV2.Factories;
+using ChatProtocolRoyV2.ParserModule.Utilities;
 
-namespace ChatProtocolRoyV2.ParserModule;
+namespace ChatProtocolRoyV2.ParserModule.Types;
 
 public class Parsing : IParsingBytes
 {
     public MessageBase Parser(byte[] input)
     {
         MessageBase message =  null!;
+        object[] args = new object[]{ };
+        
         byte sync = input[0];
 
         byte[] idBytes = new byte[16];
@@ -27,39 +30,34 @@ public class Parsing : IParsingBytes
         byte checkSum = input[^3];
 
         byte tail = input[^2];
+        
         switch (typeOfMessage)
         {
             case MessageType.FileMessage:
             {
-                object[] args = new object[] { };
                 FileTypeFinder fileTypeFinder = new FileTypeFinder();
                 HeaderBytesCalculator headerBytesCalculator = new HeaderBytesCalculator();
                 byte[] headerBytes = headerBytesCalculator.GetHeaderBytes(dataBytes);
                 string typeOfFile = fileTypeFinder.FindFileType(headerBytes);
-                args[0] = typeOfFile;
-                args[1] = 
-                message = MessageFactory.CreateMessage(typeOfMessage, id, data);
+                args[0] = data;
+                args[1] = typeOfFile;
+                message = MessageFactory.CreateMessage(typeOfMessage, id, args);
                 break;
             }
+            
             case MessageType.TextMessage:
-                
-                
-                message = MessageFactory.CreateMessage(typeOfMessage, id, data);
+                args[0] = data;
+                message = MessageFactory.CreateMessage(typeOfMessage, id, args);
                 break;
+            
             case MessageType.Audio:
-                
-                
-                message = MessageFactory.CreateMessage(typeOfMessage, id, data);
+                message = MessageFactory.CreateMessage(typeOfMessage, id);
                 break;
+            
             case MessageType.Image:
-                
-                
-                message = MessageFactory.CreateMessage(typeOfMessage, id, data);
-                break;
-            default:
+                message = MessageFactory.CreateMessage(typeOfMessage, id);
                 break;
         }
         return message;
     }
-    //TODO rewrite this section so it would correctly parse each message type
 }

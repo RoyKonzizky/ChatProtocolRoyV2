@@ -1,10 +1,9 @@
-﻿namespace ChatProtocolRoyV2;
+﻿namespace ChatProtocolRoyV2.ParserModule.Utilities;
 
 public class FileTypeFinder
 {
     public string FindFileType(byte[] headerBytes)
     {
-        // define the magic bytes for various file types
         Dictionary<string, byte[]> magicBytes = new Dictionary<string, byte[]>
         {
             { ".txt", new byte[] { 0xEF, 0xBB, 0xBF } },
@@ -18,7 +17,6 @@ public class FileTypeFinder
             { ".pdf", new byte[] { 0x25, 0x50, 0x44, 0x46 } },
             { ".zip", new byte[] { 0x50, 0x4B, 0x03, 0x04 } },
             { ".rar", new byte[] { 0x52, 0x61, 0x72, 0x21, 0x1A, 0x07, 0x00 } },
-
         };
 
         foreach (var (key, value) in magicBytes)
@@ -28,7 +26,6 @@ public class FileTypeFinder
                 return key;
             }
         }
-
         return "unknown";
     }
 

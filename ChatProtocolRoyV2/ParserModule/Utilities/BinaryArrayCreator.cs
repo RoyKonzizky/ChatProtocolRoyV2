@@ -2,7 +2,7 @@
 using System.Text.Json;
 using ChatProtocolRoyV2.DataModule;
 
-namespace ChatProtocolRoyV2;
+namespace ChatProtocolRoyV2.ParserModule.Utilities;
 
 public class BinaryArrayCreator
 {

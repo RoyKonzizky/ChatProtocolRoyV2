@@ -1,4 +1,4 @@
-﻿namespace ChatProtocolRoyV2;
+﻿namespace ChatProtocolRoyV2.ParserModule.Utilities;
 
 public class HeaderBytesCalculator
 {
