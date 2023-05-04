@@ -1,8 +1,8 @@
-using ChatProtocolRoyV2.DataModule;
-using ChatProtocolRoyV2.DataModule.Types;
+using ChatProtocolRoyV2.Data;
+using ChatProtocolRoyV2.Data.Types;
 using ChatProtocolRoyV2.Entities;
 
-namespace ChatProtocolRoyV2.Factories;
+namespace ChatProtocolRoyV2;
 
 public static class MessageFactory
 {
@@ -26,4 +26,5 @@ public static class MessageFactory
                 throw new ArgumentException("Invalid message type.");
         }
     }
+    //TODO: replace params object[]args with a different solution or write the builder pattern
 }

@@ -1,9 +1,8 @@
-﻿namespace ChatProtocolRoyV2.GeneratorModule.Types;
+﻿namespace ChatProtocolRoyV2.Generator.Types;
 
 public class ChecksumByteArrayCalculator : IChecksumByteArrayCalculator
 {
     public int CalculateChecksum(byte[] input){
-        
         byte sum = 0;
 
         for(int i = 0; i < input.Length; i++)
@@ -12,6 +11,5 @@ public class ChecksumByteArrayCalculator : IChecksumByteArrayCalculator
         }
         return sum;
     }
-    
-
+    //TODO better checksum needed
 }

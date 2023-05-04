@@ -1,6 +1,6 @@
 using ChatProtocolRoyV2.Entities;
 
-namespace ChatProtocolRoyV2.DataModule.Types;
+namespace ChatProtocolRoyV2.Data.Types;
 
 public class FileMessage : MessageBase
 {
@@ -21,4 +21,7 @@ public class FileMessage : MessageBase
     public string FileType { get; }
     
     #endregion
+    
+    //TODO add fields date, name
+    //TODO make this an abstract class inherited by audio and video class
 }

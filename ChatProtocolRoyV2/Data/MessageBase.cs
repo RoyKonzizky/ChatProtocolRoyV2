@@ -1,6 +1,6 @@
 ﻿using ChatProtocolRoyV2.Entities;
 
-namespace ChatProtocolRoyV2.DataModule;
+namespace ChatProtocolRoyV2.Data;
 public abstract class MessageBase
 {
     #region Ctor

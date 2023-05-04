@@ -1,4 +1,4 @@
-﻿namespace ChatProtocolRoyV2.ParserModule.Utilities;
+﻿namespace ChatProtocolRoyV2.Utilities;
 
 public class FileTypeFinder
 {

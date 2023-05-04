@@ -1,6 +1,6 @@
 using ChatProtocolRoyV2.Entities;
 
-namespace ChatProtocolRoyV2.DataModule.Types;
+namespace ChatProtocolRoyV2.Data.Types;
 
 public class Audio : MessageBase
 {

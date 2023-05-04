@@ -1,17 +1,17 @@
-﻿using System.Text;
-using ChatProtocolRoyV2.DataModule;
+﻿using System.Collections;
+using System.Text;
+using ChatProtocolRoyV2.Data;
 using ChatProtocolRoyV2.Entities;
-using ChatProtocolRoyV2.Factories;
-using ChatProtocolRoyV2.ParserModule.Utilities;
+using ChatProtocolRoyV2.Utilities;
 
-namespace ChatProtocolRoyV2.ParserModule.Types;
+namespace ChatProtocolRoyV2.Parser.Types;
 
-public class Parsing : IParsingBytes
+public class Parse : IParseBytes
 {
-    public MessageBase Parser(byte[] input)
+    public ArrayList Parser(byte[] input)
     {
         MessageBase message =  null!;
-        object[] args = new object[]{ };
+        object[] args = new object[2];
         
         byte sync = input[0];
 
@@ -41,23 +41,32 @@ public class Parsing : IParsingBytes
                 string typeOfFile = fileTypeFinder.FindFileType(headerBytes);
                 args[0] = data;
                 args[1] = typeOfFile;
-                message = MessageFactory.CreateMessage(typeOfMessage, id, args);
                 break;
             }
-            
+
             case MessageType.TextMessage:
                 args[0] = data;
-                message = MessageFactory.CreateMessage(typeOfMessage, id, args);
                 break;
-            
+
             case MessageType.Audio:
-                message = MessageFactory.CreateMessage(typeOfMessage, id);
-                break;
-            
             case MessageType.Image:
-                message = MessageFactory.CreateMessage(typeOfMessage, id);
                 break;
+                
+            default:
+                throw new ArgumentException("Invalid message type.");
         }
-        return message;
+        
+        message = MessageFactory.CreateMessage(typeOfMessage, id, args);
+
+        ArrayList arrayList = new ArrayList
+        {
+            message,
+            checkSum,
+            sync,
+            tail
+        };
+
+        return arrayList;
     }
+    
 }
