@@ -21,7 +21,6 @@ public class FileMessage : MessageBase
     public string FileType { get; }
     
     #endregion
-    
-    //TODO add fields date, name
-    //TODO make this an abstract class inherited by audio and video class
 }
+//TODO add fields date, name
+//TODO make this an abstract class inherited by audio and video class

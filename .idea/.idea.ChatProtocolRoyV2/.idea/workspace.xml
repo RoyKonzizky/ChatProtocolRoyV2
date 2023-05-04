@@ -4,26 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f29de42a-f7ba-48f7-9716-efeedc75c0d0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2023_11_13_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2023_11_13_AM__Changes_.xml" afterDir="false" />
+    <list default="true" id="f29de42a-f7ba-48f7-9716-efeedc75c0d0" name="Changes" comment="-added the files,TODOs and dirs of last working model">
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Entities/FileTypes.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/MessageBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/TODOs.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/DataModule/MessageBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/MessageBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/DataModule/Types/Audio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/Audio.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/DataModule/Types/FileMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/FileMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/DataModule/Types/Image.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/Image.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/DataModule/Types/TextMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/TextMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Entities/MessageType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Entities/MessageType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Factories/MessageFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/MessageFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/GeneratorModule/IChecksumCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/IChecksumCalculator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/GeneratorModule/Packet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Packet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/GeneratorModule/Types/ChecksumByteArrayCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Types/ChecksumByteArrayCalculator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/GeneratorModule/Types/IChecksumByteArrayCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Types/IChecksumByteArrayCalculator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/ParserModule/IParsing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/IParse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/ParserModule/Types/IParsingBytes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Types/IParseBytes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/ParserModule/Types/Parsing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Types/Parse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/ParserModule/Utilities/BinaryArrayCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Utilities/BinaryArrayCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/ParserModule/Utilities/FileTypeFinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Utilities/FileTypeFinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/ParserModule/Utilities/HeaderBytesCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Utilities/HeaderBytesCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/FileMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/FileMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Packet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Packet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Types/ChecksumByteArrayCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Types/ChecksumByteArrayCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/MessageFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/MessageFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Features_Factory_utilities_and_packet" />
+        <entry key="$PROJECT_DIR$" value="Code_Rework" />
       </map>
     </option>
   </component>
@@ -104,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682943349804</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="-added the files,TODOs and dirs of last working model">
+      <created>1683195382320</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683195382320</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +127,7 @@
     <MESSAGE value="-added factory, need to correct it and the utilities file" />
     <MESSAGE value="-commit before reworking the code to make it cleaner" />
     <MESSAGE value="-working version without build error" />
-    <option name="LAST_COMMIT_MESSAGE" value="-working version without build error" />
+    <MESSAGE value="-added the files,TODOs and dirs of last working model" />
+    <option name="LAST_COMMIT_MESSAGE" value="-added the files,TODOs and dirs of last working model" />
   </component>
 </project>

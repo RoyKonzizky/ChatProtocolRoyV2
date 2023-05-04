@@ -1,0 +1,12 @@
+﻿//TODO: replace params object[]args with a different solution or write the builder pattern
+//TODO: add fields date, name to FileMessage->v
+//TODO: make this an abstract class inherited by audio and video class/can inherit without it being abstract
+//TODO: add enums for file types
+//parser is the reverse process of the generator
+//TODO: create a method to generate the packet, interface to generate what is needed
+//TODO: expand the packet so the parser won't deal with low-level code, so instead of dealing with magic bytes it will get the type of file
+//TODO: better checksum needed
+
+-created the builder class
+-added enum for file types
+-added better checksum

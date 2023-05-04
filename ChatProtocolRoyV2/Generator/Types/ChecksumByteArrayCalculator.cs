@@ -3,13 +3,27 @@
 public class ChecksumByteArrayCalculator : IChecksumByteArrayCalculator
 {
     public int CalculateChecksum(byte[] input){
-        byte sum = 0;
+        int length = input.Length;
+        int i = 0;
 
-        for(int i = 0; i < input.Length; i++)
+        uint sum = 0;
+        while (length > 1)
         {
-            sum ^= input[i];
+            sum += (ushort)(input[i++] << 8 | input[i++]);
+            length -= 2;
         }
-        return sum;
+
+        if (length > 0)
+        {
+            sum += (ushort)(input[i] << 8);
+        }
+
+        while (sum >> 16 != 0)
+        {
+            sum = (sum & 0xFFFF) + (sum >> 16);
+        }
+
+        return (ushort)~sum;
     }
-    //TODO better checksum needed
 }
+//TODO better checksum needed

@@ -26,5 +26,5 @@ public static class MessageFactory
                 throw new ArgumentException("Invalid message type.");
         }
     }
-    //TODO: replace params object[]args with a different solution or write the builder pattern
 }
+//TODO: replace params object[]args with a different solution or write the builder pattern

@@ -30,8 +30,7 @@ public class Packet : MessageBase
     
     #endregion
     
-    //parser is the reverse process of the generator
-    //TODO create a method to generate the packet, interface to generate what is needed
-    //TODO expand the packet so the parser won't deal with low-level code, so instead of dealing with magic bytes it will get the type of file
-    
 }
+//parser is the reverse process of the generator
+//TODO create a method to generate the packet, interface to generate what is needed
+//TODO expand the packet so the parser won't deal with low-level code, so instead of dealing with magic bytes it will get the type of file
