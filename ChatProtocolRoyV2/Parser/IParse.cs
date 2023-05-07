@@ -1,8 +1,10 @@
 ﻿using System.Collections;
+using ChatProtocolRoyV2.Data;
+using ChatProtocolRoyV2.Generator;
 
 namespace ChatProtocolRoyV2.Parser;
 
 public interface IParse<in TInput>
 {
-    ArrayList Parser(TInput input);
+    Packet<MessageBase> Parser(TInput input);
 }
