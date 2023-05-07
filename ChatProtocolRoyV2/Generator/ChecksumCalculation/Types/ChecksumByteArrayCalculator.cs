@@ -1,4 +1,4 @@
-﻿namespace ChatProtocolRoyV2.Generator.Types;
+﻿namespace ChatProtocolRoyV2.Generator.ChecksumCalculation.Types;
 
 public class ChecksumByteArrayCalculator : IChecksumByteArrayCalculator
 {
@@ -26,4 +26,4 @@ public class ChecksumByteArrayCalculator : IChecksumByteArrayCalculator
         return (ushort)~sum;
     }
 }
-//TODO better checksum needed
+//TODO better checksum needed and make sure it's types are correct and consistent

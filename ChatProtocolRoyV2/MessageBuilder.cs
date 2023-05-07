@@ -11,6 +11,8 @@ namespace ChatProtocolRoyV2
         private string _text = null!;
         private string _fileName = null!;
         private string _fileContent = null!;
+        private string _fileType = null!;
+        private DateOnly _dateOnly;
 
         public MessageBuilder(MessageType type, Guid guid)
         {
@@ -24,10 +26,12 @@ namespace ChatProtocolRoyV2
             return this;
         }
 
-        public MessageBuilder WithFile(string fileName, string fileContent)
+        public MessageBuilder WithFile(string fileName, string fileContent, DateOnly dateOnly, string fileType)
         {
             _fileName = fileName;
             _fileContent = fileContent;
+            _dateOnly = dateOnly;
+            _fileType = fileType;
             return this;
         }
 
@@ -38,7 +42,7 @@ namespace ChatProtocolRoyV2
                 MessageType.Audio => new Audio(_guid, _type),
                 MessageType.Image => new Image(_guid, _type),
                 MessageType.TextMessage => new TextMessage(_guid, _type, _text),
-                MessageType.FileMessage => new FileMessage(_guid, _type, _fileName, _fileContent),
+                MessageType.FileMessage => new FileMessage(_guid, _type, _dateOnly, _fileName, _fileContent,_fileType),
                 _ => throw new ArgumentException("Invalid message type.")
             };
         }
