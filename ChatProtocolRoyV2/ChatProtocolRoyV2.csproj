@@ -10,8 +10,4 @@
         <PackageReference Include="Azure.Storage.Blobs" Version="12.16.0" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Data\Types\Files" />
-    </ItemGroup>
-
 </Project>

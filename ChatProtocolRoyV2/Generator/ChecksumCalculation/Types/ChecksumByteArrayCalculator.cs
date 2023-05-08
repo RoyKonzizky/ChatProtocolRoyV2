@@ -2,7 +2,7 @@
 
 public class ChecksumByteArrayCalculator : IChecksumByteArrayCalculator
 {
-    public int CalculateChecksum(byte[] input){
+    public uint CalculateChecksum(byte[] input){
         int length = input.Length;
         int i = 0;
 
@@ -23,10 +23,10 @@ public class ChecksumByteArrayCalculator : IChecksumByteArrayCalculator
             sum = (sum & 0xFFFF) + (sum >> 16);
         }
 
-        return (ushort)~sum;
+        return ~sum;
     }
 
-    public int CalculateChecksum(IEnumerable<byte> input)
+    public uint CalculateChecksum(IEnumerable<byte> input)
     {
         throw new NotImplementedException();
     }

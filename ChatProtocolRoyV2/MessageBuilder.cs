@@ -1,6 +1,8 @@
 ﻿using ChatProtocolRoyV2.Data;
 using ChatProtocolRoyV2.Data.Types;
+using ChatProtocolRoyV2.Data.Types.Files;
 using ChatProtocolRoyV2.Entities;
+using System;
 
 namespace ChatProtocolRoyV2
 {
@@ -8,10 +10,10 @@ namespace ChatProtocolRoyV2
     {
         private MessageType _type;
         private Guid _guid;
-        private string? _text;
-        private string? _fileName;
-        private string? _fileContent;
-        private string? _fileType;
+        private string _text;
+        private string _fileName;
+        private string _fileContent;
+        private string _fileType;
         private DateOnly _dateOnly;
 
         public MessageBuilder WithType(MessageType type)
@@ -26,13 +28,13 @@ namespace ChatProtocolRoyV2
             return this;
         }
 
-        public MessageBuilder WithText(string? text)
+        public MessageBuilder WithText(string text)
         {
             _text = text;
             return this;
         }
 
-        public MessageBuilder WithFile(string? fileName, string? fileContent, DateOnly dateOnly, string? fileType)
+        public MessageBuilder WithFile(string fileName, string fileContent, DateOnly dateOnly, string fileType)
         {
             _fileName = fileName;
             _fileContent = fileContent;
@@ -43,14 +45,15 @@ namespace ChatProtocolRoyV2
 
         public MessageBase Build()
         {
-            return _type switch
+            switch (_type)
             {
-                MessageType.Audio => new Audio(_guid, _type),
-                MessageType.Image => new Image(_guid, _type),
-                MessageType.TextMessage => new TextMessage(_guid, _type, _text!),
-                MessageType.FileMessage => new FileMessage(_guid, _type, _dateOnly, _fileName, _fileContent, _fileType),
-                _ => throw new ArgumentException("Invalid message type.")
-            };
+                case MessageType.TextMessage:
+                    return new TextMessage(_guid, _text);
+                case MessageType.FileMessage:
+                    return new FileMessage(_guid, _type, _dateOnly, _fileName, _fileContent, _fileType);
+                default:
+                    throw new ArgumentException("Invalid message type.");
+            }
         }
     }
 }
