@@ -6,7 +6,7 @@ public class TextMessage : MessageBase
 {
     #region Ctor
 
-    public TextMessage(Guid guid, MessageType type, string data) : base(guid, type)
+    public TextMessage(Guid guid, string data) : base(guid, MessageType.TextMessage)
     {
         Data = data;
     }
@@ -20,3 +20,5 @@ public class TextMessage : MessageBase
 
     #endregion
 }
+
+//TODO in this stage in the hirerachy instead of asking the user to input a type into the ctor, it can be done as seen above since we know it at this stage

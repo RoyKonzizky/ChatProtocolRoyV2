@@ -1,10 +1,11 @@
+using ChatProtocolRoyV2.Data;
 using ChatProtocolRoyV2.Entities;
 
 namespace ChatProtocolRoyV2.Generator;
 
-public class Packet<T>
+public class Packet
 {
-    public Packet(Guid id, MessageType type, T data, int checksum, MessageEdge sync, MessageEdge tail)
+    public Packet(MessageEdge sync, Guid id, MessageType type, MessageBase data, int checksum, MessageEdge tail)
     {
         Id = id;
         Type = type;
@@ -16,17 +17,13 @@ public class Packet<T>
 
     #region Properties
 
-    public Guid Id { get; }
-    public MessageType Type { get; }
-    public T Data { get; }
-    public int Checksum { get; }
     public MessageEdge Sync { get; }
+    public Guid Id { get; }
+    private MessageType Type { get; }
+    public MessageBase Data { get; }
+    public int Checksum { get; }
     public MessageEdge Tail { get; }
 
     #endregion
         
 }
-
-//parser is the reverse process of the generator
-//TODO create a method to generate the packet, interface to generate what is needed
-//TODO expand the packet so the parser won't deal with low-level code, so instead of dealing with magic bytes it will get the type of file

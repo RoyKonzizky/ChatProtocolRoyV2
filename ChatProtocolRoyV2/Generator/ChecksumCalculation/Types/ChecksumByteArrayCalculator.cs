@@ -25,5 +25,9 @@ public class ChecksumByteArrayCalculator : IChecksumByteArrayCalculator
 
         return (ushort)~sum;
     }
+
+    public int CalculateChecksum(IEnumerable<byte> input)
+    {
+        throw new NotImplementedException();
+    }
 }
-//TODO better checksum needed and make sure it's types are correct and consistent

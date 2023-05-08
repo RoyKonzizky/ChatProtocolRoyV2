@@ -1,5 +1,5 @@
-﻿using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+﻿
+using System.Text.Json;
 using ChatProtocolRoyV2.Data;
 using ChatProtocolRoyV2.Data.Types;
 using ChatProtocolRoyV2.Entities;
@@ -9,53 +9,69 @@ namespace ChatProtocolRoyV2.Parser.Types
 {
     public class Parse : IParseBytes
     {
-        public Packet<MessageBase> Parser(byte[] packetBytes)
+        public Packet Parser(byte[] packetBytes)
         {
-            using (var stream = new MemoryStream(packetBytes))
+            using var stream = new MemoryStream(packetBytes);
+            var packet = JsonSerializer.Deserialize<Packet>(stream);
+
+            if (packet == null) throw new ArgumentException("Invalid data type for message.");
+            MessageType messageType = GetMessageFromPacket(packet);
+
+            switch (packet.Data)
             {
-                var formatter = new BinaryFormatter();
-                var packet = (Packet<MessageBase>)formatter.Deserialize(stream);
+                case TextMessage textMessage:
+                {
+                    var textBuilder = new MessageBuilder()
+                        .WithType(messageType)
+                        .WithGuid(packet.Id)
+                        .WithText(textMessage.Data);
 
-                MessageType messageType = GetMessageFromPacket(packet);
+                    MessageBase parsedMessage = textBuilder.Build();
+                    return new Packet(packet.Sync, packet.Id, messageType, parsedMessage, packet.Checksum, packet.Tail);
+                }
+                case FileMessage fileMessage:
+                {
+                    var fileBuilder = new MessageBuilder()
+                        .WithType(messageType)
+                        .WithGuid(packet.Id)
+                        .WithFile(fileMessage.FileName, fileMessage.DataInFile, fileMessage.DateOnly, fileMessage.FileType);
 
-                if (packet.Data is TextMessage textMessage)
-                {
-                    return new Packet<MessageBase>(packet.Id, messageType, new TextMessage(packet.Id, messageType, textMessage.Data), packet.Checksum, packet.Sync, packet.Tail);
+                    MessageBase parsedMessage = fileBuilder.Build();
+                    return new Packet(packet.Sync, packet.Id, messageType, parsedMessage, packet.Checksum, packet.Tail);
                 }
-                else if (packet.Data is FileMessage fileMessage)
+                case Audio:
                 {
-                    return new Packet<MessageBase>(packet.Id, messageType, new FileMessage(packet.Id, messageType, fileMessage.DateOnly, fileMessage.FileName, fileMessage.DataInFile, fileMessage.FileType), packet.Checksum, packet.Sync, packet.Tail);
-                }
-                else if (packet.Data is Audio)
-                {
-                    var audioBuilder = new MessageBuilder(messageType, packet.Id);
+                    var audioBuilder = new MessageBuilder()
+                        .WithType(messageType)
+                        .WithGuid(packet.Id);
+
                     MessageBase audioMessage = audioBuilder.Build();
-                    return new Packet<MessageBase>(packet.Id, messageType, audioMessage, packet.Checksum, packet.Sync, packet.Tail);
+                    return new Packet(packet.Sync, packet.Id, messageType, audioMessage, packet.Checksum, packet.Tail);
                 }
-                else if (packet.Data is Image)
+                case Image:
                 {
-                    var imageBuilder = new MessageBuilder(messageType, packet.Id);
+                    var imageBuilder = new MessageBuilder()
+                        .WithType(messageType)
+                        .WithGuid(packet.Id);
+
                     MessageBase imageMessage = imageBuilder.Build();
-                    return new Packet<MessageBase>(packet.Id, messageType, imageMessage, packet.Checksum, packet.Sync, packet.Tail);
+                    return new Packet(packet.Sync, packet.Id, messageType, imageMessage, packet.Checksum, packet.Tail);
                 }
-                else
-                {
+                default:
                     throw new ArgumentException("Invalid data type for message.");
-                }
             }
         }
 
-        private static MessageType GetMessageFromPacket(Packet<MessageBase> packet)
+        private static MessageType GetMessageFromPacket(Packet packet)
         {
-            if (packet.Data is TextMessage)
-                return MessageType.TextMessage;
-            if (packet.Data is FileMessage)
-                return MessageType.FileMessage;
-            if (packet.Data is Audio)
-                return MessageType.Audio;
-            if (packet.Data is Image)
-                return MessageType.Image;
-            throw new ArgumentException("Invalid data type for message.");
+            return packet.Data switch
+            {
+                TextMessage => MessageType.TextMessage,
+                FileMessage => MessageType.FileMessage,
+                Audio => MessageType.Audio,
+                Image => MessageType.Image,
+                _ => throw new ArgumentException("Invalid data type for message.")
+            };
         }
     }
 }

@@ -6,7 +6,8 @@ public class FileMessage : MessageBase
 {
     #region Ctor
     
-    public FileMessage(Guid guid, MessageType type, DateOnly dateOnly, string fileName, string dataInFile, string fileType) : base(guid, type)
+    public FileMessage(Guid guid, MessageType type, DateOnly dateOnly, string? fileName, string? dataInFile, string? fileType)
+        : base(guid, type)
     {
         FileName = fileName;
         DateOnly = dateOnly;
@@ -20,11 +21,11 @@ public class FileMessage : MessageBase
     #region Properties
 
     public DateOnly DateOnly { get; }
-    public string DataInFile { get; }
-    public string FileType { get; }
-    public string FileName { get; }
+    public string? DataInFile { get; }
+    public string? FileType { get; }
+    public string? FileName { get; }
     
     #endregion
 }
-//TODO add fields date, name
-//TODO make this an abstract class inherited by audio and video class
+//TODO create FileType Enum
+//TODO properties cannot be nullable

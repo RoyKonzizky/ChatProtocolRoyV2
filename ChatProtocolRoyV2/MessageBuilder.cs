@@ -6,27 +6,33 @@ namespace ChatProtocolRoyV2
 {
     public class MessageBuilder
     {
-        private readonly MessageType _type;
-        private readonly Guid _guid;
-        private string _text = null!;
-        private string _fileName = null!;
-        private string _fileContent = null!;
-        private string _fileType = null!;
+        private MessageType _type;
+        private Guid _guid;
+        private string? _text;
+        private string? _fileName;
+        private string? _fileContent;
+        private string? _fileType;
         private DateOnly _dateOnly;
 
-        public MessageBuilder(MessageType type, Guid guid)
+        public MessageBuilder WithType(MessageType type)
         {
             _type = type;
-            _guid = guid;
+            return this;
         }
 
-        public MessageBuilder WithText(string text)
+        public MessageBuilder WithGuid(Guid guid)
+        {
+            _guid = guid;
+            return this;
+        }
+
+        public MessageBuilder WithText(string? text)
         {
             _text = text;
             return this;
         }
 
-        public MessageBuilder WithFile(string fileName, string fileContent, DateOnly dateOnly, string fileType)
+        public MessageBuilder WithFile(string? fileName, string? fileContent, DateOnly dateOnly, string? fileType)
         {
             _fileName = fileName;
             _fileContent = fileContent;
@@ -41,8 +47,8 @@ namespace ChatProtocolRoyV2
             {
                 MessageType.Audio => new Audio(_guid, _type),
                 MessageType.Image => new Image(_guid, _type),
-                MessageType.TextMessage => new TextMessage(_guid, _type, _text),
-                MessageType.FileMessage => new FileMessage(_guid, _type, _dateOnly, _fileName, _fileContent,_fileType),
+                MessageType.TextMessage => new TextMessage(_guid, _type, _text!),
+                MessageType.FileMessage => new FileMessage(_guid, _type, _dateOnly, _fileName, _fileContent, _fileType),
                 _ => throw new ArgumentException("Invalid message type.")
             };
         }

@@ -5,16 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f29de42a-f7ba-48f7-9716-efeedc75c0d0" name="Changes" comment="-created the builder class&#10;-added enum for file types&#10;-added better checksum">
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2023_11_13_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/shelf/Uncommitted_changes_before_Checkout_at_4_5_2023_11_13_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/ChatProtocolRoyV2.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/ChatProtocolRoyV2.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/FileMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/FileMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/TextMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/TextMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Entities/FileTypes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Entities/MessageType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Entities/MessageType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/ChecksumCalculation/IChecksumCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/ChecksumCalculation/IChecksumCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/ChecksumCalculation/Types/ChecksumByteArrayCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/ChecksumCalculation/Types/ChecksumByteArrayCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/ChecksumCalculation/Types/IChecksumByteArrayCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/ChecksumCalculation/Types/IChecksumByteArrayCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Generate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Generate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Packet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Packet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/MessageBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/MessageBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/IParse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/IParse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Types/IParseBytes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/IParseBytes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Types/Parse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Types/Parse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/TODOs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/TODOs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Utilities/ExtractFileName.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Utilities/FileTypeFinder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Utilities/HeaderBytesCalculator.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.packagespec.json" afterDir="false" />
@@ -78,6 +93,7 @@
       <workItem from="1683007339650" duration="14484000" />
       <workItem from="1683094150876" duration="16076000" />
       <workItem from="1683480110153" duration="7144000" />
+      <workItem from="1683524111220" duration="14754000" />
     </task>
     <task id="LOCAL‎-00001" summary="-finished the message class">
       <created>1682808044548</created>

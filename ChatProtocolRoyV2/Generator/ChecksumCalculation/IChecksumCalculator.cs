@@ -2,5 +2,6 @@
 
 public interface IChecksumCalculator<in TInput>
 {
-    int CalculateChecksum(TInput input);
+    uint CalculateChecksum(TInput input);
 }
+//TODO add startindex and endindex

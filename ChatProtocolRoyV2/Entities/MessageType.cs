@@ -7,4 +7,4 @@ public enum MessageType
     Audio,
     FileMessage
 }
-//TODO add enums for file types
+//TODO replace the last 3 with one File Type and create Enum for it

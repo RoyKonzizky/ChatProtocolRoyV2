@@ -1,6 +1,13 @@
-﻿//parser is the reverse process of the generator
-//TODO: create a method to generate the packet, interface to generate what is needed
-//TODO rework this section in Parse.cs to work with different MessageTypes
-//TODO better checksum needed(done) and make sure it's types are correct and consistent
+﻿//TODO create FileType Enum
 
--changed the parser module, although currently the builder isn't really useful.
+
+
+//parser is the reverse process of the generator
+
+
+-rework the parser class according to the following principle: since te packet has T Data property, it receives a 
+messageBase object, so in order to get specific parts of each object(i.e. the fileName and dateOfCreation i need to take 
+it apart by it's fields(probably by size)-done
+-added a method to generate the packet
+-reworked the builder
+-added better checksum and it's types are consistent across the code
