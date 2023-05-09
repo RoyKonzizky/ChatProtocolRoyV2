@@ -1,10 +1,10 @@
-﻿//
+﻿//TODO look for a way to do this without the reverse
+//TODO finish the ExtractData method
 
 
 
-//parser is the reverse process of the generator
+-changed the IParse.cs type into MessageBase instead of Packet
+-added methods that pull the sync, tail and checksum and the parser validates the checksums
+-IEnumerable instead of byte array in Generate.cs and why its better
+-Packet fields type and guid have been removed because those are already contained within the data
 
--added FileTypes Enum
--replaced the last 3 with one File Type and create Enum for it
--FileMessage properties no longer nullable
--changed the builder to the new code structure 

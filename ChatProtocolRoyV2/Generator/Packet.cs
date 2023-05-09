@@ -5,10 +5,8 @@ namespace ChatProtocolRoyV2.Generator;
 
 public class Packet
 {
-    public Packet(MessageEdge sync, Guid id, MessageType type, MessageBase data, int checksum, MessageEdge tail)
+    public Packet(MessageEdge sync, MessageBase data, int checksum, MessageEdge tail)
     {
-        Id = id;
-        Type = type;
         Data = data;
         Checksum = checksum;
         Sync = sync;
@@ -18,8 +16,6 @@ public class Packet
     #region Properties
 
     public MessageEdge Sync { get; }
-    public Guid Id { get; }
-    private MessageType Type { get; }
     public MessageBase Data { get; }
     public int Checksum { get; }
     public MessageEdge Tail { get; }

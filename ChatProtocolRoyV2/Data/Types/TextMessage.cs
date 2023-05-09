@@ -6,9 +6,9 @@ public class TextMessage : MessageBase
 {
     #region Ctor
 
-    public TextMessage(Guid guid, string data) : base(guid, MessageType.TextMessage)
+    public TextMessage(Guid guid, string content) : base(guid, MessageType.TextMessage)
     {
-        Data = data;
+        Content = content;
     }
 
     #endregion
@@ -16,9 +16,9 @@ public class TextMessage : MessageBase
 
     #region Properties
 
-    public string Data { get; }
+    public string Content { get; }
 
     #endregion
 }
 
-//TODO in this stage in the hirerachy instead of asking the user to input a type into the ctor, it can be done as seen above since we know it at this stage
+//TODO in this stage in the hierarchy instead of asking the user to input a type into the ctor, it can be done as seen above since we know it at this stage

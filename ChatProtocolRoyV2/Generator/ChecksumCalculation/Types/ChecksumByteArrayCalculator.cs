@@ -2,20 +2,23 @@
 
 public class ChecksumByteArrayCalculator : IChecksumByteArrayCalculator
 {
-    public uint CalculateChecksum(byte[] input){
-        int length = input.Length;
+
+    public uint CalculateChecksum(IEnumerable<byte> input)
+    {
+        var enumerable = input as byte[] ?? input.ToArray();
+        int length = enumerable.Length;
         int i = 0;
 
         uint sum = 0;
         while (length > 1)
         {
-            sum += (ushort)(input[i++] << 8 | input[i++]);
+            sum += (ushort)(enumerable[i++] << 8 | enumerable[i++]);
             length -= 2;
         }
 
         if (length > 0)
         {
-            sum += (ushort)(input[i] << 8);
+            sum += (ushort)(enumerable[i] << 8);
         }
 
         while (sum >> 16 != 0)
@@ -24,10 +27,5 @@ public class ChecksumByteArrayCalculator : IChecksumByteArrayCalculator
         }
 
         return ~sum;
-    }
-
-    public uint CalculateChecksum(IEnumerable<byte> input)
-    {
-        throw new NotImplementedException();
     }
 }
