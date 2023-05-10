@@ -21,4 +21,3 @@ public class TextMessage : MessageBase
     #endregion
 }
 
-//TODO in this stage in the hierarchy instead of asking the user to input a type into the ctor, it can be done as seen above since we know it at this stage

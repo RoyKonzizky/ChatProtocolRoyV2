@@ -8,15 +8,15 @@ namespace ChatProtocolRoyV2
 {
     public class MessageBuilder
     {
-        private MessageType _type;
+        private object _type = null!;
         private Guid _guid;
-        private string _text;
-        private string _fileName;
-        private string _fileContent;
-        private string _fileType;
+        private string _text = null!;
+        private string _fileName = null!;
+        private string _fileContent = null!;
+        private string _fileType = null!;
         private DateOnly _dateOnly;
 
-        public MessageBuilder WithType(MessageType type)
+        public MessageBuilder WithType(object type)
         {
             _type = type;
             return this;
@@ -45,15 +45,14 @@ namespace ChatProtocolRoyV2
 
         public MessageBase Build()
         {
-            switch (_type)
+            return _type switch
             {
-                case MessageType.TextMessage:
-                    return new TextMessage(_guid, _text);
-                case MessageType.FileMessage:
-                    return new FileMessage(_guid, _type, _dateOnly, _fileName, _fileContent, _fileType);
-                default:
-                    throw new ArgumentException("Invalid message type.");
-            }
+                MessageType.TextMessage => new TextMessage(_guid, _text),
+                MessageType.FileMessage => new FileMessage(_guid, _type, _dateOnly, _fileName, _fileContent, _fileType),
+                FileTypes.Audio => new Audio(_guid, _dateOnly, _fileName, _fileContent, _fileType),
+                FileTypes.Image => new Image(_guid, _dateOnly, _fileName, _fileContent, _fileType),
+                _ => throw new ArgumentException("Invalid message type.")
+            };
         }
     }
 }

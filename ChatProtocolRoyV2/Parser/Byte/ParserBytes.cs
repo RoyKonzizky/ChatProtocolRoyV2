@@ -1,5 +1,4 @@
 ﻿using ChatProtocolRoyV2.Data;
-using ChatProtocolRoyV2.Entities;
 using ChatProtocolRoyV2.Generator;
 using ChatProtocolRoyV2.Generator.ChecksumCalculation.Types;
 
@@ -10,27 +9,27 @@ public class ParseBytes : IParseBytes
     public MessageBase Parser(byte[] packetBytes)
     {
         MessageBase message = null!;
-        Generate generator = new Generate();
-        ChecksumByteArrayCalculator calculator = new ChecksumByteArrayCalculator();
-        ParserBytesExtensions parserExtender = new ParserBytesExtensions();
+        var generator = new Generate();
+        var calculator = new ChecksumByteArrayCalculator();
+        var parserExtender = new ParserBytesExtensions();
         
-        byte[] syncAndTailArray = ParserBytesExtensions.ExtractSyncAndTail(packetBytes);
-        byte sync = syncAndTailArray[0];
-        byte tail = syncAndTailArray[1];
+        var syncAndTailArray = parserExtender.ExtractSyncAndTail(packetBytes);
+        var sync = syncAndTailArray[0];
+        var tail = syncAndTailArray[1];
+        if (!parserExtender.IsSyncAndTailEqual(sync, tail))
+            throw new ArgumentException("Unable to parse since Sync and Tail cannot be determined.");
+        var checksumInPacket = parserExtender.ExtractChecksum(packetBytes);
         
-        uint checksumInPacket = parserExtender.ExtractChecksum(packetBytes);
+        var dataOfPacket = parserExtender.ExtractData(packetBytes);
+        var byteDataOfPacket = generator.ObjectToByteArray(dataOfPacket); 
+        var checksumFromData = calculator.CalculateChecksum(byteDataOfPacket);
         
-        MessageBase dataOfPacket = parserExtender.ExtractData(packetBytes);
-        IEnumerable<byte> byteDataOfPacket = Generate.ObjectToByteArray(dataOfPacket); 
-        uint checksumFromData = calculator.CalculateChecksum(byteDataOfPacket);
-        if (checksumFromData != checksumInPacket)
-        {
-            throw new ArgumentException("Unable to parse since data or checksum were corrupted.");
+        if (parserExtender.IsChecksumEqual(checksumFromData, checksumInPacket))
+        {        
+            return message;
         }
-        
-        return message;
+        throw new ArgumentException("Unable to parse since data cannot be validated.");
+
     }
-    
 }
-//since the data already contains the guid and the type its pointless for them to be in the packet
 //parser is the reverse process of the generator

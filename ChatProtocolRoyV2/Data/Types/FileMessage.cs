@@ -6,8 +6,8 @@ public class FileMessage : MessageBase
 {
     #region Ctor
     
-    public FileMessage(Guid guid, MessageType type, DateOnly dateOnly, string fileName, string dataInFile, string fileType)
-        : base(guid, type)
+    public FileMessage(Guid guid, object type, DateOnly dateOnly, string fileName, string dataInFile, string fileType)
+        : base(guid, MessageType.FileMessage)
     {
         FileName = fileName;
         DateOnly = dateOnly;

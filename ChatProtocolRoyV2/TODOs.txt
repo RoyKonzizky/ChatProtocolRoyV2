@@ -1,6 +1,10 @@
 ﻿//TODO look for a way to do this without the reverse
 //TODO find proper design patterns for the generator
-//TODO find a way to match FileTypes to MessageTypes
 
 -finished the ExtractData method
 -added utility methods to ParseBytesExtensions.cs
+-changed the type in MessageBase to object type so there won't be conflict between enums(probably not a good idea, read to find a new way)
+-bypassed the need the match the enums by doing what is written above
+-entered the class type in the ctor declaration
+-used in IEnumerable instead of byte array in Generate.cs
+

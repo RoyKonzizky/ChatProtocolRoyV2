@@ -6,7 +6,7 @@ namespace ChatProtocolRoyV2.Parser.Byte;
 
 public class ParserBytesExtensions
 {
-    public static byte[] ExtractSyncAndTail(byte[] packetBytes)
+    public byte[] ExtractSyncAndTail(byte[] packetBytes)
     {
         if (packetBytes[0] != (byte)MessageEdge.Sync || packetBytes[^1] != (byte)MessageEdge.Tail)
             throw new ArgumentException("Unable to parse since Sync or Tail were corrupted.");
@@ -14,6 +14,10 @@ public class ParserBytesExtensions
         arr[0] = packetBytes[0];
         arr[1] = packetBytes[^1];
         return arr;
+    }
+    public bool IsSyncAndTailEqual(byte sync, byte tail)
+    {
+        return sync==(int)MessageEdge.Sync && tail==(int)MessageEdge.Tail;
     }
 
     public uint ExtractChecksum(byte[] packetBytes)
@@ -26,19 +30,23 @@ public class ParserBytesExtensions
         Array.Copy(reversedPacketBytes, 1, reversedChecksum, 0, 4);
         Array.Reverse(reversedChecksum);
 
-        Generate generator = new Generate();
+        var generator = new Generate();
         
-        var checksum = Generate.FromByteArray<uint>(reversedChecksum);
+        var checksum = generator.FromByteArray<uint>(reversedChecksum);
         return checksum;
     }
 
-
+    public bool IsChecksumEqual(uint checksumFromData, uint checksumInPacket)
+    {
+        return checksumFromData == checksumInPacket;
+    }
+    
     public MessageBase ExtractData(byte[] packetBytes)
     {
-        var arrMessageBase = new MessageBase[] { };
+        var arrMessageBase = Array.Empty<MessageBase>();
         Array.Copy(packetBytes, 1, arrMessageBase, 0, packetBytes.Length-5);
         var message = arrMessageBase[0];
         return message;
     }
 }
-//TODO look for a way to do this without the reverse
+//TODO look for a way to do this without the reverse-can be done by parsing the data before the checksum using length of array copy
