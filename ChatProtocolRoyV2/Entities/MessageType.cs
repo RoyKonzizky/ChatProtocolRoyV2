@@ -5,4 +5,3 @@ public enum MessageType
     TextMessage,
     FileMessage
 }
-

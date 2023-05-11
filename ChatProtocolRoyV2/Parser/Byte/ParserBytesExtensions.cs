@@ -10,14 +10,15 @@ public class ParserBytesExtensions
     {
         if (packetBytes[0] != (byte)MessageEdge.Sync || packetBytes[^1] != (byte)MessageEdge.Tail)
             throw new ArgumentException("Unable to parse since Sync or Tail were corrupted.");
-        byte[] arr = {};
+        var arr = Array.Empty<byte>();
         arr[0] = packetBytes[0];
         arr[1] = packetBytes[^1];
         return arr;
     }
+
     public bool IsSyncAndTailEqual(byte sync, byte tail)
     {
-        return sync==(int)MessageEdge.Sync && tail==(int)MessageEdge.Tail;
+        return sync == (int)MessageEdge.Sync && tail == (int)MessageEdge.Tail;
     }
 
     public uint ExtractChecksum(byte[] packetBytes)
@@ -31,7 +32,7 @@ public class ParserBytesExtensions
         Array.Reverse(reversedChecksum);
 
         var generator = new Generate();
-        
+
         var checksum = generator.FromByteArray<uint>(reversedChecksum);
         return checksum;
     }
@@ -40,11 +41,11 @@ public class ParserBytesExtensions
     {
         return checksumFromData == checksumInPacket;
     }
-    
+
     public MessageBase ExtractData(byte[] packetBytes)
     {
         var arrMessageBase = Array.Empty<MessageBase>();
-        Array.Copy(packetBytes, 1, arrMessageBase, 0, packetBytes.Length-5);
+        Array.Copy(packetBytes, 1, arrMessageBase, 0, packetBytes.Length - 5);
         var message = arrMessageBase[0];
         return message;
     }

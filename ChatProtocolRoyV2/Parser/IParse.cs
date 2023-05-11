@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using ChatProtocolRoyV2.Data;
-using ChatProtocolRoyV2.Generator;
+﻿using ChatProtocolRoyV2.Data;
 
 namespace ChatProtocolRoyV2.Parser;
 

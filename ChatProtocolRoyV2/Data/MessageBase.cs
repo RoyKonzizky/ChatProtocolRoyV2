@@ -1,19 +1,23 @@
-﻿using ChatProtocolRoyV2.Entities;
+﻿namespace ChatProtocolRoyV2.Data;
 
-namespace ChatProtocolRoyV2.Data;
 public abstract class MessageBase
 {
     #region Ctor
+
     protected MessageBase(Guid id, object type)
     {
         Id = id;
         Type = type;
     }
+
     #endregion
 
     #region Properties
-    public Guid Id { get; }
-    public object Type{ get;  }
+
+    private Guid Id { get; }
+    private object Type { get; }
+
     #endregion
-    
 }
+
+//maybe the decorator/wrapper can solve the problem and change it to messageType from object

@@ -1,10 +1,18 @@
-﻿//TODO look for a way to do this without the reverse
+﻿//TODO look for a way to do this without the reverse or find a way to force the Message types to only contain 15 bytes
+
 //TODO find proper design patterns for the generator
 
--finished the ExtractData method
--added utility methods to ParseBytesExtensions.cs
--changed the type in MessageBase to object type so there won't be conflict between enums(probably not a good idea, read to find a new way)
--bypassed the need the match the enums by doing what is written above
--entered the class type in the ctor declaration
--used in IEnumerable instead of byte array in Generate.cs
+//TODO add start index and index in IChecksumCalculator and make a class of constants for indexes-would probably help with the first TODO
 
+//TODO define size for each part of the packet
+
+//TODO might have to create different generators and parsers for each type, 
+    change the packet from a class to concept(its just an array of bytes), 
+    add length to packet to know the size of the string(the message itself) before parsing, 
+    add the type to the string so i know how to parse it,
+    probably need to parse individual parts of the message because unless it fits perfectly,
+    maybe different builders for each type,
+    need to find a way to change the object in MessageBase to a concrete type
+
+-did code cleanup
+-added TODOs and comments that should get a second look
