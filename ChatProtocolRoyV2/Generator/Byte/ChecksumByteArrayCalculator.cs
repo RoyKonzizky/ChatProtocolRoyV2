@@ -1,4 +1,4 @@
-﻿namespace ChatProtocolRoyV2.Generator.ChecksumCalculation.Byte;
+﻿namespace ChatProtocolRoyV2.Generator.Byte;
 
 public class ChecksumByteArrayCalculator : IChecksumByteArrayCalculator
 {

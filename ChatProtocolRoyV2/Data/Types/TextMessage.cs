@@ -16,7 +16,7 @@ public class TextMessage : MessageBase
 
     #region Properties
 
-    private string Content { get; }
+    public string Content { get; }
 
     #endregion
 }

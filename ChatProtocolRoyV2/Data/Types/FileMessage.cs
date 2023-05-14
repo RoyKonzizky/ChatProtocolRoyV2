@@ -20,10 +20,10 @@ public class FileMessage : MessageBase
 
     #region Properties
 
-    private DateOnly DateOnly { get; }
-    private string DataInFile { get; }
-    private string FileType { get; }
-    private string FileName { get; }
+    public DateOnly DateOnly { get; }
+    public string DataInFile { get; }
+    public string FileType { get; }
+    public string FileName { get; }
 
     #endregion
 }

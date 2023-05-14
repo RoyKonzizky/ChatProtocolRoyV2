@@ -23,17 +23,10 @@ public class ParserBytesExtensions
 
     public uint ExtractChecksum(byte[] packetBytes)
     {
-        var reversedPacketBytes = new byte[packetBytes.Length];
-        Array.Copy(packetBytes, reversedPacketBytes, packetBytes.Length);
-        Array.Reverse(reversedPacketBytes);
-
-        var reversedChecksum = new byte[4];
-        Array.Copy(reversedPacketBytes, 1, reversedChecksum, 0, 4);
-        Array.Reverse(reversedChecksum);
-
+        byte[]checksumArr = Array.Empty<byte>();
+        Array.Copy(packetBytes, packetBytes.Length-5, checksumArr, 0, 4);
         var generator = new Generate();
-
-        var checksum = generator.FromByteArray<uint>(reversedChecksum);
+        var checksum = generator.FromByteArray<uint>(checksumArr);
         return checksum;
     }
 
@@ -44,10 +37,10 @@ public class ParserBytesExtensions
 
     public MessageBase ExtractData(byte[] packetBytes)
     {
-        var arrMessageBase = Array.Empty<MessageBase>();
+        var generator = new Generate();
+        var arrMessageBase = new byte[packetBytes.Length - 5];
         Array.Copy(packetBytes, 1, arrMessageBase, 0, packetBytes.Length - 5);
-        var message = arrMessageBase[0];
-        return message;
+        var deserializeMessageBase = generator.FromByteArray<MessageBase>(arrMessageBase);
+        return deserializeMessageBase;
     }
 }
-//TODO look for a way to do this without the reverse-can be done by parsing the data before the checksum using length of array copy
