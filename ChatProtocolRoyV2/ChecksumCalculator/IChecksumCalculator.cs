@@ -1,4 +1,4 @@
-﻿namespace ChatProtocolRoyV2.Generator;
+﻿namespace ChatProtocolRoyV2.ChecksumCalculator;
 
 public interface IChecksumCalculator<in TInput>
 {

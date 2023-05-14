@@ -4,6 +4,7 @@ public abstract class MessageBase
 {
     #region Ctor
 
+    //todo message type
     protected MessageBase(Guid id, object type)
     {
         Id = id;
@@ -14,10 +15,9 @@ public abstract class MessageBase
 
     #region Properties
 
-    private Guid Id { get; }
-    private object Type { get; }
+    public Guid Id { get; }
+    public object Type { get; }
 
     #endregion
 }
-
-//maybe the decorator/wrapper can solve the problem and change it to messageType from object
+//TODO change object to a more concrete type

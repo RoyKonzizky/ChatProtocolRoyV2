@@ -10,7 +10,7 @@ public class MessageBuilder
     private DateOnly _dateOnly;
     private string _fileContent = null!;
     private string _fileName = null!;
-    private string _fileType = null!;
+    private FileTypes _fileType;
     private Guid _guid;
     private string _text = null!;
     private object _type = null!;
@@ -54,3 +54,5 @@ public class MessageBuilder
         };
     }
 }
+
+//TODO every method should be replaced/backed by interfaces

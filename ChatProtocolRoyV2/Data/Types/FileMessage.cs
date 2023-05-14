@@ -2,11 +2,11 @@ using ChatProtocolRoyV2.Entities;
 
 namespace ChatProtocolRoyV2.Data.Types;
 
-public class FileMessage : MessageBase
+public abstract class FileMessage : MessageBase
 {
     #region Ctor
 
-    public FileMessage(Guid guid, object type, DateOnly dateOnly, string fileName, string dataInFile, string fileType)
+    protected FileMessage(Guid guid, object type, DateOnly dateOnly, string fileName, string dataInFile, FileTypes fileType)
         : base(guid, MessageType.FileMessage)
     {
         FileName = fileName;
@@ -22,10 +22,11 @@ public class FileMessage : MessageBase
 
     public DateOnly DateOnly { get; }
     public string DataInFile { get; }
-    public string FileType { get; }
+    
+    //todo replace string FileType to enum FileType
+    public FileTypes FileType { get; }
     public string FileName { get; }
 
     #endregion
 }
 
-//i may be wrong about it but maybe the FileTypes enum was for the FileType in this class

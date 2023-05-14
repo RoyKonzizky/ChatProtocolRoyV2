@@ -5,9 +5,10 @@ namespace ChatProtocolRoyV2.Generator;
 
 public class Packet
 {
-    public Packet(MessageEdge sync, MessageBase data, uint checksum, MessageEdge tail)
+    public Packet(MessageEdge sync, object type,MessageBase data, uint checksum, MessageEdge tail)
     {
         Data = data;
+        Type = type;
         Checksum = checksum;
         Sync = sync;
         Tail = tail;
@@ -19,6 +20,11 @@ public class Packet
     public MessageBase Data { get; }
     public uint Checksum { get; }
     public MessageEdge Tail { get; }
+    public object Type { get; }
 
     #endregion
 }
+
+
+//DELETE THIS CLASS BECAUSE IT HARMS FLEXIBILITY AND REPLACE IT WITH THE BUILDERS AND CREATE BYTE ARRAY
+

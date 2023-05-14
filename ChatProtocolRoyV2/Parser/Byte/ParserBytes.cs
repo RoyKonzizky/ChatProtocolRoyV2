@@ -8,7 +8,6 @@ public class ParseBytes : IParseBytes
 {
     public MessageBase Parser(byte[] packetBytes)
     {
-        MessageBase message = null!;
         var generator = new Generate();
         var calculator = new ChecksumByteArrayCalculator();
         var parserExtender = new ParserBytesExtensions();
@@ -18,14 +17,20 @@ public class ParseBytes : IParseBytes
         var tail = syncAndTailArray[1];
         if (!parserExtender.IsSyncAndTailEqual(sync, tail))
             throw new ArgumentException("Unable to parse since Sync and Tail cannot be determined.");
+
+        var type = parserExtender.ExtractType(packetBytes);
+
         var checksumInPacket = parserExtender.ExtractChecksum(packetBytes);
 
-        var dataOfPacket = parserExtender.ExtractData(packetBytes);
+        var dataOfPacket = parserExtender.ExtractData(packetBytes, type);
         var byteDataOfPacket = generator.ObjectToByteArray(dataOfPacket);
         var checksumFromData = calculator.CalculateChecksum(byteDataOfPacket);
 
-        if (parserExtender.IsChecksumEqual(checksumFromData, checksumInPacket)) return message;
-        throw new ArgumentException("Unable to parse since data cannot be validated.");
+        if (!parserExtender.IsChecksumEqual(checksumFromData, checksumInPacket))
+            throw new ArgumentException("Unable to parse since data cannot be validated.");
+
+        return dataOfPacket;
     }
 }
+
 //parser is the reverse process of the generator

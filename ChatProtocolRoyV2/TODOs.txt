@@ -1,15 +1,20 @@
 ﻿//TODO find proper design patterns for the generator
 
-//TODO add start index and index in IChecksumCalculator(because int is 4 bytes but only two are for checksum), 
+//TODO add start index and end index in IChecksumCalculator(because int is 4 bytes but only two are for checksum), 
     make a class of constants for indexes
     
-//TODO might have to create different generators and parsers for each type, 
-    change the packet from a class to concept(its just an array of bytes), 
-    add length to packet to know the size of the string(the message itself) before parsing, 
-    add the type to the string so i know how to parse and build it,
-    maybe different builders for each type,
-    need to find a way to change the object in MessageBase to a concrete type
+//TODO might have to create different generators and parsers for each type
+
+//TODO change the packet from a class to concept(its just an array of bytes)
+
+//TODO need to find a way to change the object in MessageBase to a concrete type
 
 
--did the ExtractChecksum method without reversing
--organized the directories
+//maybe add length to packet to know the size of the string(the message itself) before parsing 
+//maybe different builders for each type
+
+//when it comes to git, every module gets it's own branch
+
+-modified the parser ,parser extension and the generate classes so they are more accurate
+-added the type to the packet so i know how to parse and build it
+

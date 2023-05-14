@@ -23,7 +23,7 @@ public class ParserBytesExtensions
 
     public uint ExtractChecksum(byte[] packetBytes)
     {
-        byte[]checksumArr = Array.Empty<byte>();
+        var checksumArr = Array.Empty<byte>();
         Array.Copy(packetBytes, packetBytes.Length-5, checksumArr, 0, 4);
         var generator = new Generate();
         var checksum = generator.FromByteArray<uint>(checksumArr);
@@ -34,13 +34,46 @@ public class ParserBytesExtensions
     {
         return checksumFromData == checksumInPacket;
     }
-
-    public MessageBase ExtractData(byte[] packetBytes)
+    
+    public object ExtractType(byte[] packetBytes)
     {
         var generator = new Generate();
-        var arrMessageBase = new byte[packetBytes.Length - 5];
-        Array.Copy(packetBytes, 1, arrMessageBase, 0, packetBytes.Length - 5);
-        var deserializeMessageBase = generator.FromByteArray<MessageBase>(arrMessageBase);
-        return deserializeMessageBase;
+        var typeBytes = Array.Empty<byte>();
+        Array.Copy(packetBytes, 1, typeBytes, 0, 4);
+        var type = generator.FromByteArray<object>(typeBytes);
+        return type;
+    }
+
+    public MessageBase ExtractData(byte[] packetBytes, object type)
+    {
+        var generator = new Generate();
+        var arrMessageBase = new byte[packetBytes.Length - 9];
+        Array.Copy(packetBytes, 5, arrMessageBase, 0, packetBytes.Length - 9);
+    
+        switch (type)
+        {
+            case MessageType.TextMessage:
+                var deserializedTextMessage = generator.FromByteArray<MessageBase>(arrMessageBase);
+                return deserializedTextMessage;
+
+            case MessageType.FileMessage:
+                var deserializedFileMessage = generator.FromByteArray<MessageBase>(arrMessageBase);
+                return deserializedFileMessage;
+        
+            case FileTypes.Audio:
+                var deserializedAudio = generator.FromByteArray<MessageBase>(arrMessageBase);
+                return deserializedAudio;
+        
+            case FileTypes.Image:
+                var deserializedImage = generator.FromByteArray<MessageBase>(arrMessageBase);
+                return deserializedImage;
+
+            default:
+                throw new Exception("No matching message could be created for this type");
+        }
     }
 }
+
+//TODO read about down/up-casting and TryParse, MessageBase messageBase = new FileMessage(),byte.TryParse()
+//TODO since type was added need to check and change the other extraction methods
+
