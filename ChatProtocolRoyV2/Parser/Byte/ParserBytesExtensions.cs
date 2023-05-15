@@ -76,4 +76,5 @@ public class ParserBytesExtensions
 
 //TODO read about down/up-casting and TryParse, MessageBase messageBase = new FileMessage(),byte.TryParse()
 //TODO since type was added need to check and change the other extraction methods
-
+//TODO find a constant char that won't appear in any message to fill empty spaces in the packet
+//TODO change all mentions of FileTypes as they appear above

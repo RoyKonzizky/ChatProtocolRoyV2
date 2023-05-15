@@ -5,21 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f29de42a-f7ba-48f7-9716-efeedc75c0d0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/IBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/IMessageBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/FileMessageBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/TextMessageBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IChecksumBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IDataBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IGuidBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ISyncBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ITailBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ITypeBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/MessageBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/MessageBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/FileMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/FileMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/Files/Image.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Data/Types/Files/Image.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/MessageBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/MessageBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/ChecksumCalculator/Byte/ChecksumByteArrayCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/ChecksumCalculator/Byte/ChecksumByteArrayCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/ChecksumCalculator/Byte/IChecksumByteArrayCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/ChecksumCalculator/Byte/IChecksumByteArrayCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Generate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Generate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Packet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Packet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/MessageBuilder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytesExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytesExtensions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/TODOs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/TODOs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Feature_doing_the_ToDos" />
+        <entry key="$PROJECT_DIR$" value="Code_Rework" />
       </map>
     </option>
   </component>
@@ -47,6 +51,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/ChatProtocolRoyV2/ChatProtocolRoyV2/Data/Types/Files/Audio.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ChatProtocolRoyV2/Entities/FileTypes.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -182,7 +187,8 @@
     <MESSAGE value="-added the files,TODOs and dirs of last working model" />
     <MESSAGE value="-created the builder class&#10;-added enum for file types&#10;-added better checksum" />
     <MESSAGE value="-finished the ExtractData method&#10;-added utility methods to ParseBytesExtensions.cs&#10;-changed the type in MessageBase to object type so there won't be conflict between enums(probably not a good idea, read to find a new way)&#10;-bypassed the need the match the enums by doing what is written above&#10;-entered the class type in the ctor declaration&#10;-used in IEnumerable instead of byte array in Generate.cs" />
-    <option name="LAST_COMMIT_MESSAGE" value="-finished the ExtractData method&#10;-added utility methods to ParseBytesExtensions.cs&#10;-changed the type in MessageBase to object type so there won't be conflict between enums(probably not a good idea, read to find a new way)&#10;-bypassed the need the match the enums by doing what is written above&#10;-entered the class type in the ctor declaration&#10;-used in IEnumerable instead of byte array in Generate.cs" />
+    <MESSAGE value="-corrected the ctors of FileMessage, image and audio&#10;-cleaned the MessageBase class from comments and TODOs" />
+    <option name="LAST_COMMIT_MESSAGE" value="-corrected the ctors of FileMessage, image and audio&#10;-cleaned the MessageBase class from comments and TODOs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

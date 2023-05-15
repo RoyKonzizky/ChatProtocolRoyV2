@@ -1,6 +1,4 @@
-﻿using ChatProtocolRoyV2.ChecksumCalculator;
-
-namespace ChatProtocolRoyV2.Generator.Byte;
+﻿namespace ChatProtocolRoyV2.ChecksumCalculator.Byte;
 
 public interface IChecksumByteArrayCalculator : IChecksumCalculator<IEnumerable<byte>>
 {

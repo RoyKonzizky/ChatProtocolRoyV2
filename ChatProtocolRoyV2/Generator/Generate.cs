@@ -7,7 +7,7 @@ namespace ChatProtocolRoyV2.Generator;
 
 public class Generate
 {
-    public static Packet GeneratePacket(MessageEdge sync, object type,MessageBase data, uint checksum, MessageEdge tail)
+    public static Packet GeneratePacket(MessageEdge sync, MessageType type,MessageBase data, uint checksum, MessageEdge tail)
     {
         var packet = new Packet(sync, type,data, checksum, tail);
         return packet;

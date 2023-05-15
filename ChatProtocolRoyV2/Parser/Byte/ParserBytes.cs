@@ -1,6 +1,6 @@
-﻿using ChatProtocolRoyV2.Data;
+﻿using ChatProtocolRoyV2.ChecksumCalculator.Byte;
+using ChatProtocolRoyV2.Data;
 using ChatProtocolRoyV2.Generator;
-using ChatProtocolRoyV2.Generator.Byte;
 
 namespace ChatProtocolRoyV2.Parser.Byte;
 

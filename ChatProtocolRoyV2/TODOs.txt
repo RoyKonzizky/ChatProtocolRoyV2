@@ -13,7 +13,5 @@
 
 //when it comes to git, every module gets it's own branch
 
--corrected the issue with the FileTypes enum
--MessageType replaced the object type, need to change it in the rest of the code
--
-
+-added interfaces of properties
+-created the builder directories basic model
