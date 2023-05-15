@@ -22,8 +22,6 @@ public abstract class FileMessage : MessageBase
 
     public DateOnly DateOnly { get; }
     public string DataInFile { get; }
-    
-    //todo replace string FileType to enum FileType
     public FileTypes FileType { get; }
     public string FileName { get; }
 

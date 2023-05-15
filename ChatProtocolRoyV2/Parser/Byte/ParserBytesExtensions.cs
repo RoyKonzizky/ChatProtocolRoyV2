@@ -35,12 +35,12 @@ public class ParserBytesExtensions
         return checksumFromData == checksumInPacket;
     }
     
-    public object ExtractType(byte[] packetBytes)
+    public MessageType ExtractType(byte[] packetBytes)
     {
         var generator = new Generate();
         var typeBytes = Array.Empty<byte>();
         Array.Copy(packetBytes, 1, typeBytes, 0, 4);
-        var type = generator.FromByteArray<object>(typeBytes);
+        var type = generator.FromByteArray<MessageType>(typeBytes);
         return type;
     }
 

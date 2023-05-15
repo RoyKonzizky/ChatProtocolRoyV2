@@ -13,3 +13,5 @@ public class Image : FileMessage
 
     #endregion
 }
+
+//TODO for audio too, remove the fileType or the FileTypes.Image/Audio as it is no longer needed

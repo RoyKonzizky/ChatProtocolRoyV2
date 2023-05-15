@@ -1,11 +1,13 @@
-﻿namespace ChatProtocolRoyV2.Data;
+﻿using ChatProtocolRoyV2.Entities;
+
+namespace ChatProtocolRoyV2.Data;
 
 public abstract class MessageBase
 {
     #region Ctor
 
     //todo message type
-    protected MessageBase(Guid id, object type)
+    protected MessageBase(Guid id, MessageType type)
     {
         Id = id;
         Type = type;
@@ -16,7 +18,7 @@ public abstract class MessageBase
     #region Properties
 
     public Guid Id { get; }
-    public object Type { get; }
+    public MessageType Type { get; }
 
     #endregion
 }

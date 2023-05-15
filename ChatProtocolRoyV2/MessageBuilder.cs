@@ -33,7 +33,7 @@ public class MessageBuilder
         return this;
     }
 
-    public MessageBuilder WithFile(string fileName, string fileContent, DateOnly dateOnly, string fileType)
+    public MessageBuilder WithFile(string fileName, string fileContent, DateOnly dateOnly, FileTypes fileType)
     {
         _fileName = fileName;
         _fileContent = fileContent;
@@ -47,7 +47,6 @@ public class MessageBuilder
         return _type switch
         {
             MessageType.TextMessage => new TextMessage(_guid, _text),
-            MessageType.FileMessage => new FileMessage(_guid, _type, _dateOnly, _fileName, _fileContent, _fileType),
             FileTypes.Audio => new Audio(_guid, _dateOnly, _fileName, _fileContent, _fileType),
             FileTypes.Image => new Image(_guid, _dateOnly, _fileName, _fileContent, _fileType),
             _ => throw new ArgumentException("Invalid message type.")

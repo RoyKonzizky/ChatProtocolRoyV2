@@ -7,14 +7,13 @@
 
 //TODO change the packet from a class to concept(its just an array of bytes)
 
-//TODO need to find a way to change the object in MessageBase to a concrete type
-
 
 //maybe add length to packet to know the size of the string(the message itself) before parsing 
 //maybe different builders for each type
 
 //when it comes to git, every module gets it's own branch
 
--modified the parser ,parser extension and the generate classes so they are more accurate
--added the type to the packet so i know how to parse and build it
+-corrected the issue with the FileTypes enum
+-MessageType replaced the object type, need to change it in the rest of the code
+-
 
