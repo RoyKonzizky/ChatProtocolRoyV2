@@ -5,25 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f29de42a-f7ba-48f7-9716-efeedc75c0d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/IBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/IMessageBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/FileMessageBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/TextMessageBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IChecksumBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IDataBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IGuidBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ISyncBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ITailBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ITypeBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/ChecksumCalculator/Byte/ChecksumByteArrayCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/ChecksumCalculator/Byte/ChecksumByteArrayCalculator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/ChecksumCalculator/Byte/IChecksumByteArrayCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/ChecksumCalculator/Byte/IChecksumByteArrayCalculator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Generate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Generate.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Packet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Packet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/MessageBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytesExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytesExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/IBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/IBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/IMessageBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/IMessageBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/FileMessageBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/FileMessageBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/TextMessageBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/TextMessageBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IChecksumBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IChecksumBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IDataBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IDataBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IGuidBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IGuidBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ISyncBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ISyncBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ITailBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ITailBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ITypeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ITypeBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/TODOs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/TODOs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +110,7 @@
       <workItem from="1683997692774" duration="12161000" />
       <workItem from="1684043465665" duration="25892000" />
       <workItem from="1684100716161" duration="1923000" />
+      <workItem from="1684184384001" duration="3393000" />
     </task>
     <task id="LOCAL‎-00001" summary="-finished the message class">
       <created>1682808044548</created>

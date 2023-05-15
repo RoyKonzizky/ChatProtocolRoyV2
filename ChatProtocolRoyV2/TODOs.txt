@@ -13,5 +13,4 @@
 
 //when it comes to git, every module gets it's own branch
 
--added interfaces of properties
--created the builder directories basic model
+-implemented builder interfaces
