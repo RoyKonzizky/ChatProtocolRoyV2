@@ -5,19 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f29de42a-f7ba-48f7-9716-efeedc75c0d0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/MessageBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/File/IFileMessageBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/Text/ITextMessageBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Checksum/ChecksumBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Data/DataBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Guid/GuidBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Sync/SyncBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Tail/TailBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Type/TypeBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/IBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/IBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/IMessageBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/IMessageBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/FileMessageBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/FileMessageBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/TextMessageBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/TextMessageBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IChecksumBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IChecksumBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IDataBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IDataBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IGuidBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IGuidBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ISyncBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ISyncBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ITailBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ITailBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ITypeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ITypeBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/TODOs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/TODOs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/FileMessageBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/File/FileMessageBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/TextMessageBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/Text/TextMessageBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IChecksumBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Checksum/IChecksumBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IDataBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Data/IDataBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IGuidBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Guid/IGuidBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ISyncBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Sync/ISyncBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ITailBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Tail/ITailBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ITypeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Type/ITypeBuilder.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +52,6 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/ChatProtocolRoyV2/ChatProtocolRoyV2/Data/Types/Files/Audio.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ChatProtocolRoyV2/Entities/FileTypes.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">

@@ -6,4 +6,4 @@ public interface IBuilder<out TBuild,in TMessageBase>
 }
 
 //Make IBuilder for each attribute of a packet
-//TODO find what is actaully supposed to be written there
+//TODO find what is actually supposed to be written there
