@@ -24,9 +24,6 @@ public class TextMessageBuilder : ITextMessageBuilder
     {
         var textMessage = new TextMessage(_guid, _text);
 
-        _guid = default;
-        _text = "";
-
         return textMessage;
     }
 

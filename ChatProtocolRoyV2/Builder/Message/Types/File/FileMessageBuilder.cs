@@ -42,29 +42,14 @@ public class FileMessageBuilder : IFileMessageBuilder
         return this;
     }
 
-    public MessageBase Build(object input)
+    public MessageBase Build<T>(T input)
     {
-        MessageBase fileMessage;
-            
-        if (_fileType == FileTypes.Image)
+        MessageBase fileMessage = _fileType switch
         {
-            fileMessage = new Image(_guid, _dateOnly, _fileName, _fileContent, FileTypes.Image);
-        }
-        else if (_fileType == FileTypes.Audio)
-        {
-            fileMessage = new Audio(_guid, _dateOnly, _fileName, _fileContent,FileTypes.Audio);
-        }
-        else
-        {
-            throw new ArgumentException("Invalid file type.");
-        }
-
-        // Reset builder state
-        _guid = Guid.Empty;
-        _fileName = null!;
-        _fileContent = null!;
-        _dateOnly = default;
-        _fileType = default;
+            FileTypes.Image => new Image(_guid, _dateOnly, _fileName, _fileContent, FileTypes.Image),
+            FileTypes.Audio => new Audio(_guid, _dateOnly, _fileName, _fileContent, FileTypes.Audio),
+            _ => throw new ArgumentException("Invalid file type.")
+        };
 
         return fileMessage;
     }

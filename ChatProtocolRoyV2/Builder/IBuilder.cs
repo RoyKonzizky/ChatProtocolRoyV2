@@ -1,8 +1,8 @@
 ﻿namespace ChatProtocolRoyV2.Builder;
 
-public interface IBuilder<out TBuild,in TMessageBase>
+public interface IBuilder<in TInput, out TOutput>
 {
-    TBuild Build(TMessageBase input);
+    TOutput Build(TInput input);
 }
 
 //Make IBuilder for each attribute of a packet

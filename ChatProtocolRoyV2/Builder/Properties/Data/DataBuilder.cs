@@ -1,6 +1,8 @@
-﻿namespace ChatProtocolRoyV2.Builder.Properties.Data;
+﻿using ChatProtocolRoyV2.Data;
 
-public class DataBuilder : IDataBuilder
+namespace ChatProtocolRoyV2.Builder.Properties.Data;
+
+public class DataBuilder : IDataBuilder<MessageBase>
 {
     
 }

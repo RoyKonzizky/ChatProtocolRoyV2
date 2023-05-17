@@ -2,5 +2,5 @@
 
 public interface ITextMessageBuilder : IMessageBuilder
 {
-    
+    IMessageBuilder WithText(string text);
 }

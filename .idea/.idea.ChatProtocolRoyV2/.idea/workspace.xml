@@ -5,26 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f29de42a-f7ba-48f7-9716-efeedc75c0d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/MessageBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/File/IFileMessageBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/Text/ITextMessageBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Checksum/ChecksumBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Data/DataBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Guid/GuidBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Sync/SyncBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Tail/TailBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Type/TypeBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/IBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/IBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/IMessageBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/IMessageBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/FileMessageBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/File/FileMessageBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/TextMessageBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/Text/TextMessageBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IChecksumBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Checksum/IChecksumBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IDataBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Data/IDataBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/IGuidBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Guid/IGuidBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ISyncBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Sync/ISyncBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ITailBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Tail/ITailBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/ITypeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Type/ITypeBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/File/FileMessageBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/File/FileMessageBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/Text/ITextMessageBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/Text/ITextMessageBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/Text/TextMessageBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Message/Types/Text/TextMessageBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Checksum/IChecksumBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Checksum/IChecksumBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Data/DataBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Data/DataBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Data/IDataBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Data/IDataBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Guid/IGuidBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Guid/IGuidBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Tail/ITailBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Builder/Properties/Tail/ITailBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Indexes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Code_Rework" />
+        <entry key="$PROJECT_DIR$" value="Feature_data_corrections" />
       </map>
     </option>
   </component>
@@ -64,26 +58,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "vcs.Git",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\user\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\user\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\user\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\user\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
+      "C:\\Users\\user\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
+      "C:\\Users\\user\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -116,7 +110,8 @@
       <workItem from="1683997692774" duration="12161000" />
       <workItem from="1684043465665" duration="25892000" />
       <workItem from="1684100716161" duration="1923000" />
-      <workItem from="1684184384001" duration="3393000" />
+      <workItem from="1684130661383" duration="5150000" />
+      <workItem from="1684352849219" duration="486000" />
     </task>
     <task id="LOCAL‎-00001" summary="-finished the message class">
       <created>1682808044548</created>
@@ -188,8 +183,7 @@
     <MESSAGE value="-added the files,TODOs and dirs of last working model" />
     <MESSAGE value="-created the builder class&#10;-added enum for file types&#10;-added better checksum" />
     <MESSAGE value="-finished the ExtractData method&#10;-added utility methods to ParseBytesExtensions.cs&#10;-changed the type in MessageBase to object type so there won't be conflict between enums(probably not a good idea, read to find a new way)&#10;-bypassed the need the match the enums by doing what is written above&#10;-entered the class type in the ctor declaration&#10;-used in IEnumerable instead of byte array in Generate.cs" />
-    <MESSAGE value="-corrected the ctors of FileMessage, image and audio&#10;-cleaned the MessageBase class from comments and TODOs" />
-    <option name="LAST_COMMIT_MESSAGE" value="-corrected the ctors of FileMessage, image and audio&#10;-cleaned the MessageBase class from comments and TODOs" />
+    <option name="LAST_COMMIT_MESSAGE" value="-finished the ExtractData method&#10;-added utility methods to ParseBytesExtensions.cs&#10;-changed the type in MessageBase to object type so there won't be conflict between enums(probably not a good idea, read to find a new way)&#10;-bypassed the need the match the enums by doing what is written above&#10;-entered the class type in the ctor declaration&#10;-used in IEnumerable instead of byte array in Generate.cs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
