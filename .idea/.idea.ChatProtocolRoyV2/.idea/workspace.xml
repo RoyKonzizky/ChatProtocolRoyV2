@@ -5,26 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f29de42a-f7ba-48f7-9716-efeedc75c0d0" name="Changes" comment="added the Builder directory into the Parser directory">
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Byte/IGenerateBytes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/IGenerate.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/ChatProtocolRoyV2.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/ChatProtocolRoyV2.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Generate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Byte/GenerateBytes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Packet.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Length/LengthBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Length/LengthBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Constants/Indexes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Constants/Indexes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Constants/Lengths.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Constants/Lengths.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Length/ILengthBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Length/ILengthBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Length/LengthBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Length/LengthBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Checksum/ChecksumBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Checksum/ChecksumBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Data/DataBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Data/DataBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/DateOnly/DateOnlyBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/DateOnly/DateOnlyBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/FileName/FileNameBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/FileName/FileNameBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/FileType/FileTypeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/FileType/FileTypeBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Guid/GuidBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Guid/GuidBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Sync/SyncBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Sync/SyncBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Tail/TailBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Tail/TailBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Type/TypeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Type/TypeBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytesExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytesExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/TODOs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +172,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="TEXT_FILTER_SETTINGS">
+                <TextFilterSettings>
+                  <option name="REGEX" value="true" />
+                </TextFilterSettings>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

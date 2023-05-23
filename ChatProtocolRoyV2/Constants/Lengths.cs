@@ -16,6 +16,8 @@ public static class Lengths
 
     public const int TAIL_LENGTH = 1;
     
+    public const int LENGTH_OF_DATA_LENGTH = 4;
+    
     #endregion
 
     
