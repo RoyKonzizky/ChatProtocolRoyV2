@@ -1,5 +1,6 @@
 ﻿using ChatProtocolRoyV2.Constants;
 using ChatProtocolRoyV2.Generator;
+using ChatProtocolRoyV2.Generator.Byte;
 
 namespace ChatProtocolRoyV2.Parser.Builder.Byte.Properties.FileName;
 
