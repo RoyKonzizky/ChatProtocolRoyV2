@@ -7,9 +7,6 @@
     <list default="true" id="f29de42a-f7ba-48f7-9716-efeedc75c0d0" name="Changes" comment="-Adjusted the Constants and corrected mistakes in the builders">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Byte/GenerateBytes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Byte/GenerateBytes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Director/Director.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Director/Director.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytesExtensions.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +35,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/ChatProtocolRoyV2/Entities/FileTypes.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/ChatProtocolRoyV2/ChatProtocolRoyV2/Parser/Builder/Byte/Director/Director.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
