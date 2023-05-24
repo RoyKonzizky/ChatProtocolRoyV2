@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f29de42a-f7ba-48f7-9716-efeedc75c0d0" name="Changes" comment="added the Builder directory into the Parser directory">
+    <list default="true" id="f29de42a-f7ba-48f7-9716-efeedc75c0d0" name="Changes" comment="-Adjusted the Constants and corrected mistakes in the builders">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/ChatProtocolRoyV2.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/ChatProtocolRoyV2.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Constants/Indexes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Constants/Indexes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Constants/Lengths.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Constants/Lengths.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Length/ILengthBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Length/ILengthBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Length/LengthBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Length/LengthBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Checksum/ChecksumBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Checksum/ChecksumBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Data/DataBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Properties/Data/DataBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Byte/GenerateBytes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Byte/GenerateBytes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Director/Director.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Director/Director.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytesExtensions.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +156,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1684786468958</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="-Adjusted the Constants and corrected mistakes in the builders">
+      <created>1684846451695</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684846451695</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +198,8 @@
     <MESSAGE value="-created the builder class&#10;-added enum for file types&#10;-added better checksum" />
     <MESSAGE value="-finished the ExtractData method&#10;-added utility methods to ParseBytesExtensions.cs&#10;-changed the type in MessageBase to object type so there won't be conflict between enums(probably not a good idea, read to find a new way)&#10;-bypassed the need the match the enums by doing what is written above&#10;-entered the class type in the ctor declaration&#10;-used in IEnumerable instead of byte array in Generate.cs" />
     <MESSAGE value="added the Builder directory into the Parser directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the Builder directory into the Parser directory" />
+    <MESSAGE value="-Adjusted the Constants and corrected mistakes in the builders" />
+    <option name="LAST_COMMIT_MESSAGE" value="-Adjusted the Constants and corrected mistakes in the builders" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

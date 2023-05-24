@@ -5,6 +5,7 @@ namespace ChatProtocolRoyV2.Generator.Byte;
 
 public class Generate : IGenerateBytes
 {
+//TODO Write without the array list, use the copy instead
     public IEnumerable<byte> GeneratePacket(ArrayList arrList)
     {
         var arrayList = new ArrayList();
@@ -81,7 +82,7 @@ public class Generate : IGenerateBytes
             }
         }
     }
-    
+
     public IEnumerable<byte> ObjectToByteArray<T>(T obj)
     {
         using var memoryStream = new MemoryStream();
@@ -126,6 +127,8 @@ public class Generate : IGenerateBytes
             Console.WriteLine("An error occurred: " + ex.Message);
         }
     }
+
+
 }
 
 //why IEnumerable better-more flexible as it can return more specific types when needed in certain cases without breaking the footprint(Memory footprint refers to the amount of main memory that a program uses or references while running) of the method)
