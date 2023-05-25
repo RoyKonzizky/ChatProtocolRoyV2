@@ -64,7 +64,7 @@ public class Generate : IGenerateBytes
         }
     }
 
-    private byte[] ObjectToByteArray<T>(T obj)
+    public byte[] ObjectToByteArray<T>(T obj)
     {
         using var memoryStream = new MemoryStream();
         using var binaryWriter = new BinaryWriter(memoryStream);
