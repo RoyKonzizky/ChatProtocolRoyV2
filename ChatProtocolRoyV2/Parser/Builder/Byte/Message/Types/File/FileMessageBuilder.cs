@@ -24,8 +24,10 @@ public class FileMessageBuilder : IMessageBuilder<IEnumerable<byte>>
         
         MessageBase fileMessage = fileTypeBuilder.Build(enumerable) switch
         {
-            FileTypes.Image => new Image(guidBuilder.Build(enumerable), dateOnlyBuilder.Build(enumerable), fileNameBuilder.Build(enumerable), dataBuilder.Build(enumerable), FileTypes.Image),
-            FileTypes.Audio => new Audio(guidBuilder.Build(enumerable), dateOnlyBuilder.Build(enumerable), fileNameBuilder.Build(enumerable), dataBuilder.Build(enumerable), FileTypes.Audio),
+            FileTypes.Image => new Image(guidBuilder.Build(enumerable), dateOnlyBuilder.Build(enumerable), 
+                fileNameBuilder.Build(enumerable), dataBuilder.Build(enumerable), FileTypes.Image),
+            FileTypes.Audio => new Audio(guidBuilder.Build(enumerable), dateOnlyBuilder.Build(enumerable), 
+                fileNameBuilder.Build(enumerable), dataBuilder.Build(enumerable), FileTypes.Audio),
             _ => throw new ArgumentException("Invalid file type.")
         };
 
