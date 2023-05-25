@@ -6,10 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="f29de42a-f7ba-48f7-9716-efeedc75c0d0" name="Changes" comment="-Adjusted the Constants and corrected mistakes in the builders">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProtocolRoyV2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Byte/GenerateBytes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Generator/Byte/GenerateBytes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Director/Director.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Director/Director.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Director/IDirector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Director/IDirector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Message/Types/File/FileMessageBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Builder/Byte/Message/Types/File/FileMessageBuilder.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/Byte/ParserBytesExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/IParse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/Parser/IParse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/ChatProtocolRoyV2.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/Debug/net6.0/ChatProtocolRoyV2.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ChatProtocolRoyV2/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +115,7 @@
       <workItem from="1684352849219" duration="486000" />
       <workItem from="1684786336419" duration="718000" />
       <workItem from="1684827832525" duration="10525000" />
+      <workItem from="1685019589140" duration="1532000" />
     </task>
     <task id="LOCAL‎-00001" summary="-finished the message class">
       <created>1682808044548</created>
