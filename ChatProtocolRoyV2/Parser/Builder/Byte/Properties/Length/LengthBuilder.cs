@@ -22,12 +22,12 @@ public class LengthBuilder : ILengthBuilder
                 Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX_TEXT, nameBytes, 0, Lengths.LENGTH_OF_DATA_LENGTH);
                 len = generator.FromByteArray<int>(nameBytes);
                 return len;
-            
+
             case MessageType.FileMessage:
                 Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX_FILE, nameBytes, 0, Lengths.LENGTH_OF_DATA_LENGTH);
                 len = generator.FromByteArray<int>(nameBytes);
                 return len;
-            
+
             default:
                 throw new Exception("no matching type");
         }

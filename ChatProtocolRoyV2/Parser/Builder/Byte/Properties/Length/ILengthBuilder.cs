@@ -2,5 +2,4 @@
 
 public interface ILengthBuilder : IBuilder<IEnumerable<byte>, int>
 {
-    
 }

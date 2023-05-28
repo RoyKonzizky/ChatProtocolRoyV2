@@ -1,6 +1,5 @@
 ﻿using ChatProtocolRoyV2.Constants;
 using ChatProtocolRoyV2.Entities;
-using ChatProtocolRoyV2.Generator;
 using ChatProtocolRoyV2.Generator.Byte;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Length;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Type;
@@ -17,7 +16,7 @@ public class ChecksumBuilder : IChecksumBuilder
         //parse to uint in the correct format
         var enumerable = input as byte[] ?? input.ToArray();
         var inputBytes = enumerable.ToArray();
-        var checksumBytes = Array.Empty<byte>();        
+        var checksumBytes = Array.Empty<byte>();
         var typeBuilder = new TypeBuilder();
         var type = typeBuilder.Build(enumerable);
         var generator = new Generate();
@@ -37,6 +36,5 @@ public class ChecksumBuilder : IChecksumBuilder
             default:
                 throw new Exception("no matching type");
         }
-
     }
 }

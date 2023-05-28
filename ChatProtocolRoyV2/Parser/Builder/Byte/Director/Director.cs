@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using ChatProtocolRoyV2.Data;
 using ChatProtocolRoyV2.Entities;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Message.Types.File;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Message.Types.Text;
@@ -25,7 +24,7 @@ public class Director : IDirector
         var data = new DataBuilder().Build(enumerable);
         var lenData = new LengthBuilder().Build(enumerable);
         var tail = new TailBuilder().Build(enumerable);
-        
+
         var textMessageBuilder = new TextMessageBuilder();
         var fileMessageBuilder = new FileMessageBuilder();
 

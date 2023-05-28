@@ -7,6 +7,8 @@ public class Generate : IGenerateBytes
 {
     public IEnumerable<byte> GeneratePacket(ArrayList arrList)
     {
+        //TODO use constants with the arraylist or dict instead of the arraylist
+        //TODO maybe write methods to clean the methods as it does multiple things
         var sync = (MessageEdge)arrList[0]!;
         var id = (Guid)arrList[1]!;
         var type = (MessageType)arrList[2]!;
@@ -15,7 +17,7 @@ public class Generate : IGenerateBytes
         string data;
         uint checksum;
         MessageEdge tail;
-        
+
         byte[] completeByteArray;
 
         switch (type)
@@ -31,16 +33,16 @@ public class Generate : IGenerateBytes
                 checksum = (uint)arrList[8]!;
                 tail = (MessageEdge)arrList[9]!;
 
-                completeByteArray = CombineByteArrays(ObjectToByteArray(sync), 
-                    ObjectToByteArray(id), ObjectToByteArray(type), 
-                    ObjectToByteArray(fileType), ObjectToByteArray(dateOnly), ObjectToByteArray(fileName), 
+                completeByteArray = CombineByteArrays(ObjectToByteArray(sync),
+                    ObjectToByteArray(id), ObjectToByteArray(type),
+                    ObjectToByteArray(fileType), ObjectToByteArray(dateOnly), ObjectToByteArray(fileName),
                     ObjectToByteArray(dataLength), ObjectToByteArray(data),
-                    ObjectToByteArray(checksum), 
+                    ObjectToByteArray(checksum),
                     ObjectToByteArray(tail));
-                
+
                 return completeByteArray;
             }
-            
+
             case MessageType.TextMessage:
             {
                 dataLength = (int)arrList[3]!;
@@ -48,12 +50,12 @@ public class Generate : IGenerateBytes
                 checksum = (uint)arrList[5]!;
                 tail = (MessageEdge)arrList[6]!;
 
-                completeByteArray = CombineByteArrays(ObjectToByteArray(sync), 
+                completeByteArray = CombineByteArrays(ObjectToByteArray(sync),
                     ObjectToByteArray(id), ObjectToByteArray(type),
                     ObjectToByteArray(dataLength), ObjectToByteArray(data),
-                    ObjectToByteArray(checksum), 
+                    ObjectToByteArray(checksum),
                     ObjectToByteArray(tail));
-                
+
                 return completeByteArray;
             }
 
@@ -108,13 +110,11 @@ public class Generate : IGenerateBytes
             Console.WriteLine("An error occurred: " + ex.Message);
         }
     }
-    
+
     private static byte[] CombineByteArrays(params byte[][] arrays)
     {
         return arrays.SelectMany(x => x).ToArray();
     }
-
-    
 }
 
 //why IEnumerable better-more flexible as it can return more specific types when needed in certain cases without breaking the footprint(Memory footprint refers to the amount of main memory that a program uses or references while running) of the method)

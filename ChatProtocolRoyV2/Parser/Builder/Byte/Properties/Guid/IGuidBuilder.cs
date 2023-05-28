@@ -1,5 +1,5 @@
-﻿    namespace ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Guid;
+﻿namespace ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Guid;
 
-    public interface IGuidBuilder : IBuilder<IEnumerable<byte>, System.Guid>
-    {
-    }
+public interface IGuidBuilder : IBuilder<IEnumerable<byte>, System.Guid>
+{
+}

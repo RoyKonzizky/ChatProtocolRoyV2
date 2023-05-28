@@ -6,7 +6,8 @@ public abstract class FileMessage : MessageBase
 {
     #region Ctor
 
-    protected FileMessage(Guid guid, object type, DateOnly dateOnly, string fileName, string dataInFile, FileTypes fileType)
+    protected FileMessage(Guid guid, object type, DateOnly dateOnly, string fileName, string dataInFile,
+        FileTypes fileType)
         : base(guid, MessageType.FileMessage)
     {
         FileName = fileName;
@@ -27,4 +28,3 @@ public abstract class FileMessage : MessageBase
 
     #endregion
 }
-

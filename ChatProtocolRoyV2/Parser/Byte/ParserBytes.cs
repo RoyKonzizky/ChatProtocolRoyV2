@@ -17,6 +17,7 @@ public class ParseBytes : IParseBytes
         {
             return packetData;
         }
+
         throw new Exception("checksums aren't equal, data has been corrupted");
     }
 }
