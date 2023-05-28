@@ -3,9 +3,9 @@ using ChatProtocolRoyV2.Entities;
 
 namespace ChatProtocolRoyV2.Generator.Byte;
 
-public class Generate : IGenerateBytes
+public class ByteGenerator : IByteGenerator
 {
-    public IEnumerable<byte> GeneratePacket(ArrayList arrList)
+    public IEnumerable<byte> Generate(ArrayList arrList)
     {
         //TODO use constants with the arraylist or dict instead of the arraylist
         //TODO maybe write methods to clean the methods as it does multiple things

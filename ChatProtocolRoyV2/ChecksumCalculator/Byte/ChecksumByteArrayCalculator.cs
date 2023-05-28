@@ -4,6 +4,7 @@ public class ChecksumByteArrayCalculator : IChecksumByteArrayCalculator
 {
     public uint CalculateChecksum(IEnumerable<byte> input)
     {
+        //todo replace with foreach sum all the bytes values to one signature value(uint)
         var enumerable = input as byte[] ?? input.ToArray();
         var length = enumerable.Length;
         var i = 0;

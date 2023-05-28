@@ -12,7 +12,7 @@ public class ParseBytes : IParseBytes
         var director = new Director();
         var packetData = director.Build(packetBytes);
         var calc = new ChecksumByteArrayCalculator();
-        var generator = new Generate();
+        var generator = new Generator.Byte.ByteGenerator();
         if ((uint)packetData[3]! == calc.CalculateChecksum(generator.ObjectToByteArray(packetData[4])))
         {
             return packetData;

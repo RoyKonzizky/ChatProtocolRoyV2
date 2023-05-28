@@ -11,7 +11,7 @@ public class TypeBuilder : ITypeBuilder
         var inputBytes = input.ToArray();
         var typeBytes = Array.Empty<byte>();
         Array.Copy(inputBytes, Indexes.TYPE_INDEX, typeBytes, 0, 4);
-        var generator = new Generate();
+        var generator = new Generator.Byte.ByteGenerator();
         var type = generator.FromByteArray<MessageType>(typeBytes);
         return type;
     }

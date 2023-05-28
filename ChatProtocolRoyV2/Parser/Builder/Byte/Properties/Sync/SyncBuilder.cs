@@ -11,7 +11,7 @@ public class SyncBuilder : ISyncBuilder
         var inputBytes = input.ToArray();
         var syncBytes = Array.Empty<byte>();
         Array.Copy(inputBytes, Indexes.SYNC_INDEX, syncBytes, 0, 1);
-        var generator = new Generate();
+        var generator = new Generator.Byte.ByteGenerator();
         var sync = generator.FromByteArray<MessageEdge>(syncBytes);
         return sync;
     }

@@ -10,7 +10,7 @@ public class FileNameBuilder : IFileNameBuilder
         var inputBytes = input.ToArray();
         var nameBytes = Array.Empty<byte>();
         Array.Copy(inputBytes, Indexes.FILE_NAME_INDEX, nameBytes, 0, Lengths.FILE_NAME_LENGTH);
-        var generator = new Generate();
+        var generator = new Generator.Byte.ByteGenerator();
         var nameFile = generator.FromByteArray<string>(nameBytes);
         return nameFile;
     }

@@ -11,7 +11,7 @@ public class FileTypeBuilder : IFileTypeBuilder
         var inputBytes = input.ToArray();
         var fileTypesBytes = Array.Empty<byte>();
         Array.Copy(inputBytes, Indexes.FILE_TYPE_INDEX, fileTypesBytes, 0, Lengths.FILE_TYPE_LENGTH);
-        var generator = new Generate();
+        var generator = new Generator.Byte.ByteGenerator();
         var typeFile = generator.FromByteArray<FileTypes>(fileTypesBytes);
         return typeFile;
     }

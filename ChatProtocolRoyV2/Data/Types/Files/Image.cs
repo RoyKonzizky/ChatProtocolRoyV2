@@ -7,7 +7,7 @@ public class Image : FileMessage
     #region Ctor
 
     public Image(Guid guid, DateOnly dateOnly, string fileName, string dataInFile, FileTypes fileType)
-        : base(guid, FileTypes.Image, dateOnly, fileName, dataInFile, fileType)
+        : base(guid, MessageType.FileMessage, dateOnly, fileName, dataInFile, FileTypes.Image)
     {
     }
 

@@ -5,8 +5,8 @@ namespace ChatProtocolRoyV2.Data.Types;
 public abstract class FileMessage : MessageBase
 {
     #region Ctor
-
-    protected FileMessage(Guid guid, object type, DateOnly dateOnly, string fileName, string dataInFile,
+    //TODO  change from object to messageType and correct if problems arise from the change
+    protected FileMessage(Guid guid, MessageType type, DateOnly dateOnly, string fileName, string dataInFile,
         FileTypes fileType)
         : base(guid, MessageType.FileMessage)
     {

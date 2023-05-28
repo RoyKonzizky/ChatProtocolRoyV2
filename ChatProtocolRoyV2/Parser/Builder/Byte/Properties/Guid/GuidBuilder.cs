@@ -10,7 +10,7 @@ public class GuidBuilder : IGuidBuilder
         var inputBytes = input.ToArray();
         var guidBytes = Array.Empty<byte>();
         Array.Copy(inputBytes, Indexes.GUID_INDEX, guidBytes, 0, 16);
-        var generator = new Generate();
+        var generator = new Generator.Byte.ByteGenerator();
         var data = generator.FromByteArray<System.Guid>(guidBytes);
         return data;
     }

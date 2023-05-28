@@ -10,7 +10,7 @@ public class TailBuilder : ITailBuilder
         var inputBytes = input.ToArray();
         var tailBytes = Array.Empty<byte>();
         Array.Copy(inputBytes, inputBytes[^1], tailBytes, 0, 1);
-        var generator = new Generate();
+        var generator = new Generator.Byte.ByteGenerator();
         var tail = generator.FromByteArray<MessageEdge>(tailBytes);
         return tail;
     }

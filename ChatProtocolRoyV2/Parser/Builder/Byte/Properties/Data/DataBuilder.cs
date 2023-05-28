@@ -16,7 +16,7 @@ public class DataBuilder : IDataBuilder
         var inputBytes = enumerable.ToArray();
         var dataBytes = Array.Empty<byte>();
         var lengthBuilder = new LengthBuilder();
-        var generator = new Generate();
+        var generator = new Generator.Byte.ByteGenerator();
         string data;
         switch (type)
         {

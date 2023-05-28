@@ -14,7 +14,7 @@ public class LengthBuilder : ILengthBuilder
         var type = typeBuilder.Build(enumerable);
         var inputBytes = enumerable.ToArray();
         var nameBytes = Array.Empty<byte>();
-        var generator = new Generate();
+        var generator = new Generator.Byte.ByteGenerator();
         var len = 0;
         switch (type)
         {

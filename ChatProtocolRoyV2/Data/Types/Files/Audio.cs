@@ -7,7 +7,7 @@ public class Audio : FileMessage
     #region Ctor
 
     public Audio(Guid guid, DateOnly dateOnly, string fileName, string dataInFile, FileTypes fileType)
-        : base(guid, FileTypes.Audio, dateOnly, fileName, dataInFile, fileType)
+        : base(guid, MessageType.FileMessage, dateOnly, fileName, dataInFile, FileTypes.Audio)
     {
     }
 

@@ -20,7 +20,7 @@ public static class Indexes
 
     #endregion
 
-
+    //TODO remove from file of consts and calc during runtime instead
     #region ConstsForFileMessage
 
     public const int FILE_TYPE_INDEX = TYPE_INDEX + TYPE_LENGTH;

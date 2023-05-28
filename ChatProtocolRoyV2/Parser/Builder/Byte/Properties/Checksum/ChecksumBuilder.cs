@@ -19,7 +19,7 @@ public class ChecksumBuilder : IChecksumBuilder
         var checksumBytes = Array.Empty<byte>();
         var typeBuilder = new TypeBuilder();
         var type = typeBuilder.Build(enumerable);
-        var generator = new Generate();
+        var generator = new Generator.Byte.ByteGenerator();
         var lengthBuilder = new LengthBuilder();
         uint checksum;
         switch (type)
