@@ -1,37 +1,41 @@
-﻿using System.Collections;
+﻿using ChatProtocolRoyV2.ChecksumCalculator.Byte;
+using ChatProtocolRoyV2.Data;
+using ChatProtocolRoyV2.Data.Types;
 using ChatProtocolRoyV2.Entities;
 
 namespace ChatProtocolRoyV2.Generator.Byte;
 
 public class ByteGenerator : IByteGenerator
 {
-    public IEnumerable<byte> Generate(ArrayList arrList)
+    //TODO make sure no problem arise from the change in the method
+    //TODO maybe write methods to clean the methods as it does multiple things
+    public IEnumerable<byte> Generate(MessageBase messageBase)
     {
-        //TODO use constants with the arraylist or dict instead of the arraylist
-        //TODO maybe write methods to clean the methods as it does multiple things
-        var sync = (MessageEdge)arrList[0]!;
-        var id = (Guid)arrList[1]!;
-        var type = (MessageType)arrList[2]!;
+        var sync = MessageEdge.Sync;
+        var id = messageBase.Id;
+        var type = messageBase.Type;
 
         int dataLength;
         string data;
         uint checksum;
-        MessageEdge tail;
+        var tail = MessageEdge.Tail;
 
+        var calculator = new ChecksumByteArrayCalculator();
+        
         byte[] completeByteArray;
 
         switch (type)
         {
             case MessageType.FileMessage:
             {
-                var fileType = (FileTypes)arrList[3]!;
-                var dateOnly = (DateOnly)arrList[4]!;
-                var fileName = (string)arrList[5]!;
+                var fileMessage = (FileMessage)messageBase;
+                var fileType = fileMessage.FileType;
+                var dateOnly = fileMessage.DateOnly;
+                var fileName = fileMessage.FileName;
 
-                dataLength = (int)arrList[6]!;
-                data = (string)arrList[7]!;
-                checksum = (uint)arrList[8]!;
-                tail = (MessageEdge)arrList[9]!;
+                data = fileMessage.DataInFile;
+                dataLength = data.Length;
+                checksum = calculator.CalculateChecksum(ObjectToByteArray(data));
 
                 completeByteArray = CombineByteArrays(ObjectToByteArray(sync),
                     ObjectToByteArray(id), ObjectToByteArray(type),
@@ -45,10 +49,10 @@ public class ByteGenerator : IByteGenerator
 
             case MessageType.TextMessage:
             {
-                dataLength = (int)arrList[3]!;
-                data = (string)arrList[4]!;
-                checksum = (uint)arrList[5]!;
-                tail = (MessageEdge)arrList[6]!;
+                var textMessage = (TextMessage)messageBase;
+                data = textMessage.Content;
+                dataLength = data.Length;
+                checksum = calculator.CalculateChecksum(ObjectToByteArray(data));
 
                 completeByteArray = CombineByteArrays(ObjectToByteArray(sync),
                     ObjectToByteArray(id), ObjectToByteArray(type),
@@ -65,7 +69,8 @@ public class ByteGenerator : IByteGenerator
             }
         }
     }
-
+    
+    
     public byte[] ObjectToByteArray<T>(T obj)
     {
         using var memoryStream = new MemoryStream();
