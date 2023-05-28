@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using ChatProtocolRoyV2.ChecksumCalculator.Byte;
-using ChatProtocolRoyV2.Generator.Byte;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Director;
 
 namespace ChatProtocolRoyV2.Parser.Byte;
 
 public class ParseBytes : IParseBytes
 {
+    //TODO find a different solution, arraylists are bad for security
+    //TODO return MessageBase
     public ArrayList Parser(byte[] packetBytes)
     {
         var director = new Director();
