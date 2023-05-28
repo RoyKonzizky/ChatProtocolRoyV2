@@ -33,7 +33,7 @@ public class ByteGenerator : IByteGenerator
                 var dateOnly = fileMessage.DateOnly;
                 var fileName = fileMessage.FileName;
 
-                data = fileMessage.DataInFile;
+                data = fileMessage.Data;
                 dataLength = data.Length;
                 checksum = calculator.CalculateChecksum(ObjectToByteArray(data));
 
@@ -50,7 +50,7 @@ public class ByteGenerator : IByteGenerator
             case MessageType.TextMessage:
             {
                 var textMessage = (TextMessage)messageBase;
-                data = textMessage.Content;
+                data = textMessage.Data;
                 dataLength = data.Length;
                 checksum = calculator.CalculateChecksum(ObjectToByteArray(data));
 

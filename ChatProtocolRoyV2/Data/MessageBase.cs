@@ -6,7 +6,6 @@ public abstract class MessageBase
 {
     #region Ctor
 
-    //todo message type
     protected MessageBase(Guid id, MessageType type)
     {
         Id = id;
@@ -22,4 +21,3 @@ public abstract class MessageBase
 
     #endregion
 }
-//TODO change object to a more concrete type

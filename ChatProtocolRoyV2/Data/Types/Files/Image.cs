@@ -6,12 +6,11 @@ public class Image : FileMessage
 {
     #region Ctor
 
-    public Image(Guid guid, DateOnly dateOnly, string fileName, string dataInFile, FileTypes fileType)
-        : base(guid, MessageType.FileMessage, dateOnly, fileName, dataInFile, FileTypes.Image)
+    public Image(Guid guid, string data, DateOnly dateOnly, string fileName, FileTypes fileType)
+        : base(guid, MessageType.FileMessage, data, dateOnly, fileName, FileTypes.Image)
     {
     }
 
     #endregion
 }
 
-//TODO for audio too, remove the fileType or the FileTypes.Image/Audio as it is no longer needed

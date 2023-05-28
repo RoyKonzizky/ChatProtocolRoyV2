@@ -6,9 +6,9 @@ public class TextMessage : MessageBase
 {
     #region Ctor
 
-    public TextMessage(Guid guid, string content) : base(guid, MessageType.TextMessage)
+    public TextMessage(Guid guid, string data) : base(guid, MessageType.TextMessage)
     {
-        Content = content;
+        Data = data;
     }
 
     #endregion
@@ -16,7 +16,7 @@ public class TextMessage : MessageBase
 
     #region Properties
 
-    public string Content { get; }
+    public string Data { get; }
 
     #endregion
 }

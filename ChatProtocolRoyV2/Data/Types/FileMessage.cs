@@ -5,14 +5,14 @@ namespace ChatProtocolRoyV2.Data.Types;
 public abstract class FileMessage : MessageBase
 {
     #region Ctor
-    //TODO  change from object to messageType and correct if problems arise from the change
-    protected FileMessage(Guid guid, MessageType type, DateOnly dateOnly, string fileName, string dataInFile,
+    protected FileMessage(Guid guid, MessageType type, string data,
+        DateOnly dateOnly, string fileName,
         FileTypes fileType)
         : base(guid, MessageType.FileMessage)
     {
         FileName = fileName;
         DateOnly = dateOnly;
-        DataInFile = dataInFile;
+        Data = data;
         FileType = fileType;
     }
 
@@ -22,7 +22,7 @@ public abstract class FileMessage : MessageBase
     #region Properties
 
     public DateOnly DateOnly { get; }
-    public string DataInFile { get; }
+    public string Data { get; }
     public FileTypes FileType { get; }
     public string FileName { get; }
 
