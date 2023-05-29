@@ -19,16 +19,16 @@ public static class Lengths
     public const int LENGTH_OF_DATA_LENGTH = 4;
 
 
-    #region File
+        #region File
 
-    public const int FILE_NAME_LENGTH = 8;
+        public const int FILE_NAME_LENGTH = 8;
 
-    public const int FILE_TYPE_LENGTH = 4;
+        public const int FILE_TYPE_LENGTH = 4;
 
-    //use sizeof(int) * 3, explain that dateonly is 3 fields of int to represent the full date
-    public const int DATE_ONLY_LENGTH = 12;
+        //use sizeof(int) * 3, explain that DateOnly is 3 fields of int to represent the full date
+        public const int DATE_ONLY_LENGTH = 12;
 
-    #endregion
+        #endregion
 
     #endregion
 }
