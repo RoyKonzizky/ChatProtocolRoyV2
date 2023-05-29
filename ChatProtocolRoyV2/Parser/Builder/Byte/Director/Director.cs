@@ -11,32 +11,31 @@ using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Sync;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Tail;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Type;
 
-namespace ChatProtocolRoyV2.Parser.Builder.Byte.Director
+namespace ChatProtocolRoyV2.Parser.Builder.Byte.Director;
+
+public class Director : IDirector
 {
-    public class Director : IDirector
+    public MessageBase Build(IEnumerable<byte> input)
     {
-        public MessageBase Build(IEnumerable<byte> input)
+        var enumerable = input as byte[] ?? input.ToArray();
+        var sync = new SyncBuilder().Build(enumerable);
+        var guid = new GuidBuilder().Build(enumerable);
+        var type = new TypeBuilder().Build(enumerable);
+        var checksum = new ChecksumBuilder().Build(enumerable);
+        var data = new DataBuilder().Build(enumerable);
+        var lenData = new LengthBuilder().Build(enumerable);
+        var tail = new TailBuilder().Build(enumerable);
+
+        var textMessageBuilder = new TextMessageBuilder();
+        var fileMessageBuilder = new FileMessageBuilder();
+
+        var messageBase = type switch
         {
-            var enumerable = input as byte[] ?? input.ToArray();
-            var sync = new SyncBuilder().Build(enumerable);
-            var guid = new GuidBuilder().Build(enumerable);
-            var type = new TypeBuilder().Build(enumerable);
-            var checksum = new ChecksumBuilder().Build(enumerable);
-            var data = new DataBuilder().Build(enumerable);
-            var lenData = new LengthBuilder().Build(enumerable);
-            var tail = new TailBuilder().Build(enumerable);
+            MessageType.TextMessage => textMessageBuilder.Build(enumerable),
+            MessageType.FileMessage => fileMessageBuilder.Build(enumerable),
+            _ => throw new Exception("Invalid type")
+        };
 
-            var textMessageBuilder = new TextMessageBuilder();
-            var fileMessageBuilder = new FileMessageBuilder();
-
-            var messageBase = type switch
-            {
-                MessageType.TextMessage => textMessageBuilder.Build(enumerable),
-                MessageType.FileMessage => fileMessageBuilder.Build(enumerable),
-                _ => throw new Exception("Invalid type")
-            };
-
-            return messageBase;
-        }
+        return messageBase;
     }
 }

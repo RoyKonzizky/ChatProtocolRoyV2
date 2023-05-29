@@ -6,7 +6,7 @@ public class Audio : FileMessage
 {
     #region Ctor
 
-    public Audio(Guid guid, string data, DateOnly dateOnly, string fileName, FileTypes fileType)
+    public Audio(Guid guid, string data, DateOnly dateOnly, string fileName)
         : base(guid, MessageType.FileMessage, data, dateOnly, fileName, FileTypes.Audio)
     {
     }

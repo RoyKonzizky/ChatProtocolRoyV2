@@ -10,10 +10,12 @@ namespace ChatProtocolRoyV2.Parser.Byte;
 
 public class ParseBytes : IParseBytes
 {
-    public MessageBase Parser(byte[] packetBytes)
+    public MessageBase Parser(IEnumerable<byte> packetBytes)
     {
+        //TODO should be way shorter, two lines 
         var director = new Director();
-        var packetMessageBase = director.Build(packetBytes);
+        IEnumerable<byte> enumerable = packetBytes as byte[] ?? packetBytes.ToArray();
+        var packetMessageBase = director.Build(enumerable);
         var calc = new ChecksumByteArrayCalculator();
         var generator = new Generator.Byte.ByteGenerator();
         var checksumBuilder = new ChecksumBuilder();
@@ -21,7 +23,7 @@ public class ParseBytes : IParseBytes
         {
             case MessageType.FileMessage:
                 var fileMessage = (FileMessage)packetMessageBase;
-                if (checksumBuilder.Build(packetBytes) == calc.CalculateChecksum(generator.ObjectToByteArray(fileMessage.Data)))
+                if (checksumBuilder.Build(enumerable) == calc.CalculateChecksum(generator.ObjectToByteArray(fileMessage.Data)))
                 {
                     return packetMessageBase;
                 }
@@ -29,7 +31,7 @@ public class ParseBytes : IParseBytes
 
             case MessageType.TextMessage:
                 var textMessage = (TextMessage)packetMessageBase;
-                if (checksumBuilder.Build(packetBytes) == calc.CalculateChecksum(generator.ObjectToByteArray(textMessage.Data)))
+                if (checksumBuilder.Build(enumerable) == calc.CalculateChecksum(generator.ObjectToByteArray(textMessage.Data)))
                 {
                     return packetMessageBase;
                 }
@@ -40,4 +42,5 @@ public class ParseBytes : IParseBytes
 }
 
 //parser is the reverse process of the generator
-//TODO read about down/up-casting and TryParse, MessageBase messageBase = new FileMessage(),byte.TryParse()
+//TODO read about down/up-casting and TryParse, MessageBase messageBase = new FileMessage(),byte.TryParse(), yield 
+//TODO parser for each main type, read about Provider

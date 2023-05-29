@@ -70,9 +70,10 @@ public class ByteGenerator : IByteGenerator
         }
     }
     
-    
+    //TODO helper method module
     public byte[] ObjectToByteArray<T>(T obj)
     {
+        //TODO change from T to a more concrete types from this project, security concerns
         using var memoryStream = new MemoryStream();
         using var binaryWriter = new BinaryWriter(memoryStream);
         var objString = obj!.ToString()!;
