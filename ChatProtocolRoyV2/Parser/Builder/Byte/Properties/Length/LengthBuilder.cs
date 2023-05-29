@@ -1,6 +1,6 @@
 ﻿using ChatProtocolRoyV2.Constants;
 using ChatProtocolRoyV2.Entities;
-using ChatProtocolRoyV2.Generator.Byte;
+using ChatProtocolRoyV2.Helper;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Type;
 
 namespace ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Length;
@@ -14,18 +14,18 @@ public class LengthBuilder : ILengthBuilder
         var type = typeBuilder.Build(enumerable);
         var inputBytes = enumerable.ToArray();
         var nameBytes = Array.Empty<byte>();
-        var generator = new Generator.Byte.ByteGenerator();
+        var helper = new Help();
         var len = 0;
         switch (type)
         {
             case MessageType.TextMessage:
                 Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX_TEXT, nameBytes, 0, Lengths.LENGTH_OF_DATA_LENGTH);
-                len = generator.FromByteArray<int>(nameBytes);
+                len = helper.FromByteArray<int>(nameBytes);
                 return len;
 
             case MessageType.FileMessage:
                 Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX_FILE, nameBytes, 0, Lengths.LENGTH_OF_DATA_LENGTH);
-                len = generator.FromByteArray<int>(nameBytes);
+                len = helper.FromByteArray<int>(nameBytes);
                 return len;
 
             default:

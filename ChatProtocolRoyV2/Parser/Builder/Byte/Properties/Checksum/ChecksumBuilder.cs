@@ -1,6 +1,6 @@
 ﻿using ChatProtocolRoyV2.Constants;
 using ChatProtocolRoyV2.Entities;
-using ChatProtocolRoyV2.Generator.Byte;
+using ChatProtocolRoyV2.Helper;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Length;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Type;
 
@@ -19,18 +19,18 @@ public class ChecksumBuilder : IChecksumBuilder
         var checksumBytes = Array.Empty<byte>();
         var typeBuilder = new TypeBuilder();
         var type = typeBuilder.Build(enumerable);
-        var generator = new Generator.Byte.ByteGenerator();
+        var helper = new Help();
         var lengthBuilder = new LengthBuilder();
         uint checksum;
         switch (type)
         {
             case MessageType.TextMessage:
                 Array.Copy(inputBytes, lengthBuilder.Build(enumerable) + 1, checksumBytes, 0, Lengths.CHECKSUM_LENGTH);
-                checksum = generator.FromByteArray<uint>(checksumBytes);
+                checksum = helper.FromByteArray<uint>(checksumBytes);
                 return checksum;
             case MessageType.FileMessage:
                 Array.Copy(inputBytes, lengthBuilder.Build(enumerable) + 1, checksumBytes, 0, Lengths.CHECKSUM_LENGTH);
-                checksum = generator.FromByteArray<uint>(checksumBytes);
+                checksum = helper.FromByteArray<uint>(checksumBytes);
                 return checksum;
 
             default:

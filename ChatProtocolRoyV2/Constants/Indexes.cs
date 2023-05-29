@@ -4,6 +4,12 @@ using static Lengths;
 
 public static class Indexes
 {
+    #region ConstsForTextMessage
+
+    public const int LENGTH_OF_DATA_INDEX_TEXT = TYPE_INDEX + TYPE_LENGTH;
+
+    #endregion
+
     #region ConstsForAllTypes
 
     public const int SYNC_INDEX = 0;
@@ -14,13 +20,8 @@ public static class Indexes
 
     #endregion
 
-    #region ConstsForTextMessage
-
-    public const int LENGTH_OF_DATA_INDEX_TEXT = TYPE_INDEX + TYPE_LENGTH;
-
-    #endregion
-
     //TODO remove from file of consts and calc during runtime instead
+
     #region ConstsForFileMessage
 
     public const int FILE_TYPE_INDEX = TYPE_INDEX + TYPE_LENGTH;

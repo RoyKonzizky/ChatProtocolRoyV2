@@ -40,7 +40,8 @@ public class ByteGenerator : IByteGenerator
                 completeByteArray = helper.CombineByteArrays(helper.ObjectToByteArray(sync),
                     helper.ObjectToByteArray(id), helper.ObjectToByteArray(type),
                     helper.ObjectToByteArray(dataLength), helper.ObjectToByteArray(data),
-                    helper.ObjectToByteArray(fileType), helper.ObjectToByteArray(dateOnly), helper.ObjectToByteArray(fileName),
+                    helper.ObjectToByteArray(fileType), helper.ObjectToByteArray(dateOnly),
+                    helper.ObjectToByteArray(fileName),
                     helper.ObjectToByteArray(checksum),
                     helper.ObjectToByteArray(tail));
 
@@ -69,7 +70,6 @@ public class ByteGenerator : IByteGenerator
             }
         }
     }
-    
 }
 
 //why IEnumerable better-more flexible as it can return more specific types when needed in certain cases without breaking the footprint(Memory footprint refers to the amount of main memory that a program uses or references while running) of the method)
