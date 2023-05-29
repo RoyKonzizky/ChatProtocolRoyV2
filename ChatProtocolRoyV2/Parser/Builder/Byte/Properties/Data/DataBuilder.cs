@@ -21,7 +21,7 @@ public class DataBuilder : IDataBuilder
         switch (type)
         {
             case MessageType.TextMessage:
-                Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX_FILE + 1, dataBytes, 0,
+                Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX_TEXT + 1, dataBytes, 0,
                     lengthBuilder.Build(enumerable));
                 data = generator.FromByteArray<string>(dataBytes);
                 return data;
