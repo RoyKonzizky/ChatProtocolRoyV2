@@ -1,5 +1,5 @@
 ﻿using ChatProtocolRoyV2.Entities;
-using ChatProtocolRoyV2.Generator.Byte;
+using ChatProtocolRoyV2.Helper;
 
 namespace ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Tail;
 
@@ -10,8 +10,8 @@ public class TailBuilder : ITailBuilder
         var inputBytes = input.ToArray();
         var tailBytes = Array.Empty<byte>();
         Array.Copy(inputBytes, inputBytes[^1], tailBytes, 0, 1);
-        var generator = new Generator.Byte.ByteGenerator();
-        var tail = generator.FromByteArray<MessageEdge>(tailBytes);
+        var helper = new Help();
+        var tail = helper.FromByteArray<MessageEdge>(tailBytes);
         return tail;
     }
 }

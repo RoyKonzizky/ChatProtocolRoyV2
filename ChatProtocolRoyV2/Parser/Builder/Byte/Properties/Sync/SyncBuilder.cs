@@ -1,6 +1,6 @@
 ﻿using ChatProtocolRoyV2.Constants;
 using ChatProtocolRoyV2.Entities;
-using ChatProtocolRoyV2.Generator.Byte;
+using ChatProtocolRoyV2.Helper;
 
 namespace ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Sync;
 
@@ -11,8 +11,8 @@ public class SyncBuilder : ISyncBuilder
         var inputBytes = input.ToArray();
         var syncBytes = Array.Empty<byte>();
         Array.Copy(inputBytes, Indexes.SYNC_INDEX, syncBytes, 0, 1);
-        var generator = new Generator.Byte.ByteGenerator();
-        var sync = generator.FromByteArray<MessageEdge>(syncBytes);
+        var helper = new Help();
+        var sync = helper.FromByteArray<MessageEdge>(syncBytes);
         return sync;
     }
 }

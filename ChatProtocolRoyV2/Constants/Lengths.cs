@@ -25,7 +25,7 @@ public static class Lengths
 
         public const int FILE_TYPE_LENGTH = 4;
 
-        //use sizeof(int) * 3, explain that dateonly is 3 fields of int to represent the full date
+        //use sizeof(int) * 3, explain that DateOnly is 3 fields of int to represent the full date
         public const int DATE_ONLY_LENGTH = 12;
 
         #endregion

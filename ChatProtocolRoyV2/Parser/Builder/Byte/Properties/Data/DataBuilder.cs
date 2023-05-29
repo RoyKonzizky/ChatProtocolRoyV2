@@ -1,6 +1,6 @@
 ﻿using ChatProtocolRoyV2.Constants;
 using ChatProtocolRoyV2.Entities;
-using ChatProtocolRoyV2.Generator.Byte;
+using ChatProtocolRoyV2.Helper;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Length;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Type;
 
@@ -16,19 +16,19 @@ public class DataBuilder : IDataBuilder
         var inputBytes = enumerable.ToArray();
         var dataBytes = Array.Empty<byte>();
         var lengthBuilder = new LengthBuilder();
-        var generator = new Generator.Byte.ByteGenerator();
+        var helper = new Help();
         string data;
         switch (type)
         {
             case MessageType.TextMessage:
-                Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX_FILE + 1, dataBytes, 0,
+                Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX + 1, dataBytes, 0,
                     lengthBuilder.Build(enumerable));
-                data = generator.FromByteArray<string>(dataBytes);
+                data = helper.FromByteArray<string>(dataBytes);
                 return data;
             case MessageType.FileMessage:
-                Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX_FILE + 1, dataBytes, 0,
+                Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX + 1, dataBytes, 0,
                     lengthBuilder.Build(enumerable));
-                data = generator.FromByteArray<string>(dataBytes);
+                data = helper.FromByteArray<string>(dataBytes);
                 return data;
 
             default:
