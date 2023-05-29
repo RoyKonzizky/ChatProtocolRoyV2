@@ -8,60 +8,35 @@ namespace ChatProtocolRoyV2.Generator.Byte;
 
 public class ByteGenerator : IByteGenerator
 {
-    //TODO maybe write methods to clean the methods as it does multiple things
+    //TODO design patterns can help writing a cleaner version of this code
     public IEnumerable<byte> Generate(MessageBase messageBase)
     {
-        var sync = MessageEdge.Sync;
-        var id = messageBase.Id;
-        var type = messageBase.Type;
-
-        int dataLength;
-        string data;
-        uint checksum;
-        var tail = MessageEdge.Tail;
-
         var calculator = new ChecksumByteArrayCalculator();
         var helper = new Help();
-        byte[] completeByteArray;
 
-        switch (type)
+        switch (messageBase.Type)
         {
             case MessageType.FileMessage:
             {
                 var fileMessage = (FileMessage)messageBase;
-                var fileType = fileMessage.FileType;
-                var dateOnly = fileMessage.DateOnly;
-                var fileName = fileMessage.FileName;
-
-                data = fileMessage.Data;
-                dataLength = data.Length;
-                checksum = calculator.CalculateChecksum(helper.ObjectToByteArray(data));
-
-                completeByteArray = helper.CombineByteArrays(helper.ObjectToByteArray(sync),
-                    helper.ObjectToByteArray(id), helper.ObjectToByteArray(type),
-                    helper.ObjectToByteArray(dataLength), helper.ObjectToByteArray(data),
-                    helper.ObjectToByteArray(fileType), helper.ObjectToByteArray(dateOnly),
-                    helper.ObjectToByteArray(fileName),
-                    helper.ObjectToByteArray(checksum),
-                    helper.ObjectToByteArray(tail));
-
-                return completeByteArray;
+                
+                return helper.CombineByteArrays(helper.ObjectToByteArray(MessageEdge.Sync),
+                    helper.ObjectToByteArray(messageBase.Id), helper.ObjectToByteArray(messageBase.Type),
+                    helper.ObjectToByteArray(fileMessage.Data.Length), helper.ObjectToByteArray(fileMessage.Data),
+                    helper.ObjectToByteArray(fileMessage.FileType), helper.ObjectToByteArray(fileMessage.DateOnly), helper.ObjectToByteArray(fileMessage.FileName),
+                    helper.ObjectToByteArray(calculator.CalculateChecksum(helper.ObjectToByteArray(fileMessage.Data))),
+                    helper.ObjectToByteArray(MessageEdge.Tail));
             }
 
             case MessageType.TextMessage:
             {
                 var textMessage = (TextMessage)messageBase;
-                data = textMessage.Data;
-                dataLength = data.Length;
-                checksum = calculator.CalculateChecksum(helper.ObjectToByteArray(data));
 
-                completeByteArray = helper.CombineByteArrays(helper.ObjectToByteArray(sync),
-                    helper.ObjectToByteArray(id), helper.ObjectToByteArray(type),
-                    helper.ObjectToByteArray(dataLength), helper.ObjectToByteArray(data),
-                    helper.ObjectToByteArray(checksum),
-                    helper.ObjectToByteArray(tail));
-
-                return completeByteArray;
+                return helper.CombineByteArrays(helper.ObjectToByteArray(MessageEdge.Sync),
+                    helper.ObjectToByteArray(messageBase.Id), helper.ObjectToByteArray(messageBase.Type),
+                    helper.ObjectToByteArray(textMessage.Data.Length), helper.ObjectToByteArray(textMessage.Data),
+                    helper.ObjectToByteArray(calculator.CalculateChecksum(helper.ObjectToByteArray(textMessage.Data))),
+                    helper.ObjectToByteArray(MessageEdge.Tail));
             }
 
             default:
