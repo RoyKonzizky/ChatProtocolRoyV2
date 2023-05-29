@@ -10,10 +10,6 @@ public class ChecksumBuilder : IChecksumBuilder
 {
     public uint Build(IEnumerable<byte> input)
     {
-        //find the index of the checksum in the package
-        //extract the bytes
-        //remove pending chart
-        //parse to uint in the correct format
         var enumerable = input as byte[] ?? input.ToArray();
         var inputBytes = enumerable.ToArray();
         var checksumBytes = Array.Empty<byte>();
