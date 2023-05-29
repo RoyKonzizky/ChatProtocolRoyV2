@@ -1,7 +1,7 @@
 ﻿using ChatProtocolRoyV2.ChecksumCalculator.Byte;
 using ChatProtocolRoyV2.Data;
 using ChatProtocolRoyV2.Entities;
-using ChatProtocolRoyV2.Helper;
+using ChatProtocolRoyV2.Helper.Byte;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Message.Types.File;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Message.Types.Text;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Checksum;
@@ -23,7 +23,7 @@ public class Director : IDirector
         var fileMessageBuilder = new FileMessageBuilder();
 
         var calculator = new ChecksumByteArrayCalculator();
-        var helper = new Help();
+        var helper = new HelpBytes();
         var checksumFromMessageData = calculator.CalculateChecksum(helper.ObjectToByteArray(data));
 
 

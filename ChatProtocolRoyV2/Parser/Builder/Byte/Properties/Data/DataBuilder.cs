@@ -1,6 +1,7 @@
 ﻿using ChatProtocolRoyV2.Constants;
 using ChatProtocolRoyV2.Entities;
 using ChatProtocolRoyV2.Helper;
+using ChatProtocolRoyV2.Helper.Byte;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Length;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Type;
 
@@ -16,7 +17,7 @@ public class DataBuilder : IDataBuilder
         var inputBytes = enumerable.ToArray();
         var dataBytes = Array.Empty<byte>();
         var lengthBuilder = new LengthBuilder();
-        var helper = new Help();
+        var helper = new HelpBytes();
         string data;
         switch (type)
         {

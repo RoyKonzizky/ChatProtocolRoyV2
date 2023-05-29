@@ -1,6 +1,7 @@
 ﻿using ChatProtocolRoyV2.Constants;
 using ChatProtocolRoyV2.Entities;
 using ChatProtocolRoyV2.Helper;
+using ChatProtocolRoyV2.Helper.Byte;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Length;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Type;
 
@@ -15,7 +16,7 @@ public class ChecksumBuilder : IChecksumBuilder
         var checksumBytes = Array.Empty<byte>();
         var typeBuilder = new TypeBuilder();
         var type = typeBuilder.Build(enumerable);
-        var helper = new Help();
+        var helper = new HelpBytes();
         var lengthBuilder = new LengthBuilder();
         uint checksum;
         switch (type)

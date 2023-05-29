@@ -1,6 +1,6 @@
 ﻿using ChatProtocolRoyV2.Constants;
 using ChatProtocolRoyV2.Entities;
-using ChatProtocolRoyV2.Helper;
+using ChatProtocolRoyV2.Helper.Byte;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Length;
 
 
@@ -14,7 +14,7 @@ public class FileTypeBuilder : IFileTypeBuilder
         var fileTypesBytes = Array.Empty<byte>();
         var lengthBuilder = new LengthBuilder();
         Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX + 1 +  lengthBuilder.Build(inputBytes), fileTypesBytes, 0, Lengths.FILE_TYPE_LENGTH);
-        var helper = new Help();
+        var helper = new HelpBytes();
         var typeFile = helper.FromByteArray<FileTypes>(fileTypesBytes);
         return typeFile;
     }

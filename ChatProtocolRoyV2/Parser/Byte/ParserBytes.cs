@@ -1,18 +1,32 @@
 ﻿using ChatProtocolRoyV2.Data;
+using ChatProtocolRoyV2.Entities;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Director;
 
-namespace ChatProtocolRoyV2.Parser.Byte;
-
-public class ParseBytes : IParseBytes
+namespace ChatProtocolRoyV2.Parser.Byte
 {
-    public MessageBase Parser(IEnumerable<byte> packetBytes)
+    public class ParseBytes : IParseBytes
     {
-        var director = new Director();
-        IEnumerable<byte> enumerable = packetBytes as byte[] ?? packetBytes.ToArray();
-        var packetMessageBase = director.Build(enumerable);
-        return packetMessageBase;
+        public MessageBase Parser(IEnumerable<byte> packetBytes)
+        {
+            var director = new Director();
+            var enumerable = packetBytes as byte[] ?? packetBytes.ToArray();
+            var packetMessageBase = director.Build(enumerable);
+
+            var messageType = packetMessageBase.Type;
+            switch (messageType)
+            {
+                case MessageType.TextMessage:
+                    var textMessageParser = new TextMessageParser();
+                    return textMessageParser.Parse(packetMessageBase);
+                case MessageType.FileMessage:
+                    var fileMessageParser = new FileMessageParser();
+                    return fileMessageParser.Parse(packetMessageBase);
+                default:
+                    throw new Exception("Unknown message type");
+            }
+        }
     }
 }
 
 //TODO read about TryParse, yield 
-//TODO parser for each main type, read about Provider
+//TODO read about Provider
