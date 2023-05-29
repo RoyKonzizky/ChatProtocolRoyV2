@@ -9,7 +9,7 @@ public class DateOnlyBuilder : IDateOnlyBuilder
     {
         var inputBytes = input.ToArray();
         var dateOnlyBytes = Array.Empty<byte>();
-        Array.Copy(inputBytes, Indexes.DATE_ONLY_INDEX, dateOnlyBytes, 0, Lengths.DATE_ONLY_LENGTH);
+        Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX + 1 +  lengthBuilder.Build(inputBytes) + Lengths.FILE_TYPE_LENGTH, dateOnlyBytes, 0, Lengths.DATE_ONLY_LENGTH);
         var helper = new Help();
         var dateOnly = helper.FromByteArray<System.DateOnly>(dateOnlyBytes);
         return dateOnly;

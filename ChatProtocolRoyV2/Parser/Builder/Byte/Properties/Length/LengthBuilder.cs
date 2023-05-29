@@ -19,12 +19,12 @@ public class LengthBuilder : ILengthBuilder
         switch (type)
         {
             case MessageType.TextMessage:
-                Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX_TEXT, nameBytes, 0, Lengths.LENGTH_OF_DATA_LENGTH);
+                Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX, nameBytes, 0, Lengths.LENGTH_OF_DATA_LENGTH);
                 len = helper.FromByteArray<int>(nameBytes);
                 return len;
 
             case MessageType.FileMessage:
-                Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX_FILE, nameBytes, 0, Lengths.LENGTH_OF_DATA_LENGTH);
+                Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX, nameBytes, 0, Lengths.LENGTH_OF_DATA_LENGTH);
                 len = helper.FromByteArray<int>(nameBytes);
                 return len;
 

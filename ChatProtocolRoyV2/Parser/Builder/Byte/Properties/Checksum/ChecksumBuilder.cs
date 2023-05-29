@@ -29,7 +29,7 @@ public class ChecksumBuilder : IChecksumBuilder
                 checksum = helper.FromByteArray<uint>(checksumBytes);
                 return checksum;
             case MessageType.FileMessage:
-                Array.Copy(inputBytes, lengthBuilder.Build(enumerable) + 1, checksumBytes, 0, Lengths.CHECKSUM_LENGTH);
+                Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX + 1 +  lengthBuilder.Build(inputBytes) + Lengths.FILE_TYPE_LENGTH + Lengths.DATE_ONLY_LENGTH + Lengths.FILE_NAME_LENGTH, checksumBytes, 0, Lengths.CHECKSUM_LENGTH);
                 checksum = helper.FromByteArray<uint>(checksumBytes);
                 return checksum;
 
