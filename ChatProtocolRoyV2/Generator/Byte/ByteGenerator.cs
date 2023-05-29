@@ -1,55 +1,81 @@
-﻿using ChatProtocolRoyV2.ChecksumCalculator.Byte;
+﻿using System;
+using System.Collections.Generic;
+using ChatProtocolRoyV2.ChecksumCalculator.Byte;
 using ChatProtocolRoyV2.Data;
 using ChatProtocolRoyV2.Data.Types;
 using ChatProtocolRoyV2.Entities;
-using ChatProtocolRoyV2.Helper;
+using ChatProtocolRoyV2.Helper.Byte;
 
-namespace ChatProtocolRoyV2.Generator.Byte;
-
-public class ByteGenerator : IByteGenerator
+namespace ChatProtocolRoyV2.Generator.Byte
 {
-    //TODO design patterns can help writing a cleaner version of this code
-    //TODO implement factory method for all parts the messages share, and decorator for sync and tail
-    //TODO use constructor to not use the "new" keyword
-    //TODO give it an interface instead of class, i.e. instead of ChecksumByteArrayCalculator use IChecksumByteArrayCalculator
-    
-    public IEnumerable<byte> Generate(MessageBase messageBase)
+    public class ByteGenerator : IByteGenerator
     {
-        var calculator = new ChecksumByteArrayCalculator();
-        var helper = new Help();
+        // TODO: design patterns can help writing a cleaner version of this code
+        // TODO: implement factory method for all parts the messages share, and decorator for sync and checksum and tail
+        // TODO: use constructor to not use the "new" keyword
+        // TODO: give it an interface instead of class, i.e. instead of ChecksumByteArrayCalculator use IChecksumByteArrayCalculator
 
-        switch (messageBase.Type)
+        private readonly IChecksumByteArrayCalculator _checksumCalculator;
+        private readonly IHelpBytes _helper;
+
+        public ByteGenerator(IChecksumByteArrayCalculator checksumCalculator, IHelpBytes helper)
         {
-            case MessageType.FileMessage:
-            {
-                var fileMessage = (FileMessage)messageBase;
-                
-                return helper.CombineByteArrays(helper.ObjectToByteArray(MessageEdge.Sync),
-                    helper.ObjectToByteArray(messageBase.Id), helper.ObjectToByteArray(messageBase.Type),
-                    helper.ObjectToByteArray(fileMessage.Data.Length), helper.ObjectToByteArray(fileMessage.Data),
-                    helper.ObjectToByteArray(fileMessage.FileType), helper.ObjectToByteArray(fileMessage.DateOnly), helper.ObjectToByteArray(fileMessage.FileName),
-                    helper.ObjectToByteArray(calculator.CalculateChecksum(helper.ObjectToByteArray(fileMessage.Data))),
-                    helper.ObjectToByteArray(MessageEdge.Tail));
-            }
+            _checksumCalculator = checksumCalculator ?? throw new ArgumentNullException(nameof(checksumCalculator));
+            _helper = helper ?? throw new ArgumentNullException(nameof(helper));
+        }
 
-            case MessageType.TextMessage:
-            {
-                var textMessage = (TextMessage)messageBase;
+        public IEnumerable<byte> Generate(MessageBase messageBase)
+        {
+            var messageBytes = GenerateMessageBytes(messageBase);
+            var checksumBytes = GenerateChecksumBytes(messageBytes);
+            var syncBytes = _helper.ObjectToByteArray(MessageEdge.Sync);
+            var tailBytes = _helper.ObjectToByteArray(MessageEdge.Tail);
 
-                return helper.CombineByteArrays(helper.ObjectToByteArray(MessageEdge.Sync),
-                    helper.ObjectToByteArray(messageBase.Id), helper.ObjectToByteArray(messageBase.Type),
-                    helper.ObjectToByteArray(textMessage.Data.Length), helper.ObjectToByteArray(textMessage.Data),
-                    helper.ObjectToByteArray(calculator.CalculateChecksum(helper.ObjectToByteArray(textMessage.Data))),
-                    helper.ObjectToByteArray(MessageEdge.Tail));
-            }
+            return _helper.CombineByteArrays(syncBytes, messageBytes, checksumBytes, tailBytes);
+        }
 
-            default:
+        private byte[] GenerateMessageBytes(MessageBase messageBase)
+        {
+            switch (messageBase.Type)
             {
-                throw new Exception("Invalid type");
+                case MessageType.FileMessage:
+                    return GenerateFileMessageBytes((FileMessage)messageBase);
+
+                case MessageType.TextMessage:
+                    return GenerateTextMessageBytes((TextMessage)messageBase);
+
+                default:
+                    throw new Exception("Invalid message type");
             }
+        }
+
+        private byte[] GenerateFileMessageBytes(FileMessage fileMessage)
+        {
+            return _helper.CombineByteArrays(
+                _helper.ObjectToByteArray(fileMessage.Id),
+                _helper.ObjectToByteArray(fileMessage.Type),
+                _helper.ObjectToByteArray(fileMessage.Data.Length),
+                _helper.ObjectToByteArray(fileMessage.Data),
+                _helper.ObjectToByteArray(fileMessage.FileType),
+                _helper.ObjectToByteArray(fileMessage.DateOnly),
+                _helper.ObjectToByteArray(fileMessage.FileName)
+            );
+        }
+
+        private byte[] GenerateTextMessageBytes(TextMessage textMessage)
+        {
+            return _helper.CombineByteArrays(
+                _helper.ObjectToByteArray(textMessage.Id),
+                _helper.ObjectToByteArray(textMessage.Type),
+                _helper.ObjectToByteArray(textMessage.Data.Length),
+                _helper.ObjectToByteArray(textMessage.Data)
+            );
+        }
+
+        private byte[] GenerateChecksumBytes(byte[] dataBytes)
+        {
+            var checksum = _checksumCalculator.CalculateChecksum(dataBytes);
+            return _helper.ObjectToByteArray(checksum);
         }
     }
 }
-
-//why IEnumerable better-more flexible as it can return more specific types when needed in certain cases without breaking the footprint(Memory footprint refers to the amount of main memory that a program uses or references while running) of the method)
-//This class's purpose is to take one type and translate it to a different one. if parser translate byte[]arr into message/packet, this class should convert packet into byte[]arr

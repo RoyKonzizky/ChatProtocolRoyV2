@@ -1,12 +1,12 @@
 using ChatProtocolRoyV2.Entities;
 
-namespace ChatProtocolRoyV2.Helper;
+namespace ChatProtocolRoyV2.Helper.Byte;
 
-public class Help
+public class HelpBytes : IHelpBytes
 {
     public byte[] ObjectToByteArray<T>(T obj)
     {
-        //TODO change from T to a more concrete types from this project, security concerns, use design patterns
+        // TODO: change from T to more concrete types from this project, address security concerns, use design patterns
         var concreteType = ConvertToConcreteType(obj);
         using var memoryStream = new MemoryStream();
         using var binaryWriter = new BinaryWriter(memoryStream);
@@ -67,7 +67,6 @@ public class Help
         return (T)ConvertToConcreteType(objValue);
     }
 
-
     private object ConvertToConcreteType<T>(T obj)
     {
         if (obj is MessageType or Guid or string or int or MessageEdge or uint or DateOnly or FileTypes)
@@ -77,37 +76,11 @@ public class Help
 
         throw new ArgumentException("Unsupported type.");
     }
-
-    public static string FileDataToBase64(string filePath)
-    {
-        try
-        {
-            var fileBytes = File.ReadAllBytes(filePath);
-            var base64String = Convert.ToBase64String(fileBytes);
-            return base64String;
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("An error occurred: " + ex.Message);
-            return null!;
-        }
-    }
-
-    public void Base64ToFileData(string base64String, string filePath)
-    {
-        try
-        {
-            var fileBytes = Convert.FromBase64String(base64String);
-            File.WriteAllBytes(filePath, fileBytes);
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("An error occurred: " + ex.Message);
-        }
-    }
+    
 
     public byte[] CombineByteArrays(params byte[][] arrays)
     {
         return arrays.SelectMany(x => x).ToArray();
     }
 }
+
