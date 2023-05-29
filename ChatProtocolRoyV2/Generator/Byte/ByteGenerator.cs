@@ -9,6 +9,10 @@ namespace ChatProtocolRoyV2.Generator.Byte;
 public class ByteGenerator : IByteGenerator
 {
     //TODO design patterns can help writing a cleaner version of this code
+    //TODO implement factory method for all parts the messages share, and decorator for sync and tail
+    //TODO use constructor to not use the "new" keyword
+    //TODO give it an interface instead of class, i.e. instead of ChecksumByteArrayCalculator use IChecksumByteArrayCalculator
+    
     public IEnumerable<byte> Generate(MessageBase messageBase)
     {
         var calculator = new ChecksumByteArrayCalculator();
