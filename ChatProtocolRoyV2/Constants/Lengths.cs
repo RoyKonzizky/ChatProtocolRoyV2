@@ -2,7 +2,6 @@
 
 public static class Lengths
 {
-    //TODO lengths of properties in the package
 
     #region Message
 

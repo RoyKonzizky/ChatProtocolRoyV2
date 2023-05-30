@@ -1,10 +1,9 @@
 ﻿using ChatProtocolRoyV2.Data;
 using ChatProtocolRoyV2.Data.Types;
 using ChatProtocolRoyV2.Data.Types.Files;
-using System;
 using ChatProtocolRoyV2.Entities;
 
-namespace ChatProtocolRoyV2.Parser.Byte
+namespace ChatProtocolRoyV2.Parser.Byte.Message
 {
     public class FileMessageParser
     {

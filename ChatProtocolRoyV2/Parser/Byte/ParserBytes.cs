@@ -1,6 +1,7 @@
 ﻿using ChatProtocolRoyV2.Data;
 using ChatProtocolRoyV2.Entities;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Director;
+using ChatProtocolRoyV2.Parser.Byte.Message;
 
 namespace ChatProtocolRoyV2.Parser.Byte
 {
