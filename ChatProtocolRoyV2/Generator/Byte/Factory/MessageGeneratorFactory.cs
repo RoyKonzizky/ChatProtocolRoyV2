@@ -1,10 +1,10 @@
 ﻿using ChatProtocolRoyV2.Data;
 using ChatProtocolRoyV2.Data.Types;
-using ChatProtocolRoyV2.Generator.Message;
-using ChatProtocolRoyV2.Generator.Message.Type;
+using ChatProtocolRoyV2.Generator.Byte.Message;
+using ChatProtocolRoyV2.Generator.Byte.Message.Type;
 using ChatProtocolRoyV2.Helper.Byte;
 
-namespace ChatProtocolRoyV2.Generator.Factory;
+namespace ChatProtocolRoyV2.Generator.Byte.Factory;
 
 public class MessageGeneratorFactory : IMessageGeneratorFactory
 {

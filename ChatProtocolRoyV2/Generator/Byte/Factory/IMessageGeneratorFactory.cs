@@ -1,7 +1,7 @@
 ﻿using ChatProtocolRoyV2.Data;
-using ChatProtocolRoyV2.Generator.Message;
+using ChatProtocolRoyV2.Generator.Byte.Message;
 
-namespace ChatProtocolRoyV2.Generator.Factory;
+namespace ChatProtocolRoyV2.Generator.Byte.Factory;
 
 public interface IMessageGeneratorFactory
 {

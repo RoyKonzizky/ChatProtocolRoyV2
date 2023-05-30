@@ -1,8 +1,7 @@
-﻿using ChatProtocolRoyV2.Data;
-using ChatProtocolRoyV2.Data.Types;
+﻿using ChatProtocolRoyV2.Data.Types;
 using ChatProtocolRoyV2.Helper.Byte;
 
-namespace ChatProtocolRoyV2.Generator.Message.Type;
+namespace ChatProtocolRoyV2.Generator.Byte.Message.Type;
 
 public class TextMessageGenerator : IMessageGenerator
 {

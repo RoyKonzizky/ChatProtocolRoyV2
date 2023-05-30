@@ -1,10 +1,10 @@
 ﻿using ChatProtocolRoyV2.ChecksumCalculator.Byte;
 using ChatProtocolRoyV2.Data;
 using ChatProtocolRoyV2.Entities;
-using ChatProtocolRoyV2.Generator.Factory;
+using ChatProtocolRoyV2.Generator.Byte.Factory;
 using ChatProtocolRoyV2.Helper.Byte;
 
-namespace ChatProtocolRoyV2.Generator;
+namespace ChatProtocolRoyV2.Generator.Byte;
 
 public class ByteGenerator : IByteGenerator
 {
@@ -32,10 +32,11 @@ public class ByteGenerator : IByteGenerator
 
         return _helper.CombineByteArrays(syncBytes, messageBytes, checksumBytes, tailBytes);
     }
-
+    
     private byte[] GenerateChecksumBytes(IEnumerable<byte> dataBytes)
     {
         var checksum = _checksumCalculator.CalculateChecksum(dataBytes);
         return _helper.ObjectToByteArray(checksum);
     }
+
 }
