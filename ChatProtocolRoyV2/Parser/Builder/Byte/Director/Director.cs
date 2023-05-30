@@ -21,7 +21,7 @@ public class Director : IDirector
     private readonly IMessageBuilder<TextMessage> _textMessageBuilder;
     private readonly IChecksumByteArrayCalculator _checksumByteArrayCalculator;
     private readonly IHelpBytes _helper;
-    
+    //TODO FileMessage and TextMessage builder interfaces to not use IMessageBuilder
     public Director(ITypeBuilder typeBuilder, IChecksumBuilder checksumBuilder, IDataBuilder dataBuilder, 
         IMessageBuilder<TextMessage> textMessageBuilder, IMessageBuilder<FileMessage> fileMessageBuilder,
         IHelpBytes helper, IChecksumByteArrayCalculator checksumByteArrayCalculator)

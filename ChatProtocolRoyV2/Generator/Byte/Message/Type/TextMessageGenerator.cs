@@ -27,4 +27,5 @@ public class TextMessageGenerator : IMessageGenerator
             _helper.ObjectToByteArray(textMessage.Data)
         );
     }
+    //TODO change to factory method to prevent duplication
 }

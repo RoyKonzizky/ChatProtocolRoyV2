@@ -8,4 +8,3 @@ public interface IMessageGeneratorFactory
     IMessageGenerator CreateMessageGenerator(MessageBase messageBase);
 }    
 
-//TODO since it takes singletons, it's more akin to a Provider, it accepts all types of generators

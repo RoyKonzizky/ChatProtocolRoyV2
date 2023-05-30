@@ -16,5 +16,6 @@ public class MessageGeneratorFactory : IMessageGeneratorFactory
             _ => throw new ArgumentException("Invalid file message type")
         };
     }
-
+    //TODO the provider(called factory but implemented as a provider) will receive generators and decide what to
+    //TODO return based on the input
 }
