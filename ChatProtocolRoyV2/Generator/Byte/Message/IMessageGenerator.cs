@@ -1,7 +1,8 @@
-﻿namespace ChatProtocolRoyV2.Generator.Byte.Message;
+﻿using ChatProtocolRoyV2.Data;
+
+namespace ChatProtocolRoyV2.Generator.Byte.Message;
 
 public interface IMessageGenerator
 {
-    //TODO IEnumerable instead of byte[]
-    byte[] GenerateMessageBytes();
+    IEnumerable<byte> GenerateMessageBytes(MessageBase messageBase);
 }

@@ -1,27 +1,30 @@
 ﻿using ChatProtocolRoyV2.Data.Types;
 using ChatProtocolRoyV2.Helper.Byte;
+using ChatProtocolRoyV2.Data;
 
 namespace ChatProtocolRoyV2.Generator.Byte.Message.Type;
 
 public class TextMessageGenerator : IMessageGenerator
 {
-    //TODO use singleton instead so it wouldn't burn the ram, dont use textMessage as field transfer it into the method, do the same in fileMessage
-    private readonly TextMessage _textMessage;
     private readonly IHelpBytes _helper;
 
-    public TextMessageGenerator(TextMessage textMessage, IHelpBytes helper)
+    private TextMessageGenerator()
     {
-        _textMessage = textMessage;
-        _helper = helper;
+        _helper = new HelpBytes();
     }
 
-    public byte[] GenerateMessageBytes()
+    public static TextMessageGenerator Instance { get; } = new();
+
+    public IEnumerable<byte> GenerateMessageBytes(MessageBase message)
     {
+        if (message is not TextMessage textMessage)
+            throw new ArgumentException("Invalid message type");
+
         return _helper.CombineByteArrays(
-            _helper.ObjectToByteArray(_textMessage.Id),
-            _helper.ObjectToByteArray(_textMessage.Type),
-            _helper.ObjectToByteArray(_textMessage.Data.Length),
-            _helper.ObjectToByteArray(_textMessage.Data)
+            _helper.ObjectToByteArray(textMessage.Id),
+            _helper.ObjectToByteArray(textMessage.Type),
+            _helper.ObjectToByteArray(textMessage.Data.Length),
+            _helper.ObjectToByteArray(textMessage.Data)
         );
     }
 }

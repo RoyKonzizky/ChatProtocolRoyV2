@@ -1,28 +1,21 @@
 ﻿using ChatProtocolRoyV2.Data;
-using ChatProtocolRoyV2.Data.Types;
 using ChatProtocolRoyV2.Generator.Byte.Message;
 using ChatProtocolRoyV2.Generator.Byte.Message.Type;
 using ChatProtocolRoyV2.Helper.Byte;
+using ChatProtocolRoyV2.Entities;
 
 namespace ChatProtocolRoyV2.Generator.Byte.Factory;
 
 public class MessageGeneratorFactory : IMessageGeneratorFactory
 {
-    private readonly IHelpBytes _helper;
-
-    public MessageGeneratorFactory(IHelpBytes helper)
-    {
-        _helper = helper;
-    }
-
     public IMessageGenerator CreateMessageGenerator(MessageBase messageBase)
     {
-        return messageBase switch
+        return messageBase.Type switch
         {
-            null => throw new ArgumentNullException(nameof(messageBase)),
-            FileMessage fileMessage => new FileMessageGenerator(fileMessage, _helper),
-            TextMessage textMessage => new TextMessageGenerator(textMessage, _helper),
-            _ => throw new ArgumentException("Invalid message type")
+            MessageType.TextMessage => TextMessageGenerator.Instance,
+            MessageType.FileMessage => FileMessageGenerator.Instance,
+            _ => throw new ArgumentException("Invalid file message type")
         };
     }
+
 }
