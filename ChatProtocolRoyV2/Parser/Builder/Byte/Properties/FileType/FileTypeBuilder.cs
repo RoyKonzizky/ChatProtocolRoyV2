@@ -3,7 +3,6 @@ using ChatProtocolRoyV2.Entities;
 using ChatProtocolRoyV2.Helper.Byte;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Length;
 
-
 namespace ChatProtocolRoyV2.Parser.Builder.Byte.Properties.FileType;
 
 public class FileTypeBuilder : IFileTypeBuilder

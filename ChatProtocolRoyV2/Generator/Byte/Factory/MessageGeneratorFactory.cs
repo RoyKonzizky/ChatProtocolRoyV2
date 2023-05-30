@@ -1,8 +1,7 @@
 ﻿using ChatProtocolRoyV2.Data;
+using ChatProtocolRoyV2.Entities;
 using ChatProtocolRoyV2.Generator.Byte.Message;
 using ChatProtocolRoyV2.Generator.Byte.Message.Type;
-using ChatProtocolRoyV2.Helper.Byte;
-using ChatProtocolRoyV2.Entities;
 
 namespace ChatProtocolRoyV2.Generator.Byte.Factory;
 

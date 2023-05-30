@@ -1,6 +1,6 @@
-﻿using ChatProtocolRoyV2.Data.Types;
+﻿using ChatProtocolRoyV2.Data;
+using ChatProtocolRoyV2.Data.Types;
 using ChatProtocolRoyV2.Helper.Byte;
-using ChatProtocolRoyV2.Data;
 
 namespace ChatProtocolRoyV2.Generator.Byte.Message.Type;
 
