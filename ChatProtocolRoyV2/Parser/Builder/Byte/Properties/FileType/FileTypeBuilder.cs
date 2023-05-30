@@ -7,14 +7,21 @@ namespace ChatProtocolRoyV2.Parser.Builder.Byte.Properties.FileType;
 
 public class FileTypeBuilder : IFileTypeBuilder
 {
+    private readonly ILengthBuilder _lengthBuilder;
+    private readonly IHelpBytes _helper;
+
+    public FileTypeBuilder(ILengthBuilder lengthBuilder, IHelpBytes helper)
+    {
+        _lengthBuilder = lengthBuilder;
+        _helper = helper;
+    }
+
     public FileTypes Build(IEnumerable<byte> input)
     {
         var inputBytes = input.ToArray();
         var fileTypesBytes = Array.Empty<byte>();
-        var lengthBuilder = new LengthBuilder();
-        Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX + 1 +  lengthBuilder.Build(inputBytes), fileTypesBytes, 0, Lengths.FILE_TYPE_LENGTH);
-        var helper = new HelpBytes();
-        var typeFile = helper.FromByteArray<FileTypes>(fileTypesBytes);
+        Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX + 1 +  _lengthBuilder.Build(inputBytes), fileTypesBytes, 0, Lengths.FILE_TYPE_LENGTH);
+        var typeFile = _helper.FromByteArray<FileTypes>(fileTypesBytes);
         return typeFile;
     }
 }

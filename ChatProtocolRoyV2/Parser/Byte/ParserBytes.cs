@@ -2,16 +2,22 @@
 using ChatProtocolRoyV2.Entities;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Director;
 using ChatProtocolRoyV2.Parser.Byte.Message.Types;
+using ChatProtocolRoyV2.Parser.Byte.Message.Types.File;
+using ChatProtocolRoyV2.Parser.Byte.Message.Types.Text;
 
 namespace ChatProtocolRoyV2.Parser.Byte
 {
     public class ParseBytes : IParseBytes
     {
         private readonly IDirector _director;
-        public ParseBytes(IDirector director)
+        private readonly ITextMessageParser _textMessageParser;
+        private readonly IFileMessageParser _fileMessageParser;
+
+        public ParseBytes(IDirector director, ITextMessageParser textMessageParser, IFileMessageParser fileMessageParser)
         {
             _director = director;
-            
+            _textMessageParser = textMessageParser;
+            _fileMessageParser = fileMessageParser;
         }
 
         public MessageBase Parser(IEnumerable<byte> packetBytes)
@@ -20,17 +26,12 @@ namespace ChatProtocolRoyV2.Parser.Byte
             var packetMessageBase = _director.Build(enumerable);
 
             var messageType = packetMessageBase.Type;
-            switch (messageType)
+            return messageType switch
             {
-                case MessageType.TextMessage:
-                    var textMessageParser = new TextMessageParser();
-                    return textMessageParser.Parse(packetMessageBase);
-                case MessageType.FileMessage:
-                    var fileMessageParser = new FileMessageParser();
-                    return fileMessageParser.Parse(packetMessageBase);
-                default:
-                    throw new Exception("Unknown message type");
-            }
+                MessageType.TextMessage => _textMessageParser.Parser(packetMessageBase),
+                MessageType.FileMessage => _fileMessageParser.Parser(packetMessageBase),
+                _ => throw new Exception("Unknown message type")
+            };
         }
     }
 }

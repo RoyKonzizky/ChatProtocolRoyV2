@@ -1,11 +1,11 @@
 ﻿using ChatProtocolRoyV2.Data;
 using ChatProtocolRoyV2.Data.Types;
 
-namespace ChatProtocolRoyV2.Parser.Byte.Message.Types
+namespace ChatProtocolRoyV2.Parser.Byte.Message.Types.Text
 {
-    public class TextMessageParser
+    public class TextMessageParser : ITextMessageParser
     {
-        public TextMessage Parse(MessageBase messageBase)
+        public TextMessage Parser(MessageBase messageBase)
         {
             if (messageBase is not TextMessage textMessage)
                 throw new ArgumentException("Invalid message type");

@@ -3,11 +3,11 @@ using ChatProtocolRoyV2.Data.Types;
 using ChatProtocolRoyV2.Data.Types.Files;
 using ChatProtocolRoyV2.Entities;
 
-namespace ChatProtocolRoyV2.Parser.Byte.Message.Types
+namespace ChatProtocolRoyV2.Parser.Byte.Message.Types.File
 {
-    public class FileMessageParser
+    public class FileMessageParser : IFileMessageParser
     {
-        public FileMessage Parse(MessageBase messageBase)
+        public FileMessage Parser(MessageBase messageBase)
         {
             if (messageBase is not FileMessage fileMessage)
                 throw new ArgumentException("Invalid message type");
@@ -25,7 +25,8 @@ namespace ChatProtocolRoyV2.Parser.Byte.Message.Types
             if (fileMessage is not Image imageFileMessage)
                 throw new ArgumentException("Invalid message type");
 
-            var imageMessage = new Image(imageFileMessage.Id, imageFileMessage.Data, imageFileMessage.DateOnly, imageFileMessage.FileName);
+            var imageMessage = new Image(imageFileMessage.Id, imageFileMessage.Data, imageFileMessage.DateOnly,
+                imageFileMessage.FileName);
 
             return imageMessage;
         }
@@ -35,7 +36,8 @@ namespace ChatProtocolRoyV2.Parser.Byte.Message.Types
             if (fileMessage is not Audio audioFileMessage)
                 throw new ArgumentException("Invalid message type");
 
-            var audioMessage = new Audio(audioFileMessage.Id, audioFileMessage.Data, audioFileMessage.DateOnly, audioFileMessage.FileName);
+            var audioMessage = new Audio(audioFileMessage.Id, audioFileMessage.Data, audioFileMessage.DateOnly,
+                audioFileMessage.FileName);
 
             return audioMessage;
         }

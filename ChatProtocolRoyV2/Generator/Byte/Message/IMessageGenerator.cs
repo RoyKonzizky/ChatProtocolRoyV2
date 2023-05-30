@@ -6,3 +6,4 @@ public interface IMessageGenerator
 {
     IEnumerable<byte> GenerateMessageBytes(MessageBase messageBase);
 }
+//TODO should inherit from IGenerator
