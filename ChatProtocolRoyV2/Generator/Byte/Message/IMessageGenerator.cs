@@ -2,5 +2,6 @@
 
 public interface IMessageGenerator
 {
+    //TODO IEnumerable instead of byte[]
     byte[] GenerateMessageBytes();
 }

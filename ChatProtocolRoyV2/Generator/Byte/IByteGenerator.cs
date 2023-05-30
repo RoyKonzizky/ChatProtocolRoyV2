@@ -4,5 +4,4 @@ namespace ChatProtocolRoyV2.Generator.Byte;
 
 public interface IByteGenerator : IGenerator<MessageBase, IEnumerable<byte>>
 {
-    IEnumerable<byte> Generate(MessageBase messageBase);
 }

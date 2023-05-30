@@ -1,17 +1,23 @@
 ﻿using ChatProtocolRoyV2.Data;
 using ChatProtocolRoyV2.Entities;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Director;
-using ChatProtocolRoyV2.Parser.Byte.Message;
+using ChatProtocolRoyV2.Parser.Byte.Message.Types;
 
 namespace ChatProtocolRoyV2.Parser.Byte
 {
     public class ParseBytes : IParseBytes
     {
+        private readonly IDirector _director;
+        public ParseBytes(IDirector director)
+        {
+            _director = director;
+            
+        }
+
         public MessageBase Parser(IEnumerable<byte> packetBytes)
         {
-            var director = new Director();
             var enumerable = packetBytes as byte[] ?? packetBytes.ToArray();
-            var packetMessageBase = director.Build(enumerable);
+            var packetMessageBase = _director.Build(enumerable);
 
             var messageType = packetMessageBase.Type;
             switch (messageType)
@@ -31,3 +37,4 @@ namespace ChatProtocolRoyV2.Parser.Byte
 
 //TODO read about TryParse, yield 
 //TODO read about Provider
+//TODO finish the ctor

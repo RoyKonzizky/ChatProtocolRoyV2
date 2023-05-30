@@ -5,6 +5,7 @@ namespace ChatProtocolRoyV2.Generator.Byte.Message.Type;
 
 public class TextMessageGenerator : IMessageGenerator
 {
+    //TODO use singleton instead so it wouldn't burn the ram, dont use textMessage as field transfer it into the method, do the same in fileMessage
     private readonly TextMessage _textMessage;
     private readonly IHelpBytes _helper;
 

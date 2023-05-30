@@ -3,7 +3,7 @@ using ChatProtocolRoyV2.Data.Types;
 using ChatProtocolRoyV2.Data.Types.Files;
 using ChatProtocolRoyV2.Entities;
 
-namespace ChatProtocolRoyV2.Parser.Byte.Message
+namespace ChatProtocolRoyV2.Parser.Byte.Message.Types
 {
     public class FileMessageParser
     {

@@ -1,7 +1,7 @@
 ﻿using ChatProtocolRoyV2.Data;
 using ChatProtocolRoyV2.Data.Types;
 
-namespace ChatProtocolRoyV2.Parser.Byte.Message
+namespace ChatProtocolRoyV2.Parser.Byte.Message.Types
 {
     public class TextMessageParser
     {
