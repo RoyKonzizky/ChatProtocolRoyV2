@@ -15,15 +15,14 @@ public class FileMessageGenerator : IMessageGenerator
 
     public static FileMessageGenerator Instance { get; } = new();
 
-    public IEnumerable<byte> GenerateMessageBytes(MessageBase message)
+    public IEnumerable<byte> Generate(MessageBase message)
     {
         if (message is not FileMessage fileMessage)
             throw new ArgumentException("Invalid message type");
 
-        return _helper.CombineByteArrays(
-            _helper.ObjectToByteArray(fileMessage.Id),
-            _helper.ObjectToByteArray(fileMessage.Type),
+        return _helper.CombineByteArrays(   
             _helper.ObjectToByteArray(fileMessage.Data.Length),
+            _helper.ObjectToByteArray(fileMessage.Data),         
             _helper.ObjectToByteArray(fileMessage.DateOnly),
             _helper.ObjectToByteArray(fileMessage.FileName),
             _helper.ObjectToByteArray(fileMessage.FileType)

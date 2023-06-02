@@ -15,14 +15,12 @@ public class TextMessageGenerator : IMessageGenerator
 
     public static TextMessageGenerator Instance { get; } = new();
 
-    public IEnumerable<byte> GenerateMessageBytes(MessageBase message)
+    public IEnumerable<byte> Generate(MessageBase message)
     {
         if (message is not TextMessage textMessage)
             throw new ArgumentException("Invalid message type");
 
         return _helper.CombineByteArrays(
-            _helper.ObjectToByteArray(textMessage.Id),
-            _helper.ObjectToByteArray(textMessage.Type),
             _helper.ObjectToByteArray(textMessage.Data.Length),
             _helper.ObjectToByteArray(textMessage.Data)
         );

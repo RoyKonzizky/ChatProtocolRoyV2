@@ -2,8 +2,7 @@
 
 namespace ChatProtocolRoyV2.Generator.Byte.Message;
 
-public interface IMessageGenerator
+public interface IMessageGenerator : IGenerator<MessageBase,IEnumerable<byte>>
 {
-    IEnumerable<byte> GenerateMessageBytes(MessageBase messageBase);
 }
-//TODO should inherit from IGenerator
+//TODO should inherit from IGenerator - done

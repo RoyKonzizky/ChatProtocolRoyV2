@@ -7,7 +7,7 @@ namespace ChatProtocolRoyV2.Generator.Byte.Factory;
 
 public class MessageGeneratorFactory : IMessageGeneratorFactory
 {
-    public IMessageGenerator CreateMessageGenerator(MessageBase messageBase)
+    public IMessageGenerator Generate(MessageBase messageBase)
     {
         return messageBase.Type switch
         {
@@ -16,6 +16,5 @@ public class MessageGeneratorFactory : IMessageGeneratorFactory
             _ => throw new ArgumentException("Invalid file message type")
         };
     }
-    //TODO the provider(called factory but implemented as a provider) will receive generators and decide what to
-    //TODO return based on the input
 }
+//TODO the provider(called factory but implemented as a provider) will receive generators and decide what to return based on the input

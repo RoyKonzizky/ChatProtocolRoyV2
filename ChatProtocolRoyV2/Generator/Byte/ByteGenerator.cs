@@ -27,18 +27,20 @@ public class ByteGenerator : IByteGenerator
             throw new ArgumentNullException(nameof(messageBase));
 
         var messageGenerator = GetMessageGenerator(messageBase);
-        var messageBytes = messageGenerator.GenerateMessageBytes(messageBase);
+        
+        var messageBytes = messageGenerator.Generate(messageBase);
         var dataBytes = messageBytes.ToArray();
         var checksumBytes = GenerateChecksumBytes(dataBytes);
         var syncBytes = _helper.ObjectToByteArray(MessageEdge.Sync);
         var tailBytes = _helper.ObjectToByteArray(MessageEdge.Tail);
+        var commonBytes = GenerateCommonBytes(messageBase);
 
-        return _helper.CombineByteArrays(syncBytes, dataBytes, checksumBytes.ToArray(), tailBytes);
+        return _helper.CombineByteArrays(syncBytes, commonBytes.ToArray(), dataBytes, checksumBytes.ToArray(), tailBytes);
     }
 
     private IMessageGenerator GetMessageGenerator(MessageBase messageBase)
     {
-        return _messageGeneratorFactory.CreateMessageGenerator(messageBase);
+        return _messageGeneratorFactory.Generate(messageBase);
     }
 
     private IEnumerable<byte> GenerateChecksumBytes(IEnumerable<byte> dataBytes)
@@ -46,4 +48,12 @@ public class ByteGenerator : IByteGenerator
         var checksum = _checksumCalculator.CalculateChecksum(dataBytes);
         return _helper.ObjectToByteArray(checksum);
     }
+    private IEnumerable<byte> GenerateCommonBytes(MessageBase messageBase)
+    {
+        return _helper.CombineByteArrays(
+            _helper.ObjectToByteArray(messageBase.Id),
+            _helper.ObjectToByteArray(messageBase.Type)
+        );
+    }
+
 }
