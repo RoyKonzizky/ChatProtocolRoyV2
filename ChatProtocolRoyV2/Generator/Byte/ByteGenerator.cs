@@ -1,8 +1,8 @@
 ﻿using ChatProtocolRoyV2.ChecksumCalculator.Byte;
 using ChatProtocolRoyV2.Data;
 using ChatProtocolRoyV2.Entities;
-using ChatProtocolRoyV2.Generator.Byte.Factory;
 using ChatProtocolRoyV2.Generator.Byte.Message;
+using ChatProtocolRoyV2.Generator.Byte.Provider;
 using ChatProtocolRoyV2.Helper.Byte;
 
 namespace ChatProtocolRoyV2.Generator.Byte;
@@ -10,14 +10,14 @@ namespace ChatProtocolRoyV2.Generator.Byte;
 public class ByteGenerator : IByteGenerator
 {
     private readonly IChecksumByteArrayCalculator _checksumCalculator;
-    private readonly IMessageGeneratorFactory _messageGeneratorFactory;
+    private readonly IMessageGeneratorProvider _messageGeneratorProvider;
     private readonly IHelpBytes _helper;
 
     public ByteGenerator(IChecksumByteArrayCalculator checksumCalculator, 
-        IMessageGeneratorFactory messageGeneratorFactory, IHelpBytes helper)
+        IMessageGeneratorProvider messageGeneratorProvider, IHelpBytes helper)
     {
         _checksumCalculator = checksumCalculator;
-        _messageGeneratorFactory = messageGeneratorFactory;
+        _messageGeneratorProvider = messageGeneratorProvider;
         _helper = helper;
     }
 
@@ -40,7 +40,7 @@ public class ByteGenerator : IByteGenerator
 
     private IMessageGenerator GetMessageGenerator(MessageBase messageBase)
     {
-        return _messageGeneratorFactory.Generate(messageBase);
+        return _messageGeneratorProvider.Generate(messageBase);
     }
 
     private IEnumerable<byte> GenerateChecksumBytes(IEnumerable<byte> dataBytes)
