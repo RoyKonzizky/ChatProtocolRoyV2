@@ -12,8 +12,6 @@ public static class Lengths
 
     public const int CHECKSUM_LENGTH = 4;
 
-    public const int TAIL_LENGTH = 1;
-
     public const int LENGTH_OF_DATA_LENGTH = 4;
 
 
@@ -23,7 +21,7 @@ public static class Lengths
 
     public const int FILE_TYPE_LENGTH = 4;
 
-    //use sizeof(int) * 3, explain that DateOnly is 3 fields of int to represent the full date
+    //use sizeof(int) * 3, DateOnly is 3 fields of int to represent the full date
     public const int DATE_ONLY_LENGTH = 12;
 
     #endregion

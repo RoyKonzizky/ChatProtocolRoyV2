@@ -33,9 +33,9 @@ public class ByteGenerator : IByteGenerator
         var checksumBytes = GenerateChecksumBytes(dataBytes);
         var syncBytes = _helper.ObjectToByteArray(MessageEdge.Sync);
         var tailBytes = _helper.ObjectToByteArray(MessageEdge.Tail);
-        var commonBytes = GenerateCommonBytes(messageBase);
+        var sharedBytes = GenerateSharedBytes(messageBase);
 
-        return _helper.CombineByteArrays(syncBytes, commonBytes.ToArray(), dataBytes, checksumBytes.ToArray(),
+        return _helper.CombineByteArrays(syncBytes, sharedBytes.ToArray(), dataBytes, checksumBytes.ToArray(),
             tailBytes);
     }
 
@@ -50,7 +50,7 @@ public class ByteGenerator : IByteGenerator
         return _helper.ObjectToByteArray(checksum);
     }
 
-    private IEnumerable<byte> GenerateCommonBytes(MessageBase messageBase)
+    private IEnumerable<byte> GenerateSharedBytes(MessageBase messageBase)
     {
         return _helper.CombineByteArrays(
             _helper.ObjectToByteArray(messageBase.Id),

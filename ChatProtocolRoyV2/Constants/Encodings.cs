@@ -8,4 +8,4 @@ public static class Encodings
 }
 
 
-//TODO make this a constant class instead of the monstrosity in the helper module
+//TODO make this a constant class instead of the code chunk in the helper module
