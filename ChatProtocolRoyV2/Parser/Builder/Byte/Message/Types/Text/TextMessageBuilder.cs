@@ -1,5 +1,4 @@
-﻿using ChatProtocolRoyV2.Data;
-using ChatProtocolRoyV2.Data.Types;
+﻿using ChatProtocolRoyV2.Data.Types;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Data;
 using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Guid;
 
@@ -17,6 +16,7 @@ public class TextMessageBuilder : ITextMessageBuilder
         _guidBuilder = guidBuilder;
         _dataBuilder = dataBuilder;
     }
+
     public TextMessage Build(IEnumerable<byte> input)
     {
         var enumerable = input as byte[] ?? input.ToArray();

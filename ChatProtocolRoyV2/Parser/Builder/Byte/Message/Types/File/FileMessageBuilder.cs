@@ -11,14 +11,14 @@ namespace ChatProtocolRoyV2.Parser.Builder.Byte.Message.Types.File;
 
 public class FileMessageBuilder : IFileMessageBuilder
 {
-    private readonly IGuidBuilder _guidBuilder;
     private readonly IDataBuilder _dataBuilder;
-    private readonly IFileTypeBuilder _fileTypeBuilder;
-    private readonly IFileNameBuilder _fileNameBuilder;
     private readonly IDateOnlyBuilder _dateOnlyBuilder;
+    private readonly IFileNameBuilder _fileNameBuilder;
+    private readonly IFileTypeBuilder _fileTypeBuilder;
+    private readonly IGuidBuilder _guidBuilder;
 
     public FileMessageBuilder(IGuidBuilder guidBuilder, IDataBuilder dataBuilder, IFileTypeBuilder fileTypeBuilder,
-        IFileNameBuilder fileNameBuilder,IDateOnlyBuilder dateOnlyBuilder)
+        IFileNameBuilder fileNameBuilder, IDateOnlyBuilder dateOnlyBuilder)
     {
         _guidBuilder = guidBuilder;
         _dataBuilder = dataBuilder;
@@ -26,6 +26,7 @@ public class FileMessageBuilder : IFileMessageBuilder
         _fileNameBuilder = fileNameBuilder;
         _dateOnlyBuilder = dateOnlyBuilder;
     }
+
     public FileMessage Build(IEnumerable<byte> input)
     {
         var enumerable = input as byte[] ?? input.ToArray();

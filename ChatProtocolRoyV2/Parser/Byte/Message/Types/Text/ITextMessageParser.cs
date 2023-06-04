@@ -5,5 +5,4 @@ namespace ChatProtocolRoyV2.Parser.Byte.Message.Types.Text;
 
 public interface ITextMessageParser : IMessageParser<MessageBase, TextMessage>
 {
-    
 }

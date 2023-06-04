@@ -11,6 +11,7 @@ public class TailBuilder : ITailBuilder
     {
         _helper = helper;
     }
+
     public MessageEdge Build(IEnumerable<byte> input)
     {
         var inputBytes = input.ToArray();

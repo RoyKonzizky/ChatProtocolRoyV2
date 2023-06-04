@@ -5,5 +5,4 @@ namespace ChatProtocolRoyV2.Parser.Byte.Message.Types.File;
 
 public interface IFileMessageParser : IMessageParser<MessageBase, FileMessage>
 {
-    
 }

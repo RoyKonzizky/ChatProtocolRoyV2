@@ -2,6 +2,6 @@
 
 namespace ChatProtocolRoyV2.Generator.Byte.Message;
 
-public interface IMessageGenerator : IGenerator<MessageBase,IEnumerable<byte>>
+public interface IMessageGenerator : IGenerator<MessageBase, IEnumerable<byte>>
 {
 }

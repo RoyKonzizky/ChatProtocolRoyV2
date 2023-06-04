@@ -10,7 +10,7 @@ public class FileMessageGenerator : IMessageGenerator
 
     private FileMessageGenerator()
     {
-        _helper = new HelpBytes(); 
+        _helper = new HelpBytes();
     }
 
     public static FileMessageGenerator Instance { get; } = new();
@@ -20,9 +20,9 @@ public class FileMessageGenerator : IMessageGenerator
         if (message is not FileMessage fileMessage)
             throw new ArgumentException("Invalid message type");
 
-        return _helper.CombineByteArrays(   
+        return _helper.CombineByteArrays(
             _helper.ObjectToByteArray(fileMessage.Data.Length),
-            _helper.ObjectToByteArray(fileMessage.Data),         
+            _helper.ObjectToByteArray(fileMessage.Data),
             _helper.ObjectToByteArray(fileMessage.DateOnly),
             _helper.ObjectToByteArray(fileMessage.FileName),
             _helper.ObjectToByteArray(fileMessage.FileType)

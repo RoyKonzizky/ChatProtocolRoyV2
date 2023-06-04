@@ -6,8 +6,8 @@ namespace ChatProtocolRoyV2.Parser.Builder.Byte.Properties.FileName;
 
 public class FileNameBuilder : IFileNameBuilder
 {
-    private readonly ILengthBuilder _lengthBuilder;
     private readonly IHelpBytes _helper;
+    private readonly ILengthBuilder _lengthBuilder;
 
     public FileNameBuilder(ILengthBuilder lengthBuilder, IHelpBytes helper)
     {
@@ -19,7 +19,9 @@ public class FileNameBuilder : IFileNameBuilder
     {
         var inputBytes = input.ToArray();
         var nameBytes = Array.Empty<byte>();
-        Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX + 1 +  _lengthBuilder.Build(inputBytes) + Lengths.FILE_TYPE_LENGTH + Lengths.DATE_ONLY_LENGTH, nameBytes, 0, Lengths.FILE_NAME_LENGTH);
+        Array.Copy(inputBytes,
+            Indexes.LENGTH_OF_DATA_INDEX + 1 + _lengthBuilder.Build(inputBytes) + Lengths.FILE_TYPE_LENGTH +
+            Lengths.DATE_ONLY_LENGTH, nameBytes, 0, Lengths.FILE_NAME_LENGTH);
         var nameFile = _helper.FromByteArray<string>(nameBytes);
         return nameFile;
     }

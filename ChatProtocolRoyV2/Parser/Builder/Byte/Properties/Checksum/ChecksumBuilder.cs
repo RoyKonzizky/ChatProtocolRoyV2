@@ -8,9 +8,9 @@ namespace ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Checksum;
 
 public class ChecksumBuilder : IChecksumBuilder
 {
-    private readonly ITypeBuilder _typeBuilder;
     private readonly IHelpBytes _helper;
     private readonly ILengthBuilder _lengthBuilder;
+    private readonly ITypeBuilder _typeBuilder;
 
     public ChecksumBuilder(ITypeBuilder typeBuilder, IHelpBytes helper, ILengthBuilder lengthBuilder)
     {
@@ -33,7 +33,9 @@ public class ChecksumBuilder : IChecksumBuilder
                 checksum = _helper.FromByteArray<uint>(checksumBytes);
                 return checksum;
             case MessageType.FileMessage:
-                Array.Copy(inputBytes, Indexes.LENGTH_OF_DATA_INDEX + 1 +  _lengthBuilder.Build(inputBytes) + Lengths.FILE_TYPE_LENGTH + Lengths.DATE_ONLY_LENGTH + Lengths.FILE_NAME_LENGTH, checksumBytes, 0, Lengths.CHECKSUM_LENGTH);
+                Array.Copy(inputBytes,
+                    Indexes.LENGTH_OF_DATA_INDEX + 1 + _lengthBuilder.Build(inputBytes) + Lengths.FILE_TYPE_LENGTH +
+                    Lengths.DATE_ONLY_LENGTH + Lengths.FILE_NAME_LENGTH, checksumBytes, 0, Lengths.CHECKSUM_LENGTH);
                 checksum = _helper.FromByteArray<uint>(checksumBytes);
                 return checksum;
 

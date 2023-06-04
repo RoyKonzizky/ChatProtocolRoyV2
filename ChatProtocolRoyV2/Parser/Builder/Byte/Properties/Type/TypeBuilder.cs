@@ -12,6 +12,7 @@ public class TypeBuilder : ITypeBuilder
     {
         _helper = helper;
     }
+
     public MessageType Build(IEnumerable<byte> input)
     {
         var inputBytes = input.ToArray();

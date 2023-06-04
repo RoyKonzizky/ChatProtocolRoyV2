@@ -10,10 +10,10 @@ namespace ChatProtocolRoyV2.Generator.Byte;
 public class ByteGenerator : IByteGenerator
 {
     private readonly IChecksumByteArrayCalculator _checksumCalculator;
-    private readonly IMessageGeneratorProvider _messageGeneratorProvider;
     private readonly IHelpBytes _helper;
+    private readonly IMessageGeneratorProvider _messageGeneratorProvider;
 
-    public ByteGenerator(IChecksumByteArrayCalculator checksumCalculator, 
+    public ByteGenerator(IChecksumByteArrayCalculator checksumCalculator,
         IMessageGeneratorProvider messageGeneratorProvider, IHelpBytes helper)
     {
         _checksumCalculator = checksumCalculator;
@@ -27,7 +27,7 @@ public class ByteGenerator : IByteGenerator
             throw new ArgumentNullException(nameof(messageBase));
 
         var messageGenerator = GetMessageGenerator(messageBase);
-        
+
         var messageBytes = messageGenerator.Generate(messageBase);
         var dataBytes = messageBytes.ToArray();
         var checksumBytes = GenerateChecksumBytes(dataBytes);
@@ -35,7 +35,8 @@ public class ByteGenerator : IByteGenerator
         var tailBytes = _helper.ObjectToByteArray(MessageEdge.Tail);
         var commonBytes = GenerateCommonBytes(messageBase);
 
-        return _helper.CombineByteArrays(syncBytes, commonBytes.ToArray(), dataBytes, checksumBytes.ToArray(), tailBytes);
+        return _helper.CombineByteArrays(syncBytes, commonBytes.ToArray(), dataBytes, checksumBytes.ToArray(),
+            tailBytes);
     }
 
     private IMessageGenerator GetMessageGenerator(MessageBase messageBase)
@@ -48,6 +49,7 @@ public class ByteGenerator : IByteGenerator
         var checksum = _checksumCalculator.CalculateChecksum(dataBytes);
         return _helper.ObjectToByteArray(checksum);
     }
+
     private IEnumerable<byte> GenerateCommonBytes(MessageBase messageBase)
     {
         return _helper.CombineByteArrays(

@@ -21,5 +21,3 @@ public class MessageGeneratorProvider : IMessageGeneratorProvider
         return generator;
     }
 }
-
-//TODO the provider(called factory but implemented as a provider) will receive generators and decide what to return based on the input

@@ -67,20 +67,16 @@ public class HelpBytes : IHelpBytes
         return (T)ConvertToConcreteType(objValue);
     }
 
-    private object ConvertToConcreteType<T>(T obj)
-    {
-        if (obj is MessageType or Guid or string or int or MessageEdge or uint or DateOnly or FileTypes)
-        {
-            return obj;
-        }
-
-        throw new ArgumentException("Unsupported type.");
-    }
-    
 
     public byte[] CombineByteArrays(params byte[][] arrays)
     {
         return arrays.SelectMany(x => x).ToArray();
     }
-}
 
+    private object ConvertToConcreteType<T>(T obj)
+    {
+        if (obj is MessageType or Guid or string or int or MessageEdge or uint or DateOnly or FileTypes) return obj;
+
+        throw new ArgumentException("Unsupported type.");
+    }
+}

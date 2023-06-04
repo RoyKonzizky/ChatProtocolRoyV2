@@ -1,6 +1,5 @@
 ﻿using ChatProtocolRoyV2.Constants;
 using ChatProtocolRoyV2.Helper.Byte;
-using ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Length;
 
 namespace ChatProtocolRoyV2.Parser.Builder.Byte.Properties.Guid;
 

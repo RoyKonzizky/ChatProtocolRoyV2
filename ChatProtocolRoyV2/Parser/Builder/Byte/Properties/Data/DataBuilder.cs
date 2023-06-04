@@ -8,7 +8,7 @@ public class DataBuilder : IDataBuilder
 {
     private readonly ILengthBuilder _lengthBuilder;
 
-    public DataBuilder( ILengthBuilder lengthBuilder)
+    public DataBuilder(ILengthBuilder lengthBuilder)
     {
         _lengthBuilder = lengthBuilder;
     }

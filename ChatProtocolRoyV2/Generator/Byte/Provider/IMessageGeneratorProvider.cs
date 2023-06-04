@@ -5,5 +5,4 @@ namespace ChatProtocolRoyV2.Generator.Byte.Provider;
 
 public interface IMessageGeneratorProvider : IGenerator<MessageBase, IMessageGenerator>
 {
-}    
-
+}
