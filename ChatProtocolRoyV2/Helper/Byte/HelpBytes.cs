@@ -1,12 +1,18 @@
+using System.Text;
 using ChatProtocolRoyV2.Entities;
 using static ChatProtocolRoyV2.Constants.Encodings;
 
 namespace ChatProtocolRoyV2.Helper.Byte;
 
-// TODO: change from T to more concrete types from this project, address security concerns, use design patterns
-
 public class HelpBytes : IHelpBytes
 {
+    private Dictionary<Type, Func<byte[], object>> _conversionMap = null!;
+
+    public HelpBytes()
+    {
+        InitializeConversionMap();
+    }
+
     public byte[] ObjectToByteArray<T>(T obj)
     {
         if (obj == null)
@@ -22,53 +28,25 @@ public class HelpBytes : IHelpBytes
         if (byteArray == null)
             throw new ArgumentNullException(nameof(byteArray));
 
-        T objValue;
-
-        if (typeof(T) == typeof(MessageType))
-        {
-            var messageTypeValue = BitConverter.ToInt32(byteArray, 0);
-            objValue = (T)(object)messageTypeValue;
-        }
-        else if (typeof(T) == typeof(Guid))
-        {
-            objValue = (T)(object)new Guid(byteArray);
-        }
-        else if (typeof(T) == typeof(string))
-        {
-            var decodedString = ASCII.GetString(byteArray);
-            objValue = (T)(object)decodedString;
-        }
-        else if (typeof(T) == typeof(int))
-        {
-            var intValue = BitConverter.ToInt32(byteArray, 0);
-            objValue = (T)(object)intValue;
-        }
-        else if (typeof(T) == typeof(MessageEdge))
-        {
-            var byteValue = byteArray[0];
-            objValue = (T)(object)byteValue;
-        }
-        else if (typeof(T) == typeof(uint))
-        {
-            var uintValue = BitConverter.ToUInt32(byteArray, 0);
-            objValue = (T)(object)uintValue;
-        }
-        else if (typeof(T) == typeof(DateOnly))
-        {
-            var decodedString = ASCII.GetString(byteArray);
-            objValue = (T)(object)DateOnly.Parse(decodedString);
-        }
-        else if (typeof(T) == typeof(FileTypes))
-        {
-            var fileTypeValue = BitConverter.ToInt32(byteArray, 0);
-            objValue = (T)(object)fileTypeValue;
-        }
-        else
-        {
+        if (!_conversionMap.TryGetValue(typeof(T), out var conversionFunc))
             throw new ArgumentException("Unsupported type.");
-        }
 
-        return objValue;
+        return (T)conversionFunc(byteArray);
+    }
+
+    private void InitializeConversionMap()
+    {
+        _conversionMap = new Dictionary<Type, Func<byte[], object>>
+        {
+            { typeof(MessageType), bytes => BitConverter.ToInt32(bytes, 0) },
+            { typeof(Guid), bytes => new Guid(bytes) },
+            { typeof(string), bytes => ASCII.GetString(bytes) },
+            { typeof(int), bytes => BitConverter.ToInt32(bytes, 0) },
+            { typeof(MessageEdge), bytes => bytes[0] },
+            { typeof(uint), bytes => BitConverter.ToUInt32(bytes, 0) },
+            { typeof(DateOnly), bytes => DateOnly.Parse(ASCII.GetString(bytes)) },
+            { typeof(FileTypes), bytes => BitConverter.ToInt32(bytes, 0) }
+        };
     }
 
     public IEnumerable<byte> CombineByteArrays(params byte[][] arrays)
