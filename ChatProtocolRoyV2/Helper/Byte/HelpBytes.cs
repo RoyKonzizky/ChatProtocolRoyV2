@@ -1,82 +1,79 @@
 using ChatProtocolRoyV2.Entities;
+using static ChatProtocolRoyV2.Constants.Encodings;
 
 namespace ChatProtocolRoyV2.Helper.Byte;
+
+// TODO: change from T to more concrete types from this project, address security concerns, use design patterns
 
 public class HelpBytes : IHelpBytes
 {
     public byte[] ObjectToByteArray<T>(T obj)
     {
-        // TODO: change from T to more concrete types from this project, address security concerns, use design patterns
-        var concreteType = ConvertToConcreteType(obj);
-        using var memoryStream = new MemoryStream();
-        using var binaryWriter = new BinaryWriter(memoryStream);
-        var objString = concreteType.ToString()!;
-        binaryWriter.Write(objString);
-        return memoryStream.ToArray();
+        if (obj == null)
+            throw new ArgumentNullException(nameof(obj));
+
+        var objString = obj.ToString()!;
+        var byteArray = ASCII.GetBytes(objString);
+        return byteArray;
     }
 
     public T FromByteArray<T>(byte[] byteArray)
     {
-        using var memoryStream = new MemoryStream(byteArray);
-        using var binaryReader = new BinaryReader(memoryStream);
+        if (byteArray == null)
+            throw new ArgumentNullException(nameof(byteArray));
 
-        object objValue;
+        T objValue;
 
         if (typeof(T) == typeof(MessageType))
         {
-            var messageType = (MessageType)binaryReader.ReadInt32();
-            objValue = messageType;
+            var messageTypeValue = BitConverter.ToInt32(byteArray, 0);
+            objValue = (T)(object)messageTypeValue;
         }
         else if (typeof(T) == typeof(Guid))
         {
-            var guidBytes = binaryReader.ReadBytes(16);
-            objValue = new Guid(guidBytes);
+            objValue = (T)(object)new Guid(byteArray);
         }
         else if (typeof(T) == typeof(string))
         {
-            objValue = binaryReader.ReadString();
+            var decodedString = ASCII.GetString(byteArray);
+            objValue = (T)(object)decodedString;
         }
         else if (typeof(T) == typeof(int))
         {
-            objValue = binaryReader.ReadInt32();
+            var intValue = BitConverter.ToInt32(byteArray, 0);
+            objValue = (T)(object)intValue;
         }
         else if (typeof(T) == typeof(MessageEdge))
         {
-            var messageEdge = (MessageEdge)binaryReader.ReadByte();
-            objValue = messageEdge;
+            var byteValue = byteArray[0];
+            objValue = (T)(object)byteValue;
         }
         else if (typeof(T) == typeof(uint))
         {
-            objValue = binaryReader.ReadUInt32();
+            var uintValue = BitConverter.ToUInt32(byteArray, 0);
+            objValue = (T)(object)uintValue;
         }
         else if (typeof(T) == typeof(DateOnly))
         {
-            var dateOnlyString = binaryReader.ReadString();
-            objValue = DateOnly.Parse(dateOnlyString);
+            var decodedString = ASCII.GetString(byteArray);
+            objValue = (T)(object)DateOnly.Parse(decodedString);
         }
         else if (typeof(T) == typeof(FileTypes))
         {
-            var fileType = (FileTypes)binaryReader.ReadInt32();
-            objValue = fileType;
+            var fileTypeValue = BitConverter.ToInt32(byteArray, 0);
+            objValue = (T)(object)fileTypeValue;
         }
         else
         {
             throw new ArgumentException("Unsupported type.");
         }
 
-        return (T)ConvertToConcreteType(objValue);
+        return objValue;
     }
 
-
-    public byte[] CombineByteArrays(params byte[][] arrays)
+    public IEnumerable<byte> CombineByteArrays(params byte[][] arrays)
     {
         return arrays.SelectMany(x => x).ToArray();
     }
-
-    private object ConvertToConcreteType<T>(T obj)
-    {
-        if (obj is MessageType or Guid or string or int or MessageEdge or uint or DateOnly or FileTypes) return obj;
-
-        throw new ArgumentException("Unsupported type.");
-    }
 }
+
