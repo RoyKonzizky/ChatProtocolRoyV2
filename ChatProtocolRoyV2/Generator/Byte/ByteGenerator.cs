@@ -55,5 +55,4 @@ public class ByteGenerator : IByteGenerator
             _helper.ObjectToByteArray(messageBase.Type)
         );
     }
-
 }
