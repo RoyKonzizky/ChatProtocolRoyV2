@@ -1,4 +1,3 @@
-using System.Text;
 using ChatProtocolRoyV2.Entities;
 using static ChatProtocolRoyV2.Constants.Encodings;
 
@@ -34,6 +33,11 @@ public class HelpBytes : IHelpBytes
         return (T)conversionFunc(byteArray);
     }
 
+    public IEnumerable<byte> CombineByteArrays(byte[][] arrays)
+    {
+        return arrays.SelectMany(x => x).ToArray();
+    }
+
     private void InitializeConversionMap()
     {
         _conversionMap = new Dictionary<Type, Func<byte[], object>>
@@ -48,10 +52,4 @@ public class HelpBytes : IHelpBytes
             { typeof(FileTypes), bytes => BitConverter.ToInt32(bytes, 0) }
         };
     }
-
-    public IEnumerable<byte> CombineByteArrays(params byte[][] arrays)
-    {
-        return arrays.SelectMany(x => x).ToArray();
-    }
 }
-

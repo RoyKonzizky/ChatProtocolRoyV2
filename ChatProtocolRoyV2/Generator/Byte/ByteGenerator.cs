@@ -1,47 +1,39 @@
 ﻿using ChatProtocolRoyV2.ChecksumCalculator.Byte;
 using ChatProtocolRoyV2.Data;
 using ChatProtocolRoyV2.Entities;
-using ChatProtocolRoyV2.Generator.Byte.Message;
-using ChatProtocolRoyV2.Generator.Byte.Provider;
+using ChatProtocolRoyV2.Generator.Byte.Factory;
 using ChatProtocolRoyV2.Helper.Byte;
 
 namespace ChatProtocolRoyV2.Generator.Byte;
 
-public class ByteGenerator : IByteGenerator
+public class ByteGenerator : IByteGenerator<MessageBase>
 {
     private readonly IChecksumByteArrayCalculator _checksumCalculator;
     private readonly IHelpBytes _helper;
-    private readonly IMessageGeneratorProvider _messageGeneratorProvider;
+    private readonly IMessageGeneratorByteFactory _messageGeneratorFactory;
 
     public ByteGenerator(IChecksumByteArrayCalculator checksumCalculator,
-        IMessageGeneratorProvider messageGeneratorProvider, IHelpBytes helper)
+        IMessageGeneratorByteFactory messageGeneratorFactory, IHelpBytes helper)
     {
         _checksumCalculator = checksumCalculator;
-        _messageGeneratorProvider = messageGeneratorProvider;
+        _messageGeneratorFactory = messageGeneratorFactory;
         _helper = helper;
     }
+
 
     public IEnumerable<byte> Generate(MessageBase messageBase)
     {
         if (messageBase == null)
             throw new ArgumentNullException(nameof(messageBase));
 
-        var messageGenerator = GetMessageGenerator(messageBase);
-
-        var messageBytes = messageGenerator.Generate(messageBase);
-        var dataBytes = messageBytes.ToArray();
-        var checksumBytes = GenerateChecksumBytes(dataBytes);
-        var syncBytes = _helper.ObjectToByteArray(MessageEdge.Sync);
-        var tailBytes = _helper.ObjectToByteArray(MessageEdge.Tail);
+        var dataBytes = _messageGeneratorFactory.Generate(messageBase);
+        var dataBytesEnumerable = dataBytes as byte[] ?? dataBytes.ToArray();
+        var checksumBytes = GenerateChecksumBytes(dataBytesEnumerable);
+        IEnumerable<byte> syncBytes = _helper.ObjectToByteArray(MessageEdge.Sync);
+        IEnumerable<byte> tailBytes = _helper.ObjectToByteArray(MessageEdge.Tail);
         var sharedBytes = GenerateSharedBytes(messageBase);
-
-        return _helper.CombineByteArrays(syncBytes, sharedBytes.ToArray(), dataBytes, checksumBytes.ToArray(),
-            tailBytes);
-    }
-
-    private IMessageGenerator GetMessageGenerator(MessageBase messageBase)
-    {
-        return _messageGeneratorProvider.Generate(messageBase);
+        var packet = syncBytes.Concat(sharedBytes.Concat(dataBytesEnumerable.Concat(checksumBytes.Concat(tailBytes))));
+        return packet;
     }
 
     private IEnumerable<byte> GenerateChecksumBytes(IEnumerable<byte> dataBytes)
@@ -52,9 +44,9 @@ public class ByteGenerator : IByteGenerator
 
     private IEnumerable<byte> GenerateSharedBytes(MessageBase messageBase)
     {
-        return _helper.CombineByteArrays(
-            _helper.ObjectToByteArray(messageBase.Id),
-            _helper.ObjectToByteArray(messageBase.Type)
-        );
+        IEnumerable<byte> guidBytes = _helper.ObjectToByteArray(messageBase.Id);
+        IEnumerable<byte> typeBytes = _helper.ObjectToByteArray(messageBase.Type);
+        return guidBytes.Concat(typeBytes);
     }
 }
+//TODO try to eliminate use of the Helper in all classes
