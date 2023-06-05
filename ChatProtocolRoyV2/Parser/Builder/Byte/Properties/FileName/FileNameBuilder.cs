@@ -26,3 +26,5 @@ public class FileNameBuilder : IFileNameBuilder
         return nameFile;
     }
 }
+//TODO the calculation in a var
+//TODO call skip and take

@@ -29,3 +29,4 @@ public class FileMessageGenerator : IMessageGenerator
         );
     }
 }
+//TODO use a factory to reduce to duplication

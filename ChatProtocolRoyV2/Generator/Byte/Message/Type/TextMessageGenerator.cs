@@ -26,3 +26,5 @@ public class TextMessageGenerator : IMessageGenerator
         );
     }
 }
+
+//TODO do not initialize in this level and make sure to check the rest of the code for it

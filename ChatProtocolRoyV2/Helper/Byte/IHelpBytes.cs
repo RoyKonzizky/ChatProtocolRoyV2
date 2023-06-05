@@ -6,3 +6,5 @@ public interface IHelpBytes : IHelp
     T FromByteArray<T>(byte[] byteArray);
     IEnumerable<byte> CombineByteArrays(params byte[][] arrays);
 }
+//TODO IEnumerable instead of byte[]
+//TODO remove params by using built in methods in IEnumerable
