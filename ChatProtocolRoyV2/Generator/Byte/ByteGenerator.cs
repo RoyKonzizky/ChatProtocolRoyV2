@@ -29,8 +29,8 @@ public class ByteGenerator : IByteGenerator<MessageBase>
         var dataBytes = _messageGeneratorFactory.Generate(messageBase);
         var dataBytesEnumerable = dataBytes as byte[] ?? dataBytes.ToArray();
         var checksumBytes = GenerateChecksumBytes(dataBytesEnumerable);
-        IEnumerable<byte> syncBytes = _helper.ObjectToByteArray(MessageEdge.Sync);
-        IEnumerable<byte> tailBytes = _helper.ObjectToByteArray(MessageEdge.Tail);
+        var syncBytes = _helper.ObjectToByteArray(MessageEdge.Sync);
+        var tailBytes = _helper.ObjectToByteArray(MessageEdge.Tail);
         var sharedBytes = GenerateSharedBytes(messageBase);
         var packet = syncBytes.Concat(sharedBytes.Concat(dataBytesEnumerable.Concat(checksumBytes.Concat(tailBytes))));
         return packet;
@@ -44,8 +44,8 @@ public class ByteGenerator : IByteGenerator<MessageBase>
 
     private IEnumerable<byte> GenerateSharedBytes(MessageBase messageBase)
     {
-        IEnumerable<byte> guidBytes = _helper.ObjectToByteArray(messageBase.Id);
-        IEnumerable<byte> typeBytes = _helper.ObjectToByteArray(messageBase.Type);
+        var guidBytes = _helper.ObjectToByteArray(messageBase.Id);
+        var typeBytes = _helper.ObjectToByteArray(messageBase.Type);
         return guidBytes.Concat(typeBytes);
     }
 }
