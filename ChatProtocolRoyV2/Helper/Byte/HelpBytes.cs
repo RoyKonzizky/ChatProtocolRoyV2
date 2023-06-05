@@ -1,3 +1,4 @@
+using System.Text;
 using ChatProtocolRoyV2.Entities;
 using static ChatProtocolRoyV2.Constants.Encodings;
 
@@ -5,14 +6,14 @@ namespace ChatProtocolRoyV2.Helper.Byte;
 
 public class HelpBytes : IHelpBytes
 {
-    private Dictionary<Type, Func<byte[], object>> _conversionMap = null!;
+    private Dictionary<Type, Func<IEnumerable<byte>, object>> _conversionMap = null!;
 
     public HelpBytes()
     {
         InitializeConversionMap();
     }
 
-    public byte[] ObjectToByteArray<T>(T obj)
+    public IEnumerable<byte> ObjectToByteArray<T>(T obj)
     {
         if (obj == null)
             throw new ArgumentNullException(nameof(obj));
@@ -22,7 +23,7 @@ public class HelpBytes : IHelpBytes
         return byteArray;
     }
 
-    public T FromByteArray<T>(byte[] byteArray)
+    public T FromByteArray<T>(IEnumerable<byte> byteArray)
     {
         if (byteArray == null)
             throw new ArgumentNullException(nameof(byteArray));
@@ -33,23 +34,25 @@ public class HelpBytes : IHelpBytes
         return (T)conversionFunc(byteArray);
     }
 
-    public IEnumerable<byte> CombineByteArrays(byte[][] arrays)
-    {
-        return arrays.SelectMany(x => x).ToArray();
-    }
-
     private void InitializeConversionMap()
     {
-        _conversionMap = new Dictionary<Type, Func<byte[], object>>
+        _conversionMap = new Dictionary<Type, Func<IEnumerable<byte>, object>>
         {
-            { typeof(MessageType), bytes => BitConverter.ToInt32(bytes, 0) },
-            { typeof(Guid), bytes => new Guid(bytes) },
-            { typeof(string), bytes => ASCII.GetString(bytes) },
-            { typeof(int), bytes => BitConverter.ToInt32(bytes, 0) },
-            { typeof(MessageEdge), bytes => bytes[0] },
-            { typeof(uint), bytes => BitConverter.ToUInt32(bytes, 0) },
-            { typeof(DateOnly), bytes => DateOnly.Parse(ASCII.GetString(bytes)) },
-            { typeof(FileTypes), bytes => BitConverter.ToInt32(bytes, 0) }
+            { typeof(MessageType), bytes => BitConverter.ToInt32(bytes.ToArray(), 0) },
+            { typeof(Guid), bytes => new Guid(bytes.ToArray()) },
+            { typeof(string), bytes => ASCII.GetString(bytes.ToArray()) },
+            { typeof(int), bytes => BitConverter.ToInt32(bytes.ToArray(), 0) },
+            { typeof(MessageEdge), bytes => bytes.First() },
+            { typeof(uint), bytes => BitConverter.ToUInt32(bytes.ToArray(), 0) },
+            { typeof(DateOnly), bytes => DateOnly.Parse(ASCII.GetString(bytes.ToArray())) },
+            { typeof(FileTypes), bytes => BitConverter.ToInt32(bytes.ToArray(), 0) }
         };
     }
+
+
+    public IEnumerable<byte> CombineByteArrays(IEnumerable<byte[]> arrays)
+    {
+        return arrays.SelectMany(x => x);
+    }
 }
+
